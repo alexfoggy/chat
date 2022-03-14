@@ -1,13 +1,15 @@
-<div class="right-q">
+@foreach($responseMsg as $oneMsg)
+<div class="left-q">
     <div class="small-image-assist">
         <img src="" alt="">
     </div>
     <div class="msg-block">
         <div class="msg-text">
-            {{$newMsg->msg}}
+            {{$oneMsg->msg}}
         </div>
         <div class="date-msg">
-            {{\Illuminate\Support\Carbon::parse($newMsg->created_at)->format('H:m')}}
+            {{\Illuminate\Support\Carbon::parse($oneMsg->created_at)->format('H:m')}}
         </div>
     </div>
 </div>
+@endforeach

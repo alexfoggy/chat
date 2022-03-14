@@ -19,6 +19,7 @@ class CreateMsgTable extends Migration
             $table->unsignedBigInteger('site_id')->nullable();
             $table->string('msg');
             $table->tinyInteger('userStatus');
+            $table->tinyInteger('sendStatus')->default(0);
             $table->timestamps();
         });
     }
