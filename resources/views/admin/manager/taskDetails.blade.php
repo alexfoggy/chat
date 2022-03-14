@@ -60,8 +60,8 @@
                         </div>
                     </div>
                     <div class="billed-from">
-                        <h6>{{$task->title ?? 'Task title'}}</h6>
-                        <p>{{$task->description ?? 'Task description'}}</p>
+                        <h6>{{$task->title ?? 'Sites title'}}</h6>
+                        <p>{{$task->description ?? 'Sites description'}}</p>
                     </div><!-- billed-from -->
                 </div><!-- invoice-header -->
 
@@ -190,7 +190,7 @@
                     </div>
 
                     {{--                <div class="ml-2">--}}
-                    {{--                    <div class="btn btn-block btn-warning popup-action" data-action="resendTask/{{$task->task->uuid}}">Task contains problem</div>--}}
+                    {{--                    <div class="btn btn-block btn-warning popup-action" data-action="resendTask/{{$task->task->uuid}}">Sites contains problem</div>--}}
                     {{--                    <div class="tx-10 px-2"><i class="icon ion-information-circled"></i> need to be redone</div>--}}
                     {{--                </div>--}}
 

@@ -4,7 +4,7 @@
     </div>
     <div class="col">
         @php
-            $tasks = \App\Http\Resources\TaskResource::collection(\App\Models\Task::limit(5)->get());
+            $tasks = \App\Http\Resources\TaskResource::collection(\App\Models\Sites::limit(5)->get());
             //dd($tasks);
         @endphp
         @foreach($tasks as $task)

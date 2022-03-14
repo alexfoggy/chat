@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-use App\Models\Task;
+use App\Models\Sites;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -43,7 +43,7 @@ class UpdateTaskList implements ShouldBroadcast
     {
         return [
 
-            'data' => Task::whereHas('users', function ($query) {
+            'data' => Sites::whereHas('users', function ($query) {
                 $query->where('complete_status', 'new')
                     ->where('taskable_id', $this->user->first()->id);
             })->get()

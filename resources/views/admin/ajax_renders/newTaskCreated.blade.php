@@ -2,7 +2,7 @@
     <div class="col-lg-7">
     <input type="hidden" name="{{$one_task->user_id}}" name="user_id">
     <div class="media-body ml-0">
-        <a href="{{url(request()->segment(1).'/task').'/'.$one_task->id}}" class="lead">{{$one_task->title ?? 'Task title'}}</a>
+        <a href="{{url(request()->segment(1).'/task').'/'.$one_task->id}}" class="lead">{{$one_task->title ?? 'Sites title'}}</a>
         <p class="d-flex mt-1 font-weight-light">Pinned to: <a href="{{url(request()->segment(1),'userinfo').'/'.$one_task->user_id}}" class="ml-1 tx-warning">{{$one_task->user->first_name ?? ''}} {{$one_task->user->last_name ?? ''}}</a> </p>
     </div><!-- media-body -->
     </div>

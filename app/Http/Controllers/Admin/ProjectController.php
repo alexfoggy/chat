@@ -9,7 +9,7 @@ use App\Http\Services\ProjectService;
 use App\Models\Country;
 use App\Models\Language;
 use App\Models\Project;
-use App\Models\Task;
+use App\Models\Sites;
 use App\Models\TasksRelation;
 use App\Notifications\NewTaskNotification;
 use App\User;
@@ -100,9 +100,9 @@ class ProjectController extends Controller
 
             $languages = Language::get();
 
-            $tasks = Task::where('project_id', $id)->get();
+            $tasks = Sites::where('project_id', $id)->get();
 
-            $relatedUsersId = Task::where('project_id', $id)->pluck('user_id')->toArray();
+            $relatedUsersId = Sites::where('project_id', $id)->pluck('user_id')->toArray();
 
             //$relatedUsers = TasksRelation::whereIn('task_id',$tasksId)->pluck('user_id')->toArray();
 
@@ -185,10 +185,10 @@ class ProjectController extends Controller
 
                        for ($i = 0; $i < $project->tasks_count; $i++) {
                            $tasks->push(
-                               Task::create([
+                               Sites::create([
                                    'uuid' => Uuid::uuid4()->toString(),
                                    'project_id' => $project->id,
-                                   'title' => $project->title . ' Task',
+                                   'title' => $project->title . ' Sites',
                                    'budget' => $project->budget,
                                    'length' => $project->minutes_per_tasks,
                                    'status' => true,

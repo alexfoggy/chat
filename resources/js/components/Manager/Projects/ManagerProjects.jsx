@@ -61,7 +61,7 @@ export default class Project extends PureComponent {
                                 </div>
 
                                 <div >
-                                    <div>Task count</div>
+                                    <div>Sites count</div>
                                     <small className="deadline"> {p.tasks_count}</small>
                                 </div>
                                 <div >

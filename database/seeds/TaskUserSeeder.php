@@ -11,8 +11,8 @@ class TaskUserSeeder extends Seeder
      */
     public function run()
     {
-        if(\App\Models\Task::whereStatus(true)->get()->count()) {
-            foreach (\App\Models\Task::limit(40)->get() as $task) {
+        if(\App\Models\Sites::whereStatus(true)->get()->count()) {
+            foreach (\App\Models\Sites::limit(40)->get() as $task) {
                 \Illuminate\Support\Facades\DB::table('taskables')->insert([
                     'task_uuid' => $task->uuid,
                     'taskable_type' => \App\User::class,

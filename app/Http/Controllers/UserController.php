@@ -9,7 +9,7 @@ use App\Http\Resources\UserResource;
 use App\Models\Country;
 use App\Models\Language;
 use App\Models\Record;
-use App\Models\Task;
+use App\Models\Sites;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -100,7 +100,7 @@ class UserController extends Controller implements ApiCrudInterface
 
     public function getTaskLength()
     {
-        $tasks = Task::whereHas('user', function ($query) {
+        $tasks = Sites::whereHas('user', function ($query) {
             $query->whereToken($this->token);
         })->get();
 

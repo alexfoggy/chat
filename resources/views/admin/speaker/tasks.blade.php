@@ -55,9 +55,9 @@
                                 <span class="font-weight-bold tx-20 tx-warning">{{$one_task->price}}$</span>
                         </span><!-- d-flex -->
                                 <h4 class="lh-2 mg-b-5"><span
-                                        class="tx-inverse hover-primary">{{$one_task->title ?? 'Task title'}}</span>
+                                        class="tx-inverse hover-primary">{{$one_task->title ?? 'Sites title'}}</span>
                                 </h4>
-                                <p class="tx-13 mg-b-0 tx-gray-700">{{$one_task->description ?? 'Task description'}}</p>
+                                <p class="tx-13 mg-b-0 tx-gray-700">{{$one_task->description ?? 'Sites description'}}</p>
                             </a>
                         </div><!-- list-group -->
                     </div><!-- col-6 -->

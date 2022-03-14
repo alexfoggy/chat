@@ -3,7 +3,7 @@
 namespace App\Events;
 
 use App\Http\Resources\TaskResource;
-use App\Models\Task;
+use App\Models\Sites;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -44,7 +44,7 @@ class TaskStatusChange implements ShouldBroadcastNow
     {
 
         return [
-            'body' => Task::all()
+            'body' => Sites::all()
         ];
     }
 }

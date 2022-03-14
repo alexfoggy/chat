@@ -9,7 +9,7 @@ use App\Models\Country;
 use App\Models\Dialect;
 use App\Models\Language;
 use App\Models\Project;
-use App\Models\Task;
+use App\Models\Sites;
 use App\Notifications\NewTaskNotification;
 use App\User;
 use Dotenv\Validator;
@@ -49,7 +49,7 @@ class AdminController extends Controller
 
            $dialects = Dialect::where('user_id',$user->id)->get();
 
-           $userTasks = Task::where('user_id',$user->id)->get();*/
+           $userTasks = Sites::where('user_id',$user->id)->get();*/
 
         return view('admin.main.index', get_defined_vars());
 

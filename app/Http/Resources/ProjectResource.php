@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Task;
+use App\Models\Sites;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProjectResource extends JsonResource

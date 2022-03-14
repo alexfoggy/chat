@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Models\Task;
+use App\Models\Sites;
 use Faker\Generator as Faker;
 
-$factory->define(Task::class, function (Faker $faker) {
+$factory->define(Sites::class, function (Faker $faker) {
     return [
         'uuid' => $faker->uuid,
         'project_id' => $faker->numberBetween(1,10),

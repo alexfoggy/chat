@@ -13,7 +13,7 @@ use App\Http\Services\NotificationService;
 use App\Models\Invoice;
 use App\Models\Project;
 use App\Models\Record;
-use App\Models\Task;
+use App\Models\Sites;
 use Carbon\Carbon;
 use Faker\Factory;
 use App\User;
@@ -46,10 +46,10 @@ class TaskController extends Controller
     public function index(Request $request)
     {
         if ($this->request->exists('filter') && !empty($this->request->filter)) {
-            return TaskResource::collection(Task::where('complete_status', $request->filter)->get());
+            return TaskResource::collection(Sites::where('complete_status', $request->filter)->get());
         }
 
-        return TaskResource::collection(Task::all());
+        return TaskResource::collection(Sites::all());
     }
 
 
@@ -57,7 +57,7 @@ class TaskController extends Controller
     {
         $user = Auth::user();
 
-        $tasks = Task::where('user_id', $user->id)->get();
+        $tasks = Sites::where('user_id', $user->id)->get();
 
         return view('admin.speaker.tasks', get_defined_vars());
 
@@ -67,7 +67,7 @@ class TaskController extends Controller
     {
         $user = Auth::user();
 
-        $task = Task::where('user_id', $user->id)->where('id', $id)->first();
+        $task = Sites::where('user_id', $user->id)->where('id', $id)->first();
 
         if (!$task) {
             return redirect('/cabinet/tasks')->with('status', 'This task is not set for you');
@@ -93,7 +93,7 @@ class TaskController extends Controller
 //            return redirect('/cabinet/tasks')->with('status','This task is not set for you');
 //        }
 //
-        $task = Task::where('id', $id)->first();
+        $task = Sites::where('id', $id)->first();
         $user = User::where('id', $task->user_id)->first();
         $records = Record::where('task_id', $id)->get();
 
@@ -116,7 +116,7 @@ class TaskController extends Controller
                 ]
             );
 
-            return Task::create($this->request->all());
+            return Sites::create($this->request->all());
 
         } catch (\Exception $exception) {
 
@@ -133,7 +133,7 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        return new TaskResource(Task::find($id));
+        return new TaskResource(Sites::find($id));
     }
 
     /**
@@ -144,7 +144,7 @@ class TaskController extends Controller
      */
     public function taskEdit(Request $request)
     {
-        $task = Task::where('uuid', $request->input('uuid'))->first();
+        $task = Sites::where('uuid', $request->input('uuid'))->first();
 
         if ($task) {
 
@@ -194,12 +194,12 @@ class TaskController extends Controller
                 'status' => isset($this->request->status)
             ]
         );
-        Task::find($id)->update($this->request->all());
+        Sites::find($id)->update($this->request->all());
         /*$tasks = new Collection;
-        $tasks->push(Task::find($id));
+        $tasks->push(Sites::find($id));
         event(new TaskCounterEvent(collect($tasks)));*/
 
-//        dd(collect(Task::find($id)));
+//        dd(collect(Sites::find($id)));
 
 
         return $notification->show();
@@ -213,7 +213,7 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        return Task::find($id)->delete();
+        return Sites::find($id)->delete();
     }
 
     /*----------------------------
@@ -228,9 +228,9 @@ class TaskController extends Controller
         foreach ($request->tasks as $task) {
             if ($task['checked'] === true) {
 
-                $tasks->push(Task::find($task['id'])->first()->uuid);
+                $tasks->push(Sites::find($task['id'])->first()->uuid);
 
-                Task::find($task['id'])->update([
+                Sites::find($task['id'])->update([
                     'complete_status' => 'invoiced'
                 ]);
             }
@@ -276,7 +276,7 @@ class TaskController extends Controller
                     break;
             }
 
-            $one_task = new Task();
+            $one_task = new Sites();
 
             $one_task->uuid = Uuid::uuid4()->toString();
             $one_task->project_id = $project_id;
@@ -330,7 +330,7 @@ class TaskController extends Controller
 
         foreach ($user_ids as $one_user) {
 
-            $one_task = new Task();
+            $one_task = new Sites();
 
             $one_task->uuid = Uuid::uuid4()->toString();
             $one_task->project_id = $request->input('project_id');
@@ -396,7 +396,7 @@ class TaskController extends Controller
             do {
 
                 foreach ($users->pluck('id') as $one_user) {
-                    $one_task = new Task();
+                    $one_task = new Sites();
                     $one_task->uuid = Uuid::uuid4()->toString();
                     $one_task->project_id = $project->id;
                     $one_task->user_id = $one_user;
@@ -423,7 +423,7 @@ class TaskController extends Controller
         } else {
             foreach ($users->pluck('id') as $one_user) {
 
-                $one_task = new Task();
+                $one_task = new Sites();
 
                 $one_task->uuid = Uuid::uuid4()->toString();
                 $one_task->project_id = $project->id;
@@ -453,14 +453,14 @@ class TaskController extends Controller
     public function acceptTask(Request $request, $uuid)
     {
 
-        $task = Task::where('uuid', $uuid)->update(['complete_status' => 'in_progress']);
+        $task = Sites::where('uuid', $uuid)->update(['complete_status' => 'in_progress']);
 
         return response()->json(['status' => true]);
     }
 
     public function sendForVerifyTask(Request $request, $uuid)
     {
-        $task = Task::where('uuid', $uuid)->first();
+        $task = Sites::where('uuid', $uuid)->first();
         $project = Project::where('id', $task->project_id)->first();
         $user = User::where('id', $project->user_id)->first();
 
@@ -473,7 +473,7 @@ class TaskController extends Controller
         $task->update(['complete_status' => 'delivered']);
 
         Mail::send('mailForms.taskWasDone', ['task' => $task, 'user' => $user, 'project' => $project], function ($m) use ($user) {
-            $m->to($user->email, $user->first_name)->subject("Task was done, check it");
+            $m->to($user->email, $user->first_name)->subject("Sites was done, check it");
         });
 
         return response()->json(['status' => true]);
@@ -482,10 +482,10 @@ class TaskController extends Controller
     public function sendReminder(Request $request, $uuid)
     {
 
-        $task = Task::where('uuid', $uuid)->first();
+        $task = Sites::where('uuid', $uuid)->first();
         $task->update(['remind_date' => Carbon::now()]);
 
-        $user = User::where('id', Task::where('id', $task->id)->pluck('user_id'))->first();
+        $user = User::where('id', Sites::where('id', $task->id)->pluck('user_id'))->first();
 
         $this->notifService->notify($user, 'info', 'You were remined that you have task', true, url('cabinet', ['task', $task->id]));
 
@@ -499,7 +499,7 @@ class TaskController extends Controller
     public function approveTask(Request $request, $uuid)
     {
 
-        $task = Task::where('uuid', $uuid)->first();
+        $task = Sites::where('uuid', $uuid)->first();
         $task->update(['complete_status' => 'approved']);
 
         $this->notifService->notify(User::where('id', $task->user_id)->first(), 'success', 'Your task was approved', false);
@@ -510,7 +510,7 @@ class TaskController extends Controller
 //    public function resendTask(Request $request, $uuid)
 //    {
 //
-//        $task = Task::where('uuid', $uuid)->update(['complete_status' => 'in_progress']);
+//        $task = Sites::where('uuid', $uuid)->update(['complete_status' => 'in_progress']);
 //
 //        return response()->json(['status' => true]);
 //    }
@@ -518,7 +518,7 @@ class TaskController extends Controller
     public function revokeTask(Request $request, $uuid)
     {
 
-        $task = Task::where('uuid', $uuid)->first();
+        $task = Sites::where('uuid', $uuid)->first();
         $task->update(['complete_status' => 'rejected']);
 
         $this->notifService->notify(User::where('id', $task->user_id)->first(), 'danger', 'Your task rejected', false);

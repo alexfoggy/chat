@@ -1,4 +1,7 @@
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+
 #chatassist {
+    font-family: 'Poppins', sans-serif;
     position: fixed;
     right: 5%;
     top: 100%;
@@ -6,9 +9,21 @@
     width: 300px;
     height: 500px;
     border-radius: 10px 10px 0 0;
-
+    transition: 0.5s;
     &.active {
         top: calc(100% - 500px);
+        .open-close {
+            top: 0px;
+            width: 40px;
+            height: 40px;
+            .open-assist {
+                display: none;
+            }
+            .close-assist {
+                display: block;
+            }
+
+        }
     }
 
     .wrapper {
@@ -17,22 +32,51 @@
         position: relative;
         height: 100%;
     }
-
     .open-close {
         position: absolute;
         right: 0;
         top: -100px;
         width: 60px;
+        transition: 0.5s;
         height: 60px;
+        z-index: 9;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        border: 1px #eee solid;
-        background-color: #eee;
-        cursor: pointer;
-    }
+        border: 1px #43ab71 solid;
+        background-color: #43ab71;
+        cursor: pointer; 
 
+        .open-assist {
+            svg {
+                width: 30px;
+                height: 30px;
+                path {
+                    //animation:dash 5s ease-in-out infinite;
+                    stroke: #fff;
+                }
+            }
+        }
+        .close-assist {
+            display: none;
+            svg {
+                width: 12px;
+                height: 12px;
+                path {
+                    stroke: #fff;
+                }
+            }
+        }
+    }
+    // @keyframes dash {
+    //     0% {
+    //         stroke-dasharray:0px;
+    //     }
+    //     100% {
+    //         stroke-dasharray:10px;
+    //     }
+    // }
     .head-assist {
         display: flex;
         background-color: #43ab71;
@@ -64,7 +108,7 @@
         overflow-y: auto;
         .left-q,.right-q {
             display: flex;
-            margin: 14px 0;
+            margin: 10px 0;
         }
         .date-msg {
             padding: 0 4px;
@@ -75,7 +119,6 @@
         .left-q {
             .msg-text {
                 background: #f5f5f5;
-                border-radius: 8px;
             }
         }
         .msg-block {
@@ -84,7 +127,10 @@
             border-radius: 6px;
         }
         .msg-text {
-            padding: 6px;
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-weight: 300;
+            font-size: 14px;
         }
         .right-q {
             flex-direction: row-reverse;
@@ -95,7 +141,6 @@
             .msg-text {
                 background: #43ab71;
                 color: #fff;
-                border-radius: 8px;
             }
         }
         .small-image-assist {

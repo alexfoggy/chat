@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Task;
+use App\Models\Sites;
 use App\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
@@ -44,7 +44,7 @@ class FillDatabase extends Command
 
 
         factory(User::class, 10)->create();
-//        factory(Task::class, 100)->create();
+//        factory(Sites::class, 100)->create();
 
         Artisan::call('db:seed');
 

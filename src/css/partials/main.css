@@ -1,13 +1,23 @@
 #chatassist {
+  font-family: 'Poppins', sans-serif;
   position: fixed;
   right: 5%;
   top: 100%;
   border: 1px #ddd solid;
   width: 300px;
   height: 500px;
-  border-radius: 10px 10px 0 0; }
+  border-radius: 10px 10px 0 0;
+  transition: 0.5s; }
   #chatassist.active {
     top: calc(100% - 500px); }
+    #chatassist.active .open-close {
+      top: 0px;
+      width: 40px;
+      height: 40px; }
+      #chatassist.active .open-close .open-assist {
+        display: none; }
+      #chatassist.active .open-close .close-assist {
+        display: block; }
   #chatassist .wrapper {
     overflow: hidden;
     border-radius: 10px 10px 0 0;
@@ -18,14 +28,28 @@
     right: 0;
     top: -100px;
     width: 60px;
+    transition: 0.5s;
     height: 60px;
+    z-index: 9;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 1px #eee solid;
-    background-color: #eee;
+    border: 1px #43ab71 solid;
+    background-color: #43ab71;
     cursor: pointer; }
+    #chatassist .open-close .open-assist svg {
+      width: 30px;
+      height: 30px; }
+      #chatassist .open-close .open-assist svg path {
+        stroke: #fff; }
+    #chatassist .open-close .close-assist {
+      display: none; }
+      #chatassist .open-close .close-assist svg {
+        width: 12px;
+        height: 12px; }
+        #chatassist .open-close .close-assist svg path {
+          stroke: #fff; }
   #chatassist .head-assist {
     display: flex;
     background-color: #43ab71;
@@ -50,29 +74,30 @@
     overflow-y: auto; }
     #chatassist .body-assist .left-q, #chatassist .body-assist .right-q {
       display: flex;
-      margin: 14px 0; }
+      margin: 10px 0; }
     #chatassist .body-assist .date-msg {
       padding: 0 4px;
       font-size: 12px;
       font-weight: thin;
       color: #999; }
     #chatassist .body-assist .left-q .msg-text {
-      background: #f5f5f5;
-      border-radius: 8px; }
+      background: #f5f5f5; }
     #chatassist .body-assist .msg-block {
       margin: 0 12px;
       max-width: 70%;
       border-radius: 6px; }
     #chatassist .body-assist .msg-text {
-      padding: 6px; }
+      padding: 4px 10px;
+      border-radius: 10px;
+      font-weight: 300;
+      font-size: 14px; }
     #chatassist .body-assist .right-q {
       flex-direction: row-reverse; }
       #chatassist .body-assist .right-q .date-msg {
         text-align: right; }
       #chatassist .body-assist .right-q .msg-text {
         background: #43ab71;
-        color: #fff;
-        border-radius: 8px; }
+        color: #fff; }
     #chatassist .body-assist .small-image-assist {
       width: 20px;
       min-width: 20px;

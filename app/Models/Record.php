@@ -10,6 +10,6 @@ class Record extends Model
 
     public function tasks()
     {
-        return $this->morphToMany(Task::class,'taskable', 'taskables', 'taskable_id', 'id');
+        return $this->morphToMany(Sites::class,'taskable', 'taskables', 'taskable_id', 'id');
     }
 }

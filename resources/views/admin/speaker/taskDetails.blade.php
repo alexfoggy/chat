@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @push('title')
-    {{trans('vars.your_task',[],$lang)}}: {{$task->task->title ?? 'Task title'}}
+    {{trans('vars.your_task',[],$lang)}}: {{$task->task->title ?? 'Sites title'}}
 @endpush
 @push('styles')
     <link href="{{asset('assets/css/AVRecord/AVRecord.css')}}" rel="stylesheet">
@@ -84,8 +84,8 @@
                     </div>
                 </div>
                 <div class="billed-from">
-                    <h6>{{$task->title ?? 'Task title'}}</h6>
-                    <p>{{$task->description ?? 'Task description'}}</p>
+                    <h6>{{$task->title ?? 'Sites title'}}</h6>
+                    <p>{{$task->description ?? 'Sites description'}}</p>
                 </div><!-- billed-from -->
             </div><!-- invoice-header -->
 

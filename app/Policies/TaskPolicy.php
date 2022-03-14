@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Task;
+use App\Models\Sites;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class TaskPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Models\Task  $task
+     * @param  \App\Models\Sites  $task
      * @return mixed
      */
-    public function view(User $user, Task $task)
+    public function view(User $user, Sites $task)
     {
         //
     }
@@ -48,10 +48,10 @@ class TaskPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Models\Task  $task
+     * @param  \App\Models\Sites  $task
      * @return mixed
      */
-    public function update(User $user, Task $task)
+    public function update(User $user, Sites $task)
     {
         //
     }
@@ -60,10 +60,10 @@ class TaskPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Models\Task  $task
+     * @param  \App\Models\Sites  $task
      * @return mixed
      */
-    public function delete(User $user, Task $task)
+    public function delete(User $user, Sites $task)
     {
         //
     }
@@ -72,10 +72,10 @@ class TaskPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Models\Task  $task
+     * @param  \App\Models\Sites  $task
      * @return mixed
      */
-    public function restore(User $user, Task $task)
+    public function restore(User $user, Sites $task)
     {
         //
     }
@@ -84,10 +84,10 @@ class TaskPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Models\Task  $task
+     * @param  \App\Models\Sites  $task
      * @return mixed
      */
-    public function forceDelete(User $user, Task $task)
+    public function forceDelete(User $user, Sites $task)
     {
         //
     }

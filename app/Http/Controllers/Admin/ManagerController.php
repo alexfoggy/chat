@@ -8,7 +8,7 @@ use App\Http\Resources\ProjectResource;
 use App\Models\Country;
 use App\Models\Language;
 use App\Models\Project;
-use App\Models\Task;
+use App\Models\Sites;
 use App\Notifications\NewTaskNotification;
 use App\User;
 use Illuminate\Http\Request;

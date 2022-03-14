@@ -15,6 +15,6 @@ class Invoice extends Model
     public function tasks()
     {
         $tasks = explode('|', $this['task_uuids']);
-        return $this->tasks = Task::whereIn('uuid', $tasks)->get();
+        return $this->tasks = Sites::whereIn('uuid', $tasks)->get();
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Events;
 
 use App\Http\Resources\TaskResource;
-use App\Models\Task;
+use App\Models\Sites;
 use App\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
@@ -65,7 +65,7 @@ class TaskCounterEvent implements ShouldBroadcastNow
 
         return [
             'count' => $task_response,
-            'tasks' => TaskResource::collection(Task::whereHas('user', function ($query) {
+            'tasks' => TaskResource::collection(Sites::whereHas('user', function ($query) {
                 $query->where('taskable_id', $this->user->first()->id);
             })->where('complete_status', 'new')->get()),
             'user' => $this->user->first()

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
-use App\Models\Task;
+use App\Models\Sites;
 use App\Http\Services\NotificationService;
 use App\Models\TasksRelation;
 use App\Models\User;
@@ -32,7 +32,7 @@ class ProfileController extends Controller
     {
         $user_profile = User::where('id', $id)->first();
 
-        $userTasks = Task::where('user_id', $id)->get();
+        $userTasks = Sites::where('user_id', $id)->get();
 
         return view('admin.manager.userInfo', get_defined_vars());
     }

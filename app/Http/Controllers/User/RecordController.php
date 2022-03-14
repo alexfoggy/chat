@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\msg;
+use App\Models\Sites;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\File;
@@ -92,6 +93,20 @@ class RecordController extends Controller
                 return response()->json([
                     'status' => true,
                     'userText' => view('messages.historyMsg', get_defined_vars())->render(),
+                ]);
+        }
+        return response()->json([
+            'status' => false
+        ]);
+    }
+
+    public function checkIfKeyWorks(Request $request)
+    {
+        $siteCheck = Sites::where('site_key',$request->input('key'))->first();
+        if($siteCheck)
+        {
+                return response()->json([
+                    'status' => true,
                 ]);
         }
         return response()->json([
