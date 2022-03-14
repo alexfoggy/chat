@@ -10,7 +10,10 @@ class PageController extends Controller
 {
     public function main()
     {
-        return view('pages.main');
+
+        $users = User::get();
+
+        return view('pages.main',get_defined_vars());
     }
 
     public function profile()
