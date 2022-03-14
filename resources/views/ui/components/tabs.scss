@@ -1,0 +1,42 @@
+@import "../../../sass/variables";
+nav.tabs {
+    display: flex;
+    align-items: center;
+    button {
+        flex: auto;
+        border: 0;
+        border-bottom: 4px solid $color-grey-light;
+        background: $color-white;
+        padding: 10px 15px;
+        font-size: 14px;
+        color: rgba($color-grey, 0.5);
+        outline: none;
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            color: $color-grey;
+            border-bottom: 4px solid rgba($color-grey, 0.3);
+        }
+        &:active {
+            color: $color-black;
+        }
+        &.active {
+            border-bottom: 4px solid $color-main;
+            color: $color-main;
+            span {
+                border: 1px solid rgba($color-main, 0.3);
+            }
+        }
+        span {
+            @extend .rounded-5;
+            font-size: 12px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+            padding: 0 5px;
+            border: 1px solid rgba($color-grey, 0.3);
+        }
+    }
+}
+

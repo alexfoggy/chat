@@ -1,0 +1,74 @@
+@import "../../../sass/variables";
+
+.task {
+    @extend .rounded-10;
+    border: 1px solid rgba($color-grey, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    a {
+        color: $color-grey;
+    }
+
+    small {
+        &.type {
+            @extend .rounded-5;
+            font-size: 14px;
+            padding: 5px 10px;
+            color: $color-main;
+            i {
+                font-size: 20px;
+                margin-right: 5px;
+            }
+        }
+
+        &.price {
+            @extend .rounded-5;
+            margin-left: 10px;
+            font-weight: bold;
+            color: $color-main;
+            padding: 5px;
+            border: 1px solid rgba($color-main, 0.3);
+        }
+
+        &.language {
+            font-weight: bold;
+        }
+    }
+
+    a.claim {
+        @extend .rounded-30;
+        border: 0;
+        font-size: 14px;
+        padding: 5px 20px;
+        display: inline-block;
+        margin-right: 10px;
+        i {
+            margin-right: 10px;
+            font-weight: lighter;
+            font-size: 22px;
+        }
+        background: $color-main;
+        color: $color-white;
+    }
+    button {
+        @extend .rounded-30;
+        border: 0;
+        font-size: 14px;
+        padding: 5px 20px;
+        i {
+            margin-right: 10px;
+            font-weight: lighter;
+            font-size: 22px;
+        }
+        &.decline {
+            border: 1px solid rgba($color-grey, 0.1);
+            color: rgba($color-grey, 0.4);
+            background: transparent;
+        }
+    }
+}

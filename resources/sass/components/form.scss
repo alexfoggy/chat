@@ -1,0 +1,48 @@
+@import "../variables";
+form {
+    .form-group {
+        margin-bottom: 25px;
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+        input {
+            @extend .rounded-5;
+            border: 1px solid rgba($color-grey, 0.15);
+            width: 100%;
+            padding: 15px;
+            font-weight: bold;
+            &::placeholder {
+                font-weight: normal;
+            }
+        }
+    }
+    button[type="submit"] {
+        @extend .rounded-5;
+        padding: 10px 30px;
+        background: $color-blue;
+        color: $color-white;
+        border: 0;
+    }
+}
+
+.project-name {
+    color: $color-main;
+    font-size: 25px;
+    font-weight: bold;
+    border: 0;
+}
+form.project-form {
+    .form-group {
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+
+    input, select, textarea {
+        @extend .rounded-5;
+        padding: 5px 10px;
+        width: 100%;
+    }
+}

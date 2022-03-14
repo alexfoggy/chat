@@ -1,0 +1,164 @@
+.color-main {
+  color: #E22A7F;
+}
+
+.color-yellow {
+  color: #FFD635;
+}
+
+.color-blue {
+  color: #1592E6;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.color-grey-light {
+  color: #F2F2F2;
+}
+
+.color-grey {
+  color: #646464;
+}
+
+.color-grey-dark {
+  color: #606060;
+}
+
+.color-black {
+  color: #000;
+}
+
+.bg-main {
+  background: #E22A7F;
+}
+
+.bg-yellow {
+  background: #FFD635;
+}
+
+.bg-blue {
+  background: #1592E6;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.bg-grey-light {
+  background: #F2F2F2;
+}
+
+.bg-grey {
+  background: #646464;
+}
+
+.bg-grey-dark {
+  background: #606060;
+}
+
+.bg-black {
+  background: #000;
+}
+
+.rounded-5,
+.task small.type,
+.task small.price {
+  border-radius: 5px;
+}
+
+.rounded-10,
+.task {
+  border-radius: 10px;
+}
+
+.rounded-15 {
+  border-radius: 15px;
+}
+
+.rounded-20 {
+  border-radius: 20px;
+}
+
+.rounded-30,
+.task a.claim,
+.task button {
+  border-radius: 30px;
+}
+
+.rounded-50 {
+  border-radius: 50px;
+}
+
+.task {
+  border: 1px solid rgba(100, 100, 100, 0.1);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.task a {
+  color: #646464;
+}
+
+.task small.type {
+  font-size: 14px;
+  padding: 5px 10px;
+  color: #E22A7F;
+}
+
+.task small.type i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.task small.price {
+  margin-left: 10px;
+  font-weight: bold;
+  color: #E22A7F;
+  padding: 5px;
+  border: 1px solid rgba(226, 42, 127, 0.3);
+}
+
+.task small.language {
+  font-weight: bold;
+}
+
+.task a.claim {
+  border: 0;
+  font-size: 14px;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-right: 10px;
+  background: #E22A7F;
+  color: #fff;
+}
+
+.task a.claim i {
+  margin-right: 10px;
+  font-weight: lighter;
+  font-size: 22px;
+}
+
+.task button {
+  border: 0;
+  font-size: 14px;
+  padding: 5px 20px;
+}
+
+.task button i {
+  margin-right: 10px;
+  font-weight: lighter;
+  font-size: 22px;
+}
+
+.task button.decline {
+  border: 1px solid rgba(100, 100, 100, 0.1);
+  color: rgba(100, 100, 100, 0.4);
+  background: transparent;
+}
+

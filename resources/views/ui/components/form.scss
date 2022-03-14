@@ -1,0 +1,125 @@
+@import "../../../sass/variables";
+
+.form-text {
+    h4 {
+
+    }
+    p {
+        font-weight: normal;
+        color: $color-grey;
+    }
+}
+.user-form {
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: $color-grey;
+    }
+    input {
+        @extend .rounded-10;
+        border: 1px solid rgba($color-grey, 0.3);
+        padding: 15px 15px;
+        font-size: 16px;
+        width: 100%;
+        outline: none;
+        -webkit-appearance: none;
+        &:focus {
+            border: 1px solid $color-main;
+            color: $color-main;
+        }
+        &::placeholder {
+            color: rgba($color-grey, 0.3);
+        }
+
+        &[type="radio"] {
+            @extend .rounded-30;
+            cursor: pointer;
+            padding: 5px;
+            width: 15px;
+            height: 15px;
+            margin: 5px;
+            margin-left: 0;
+            margin-top: 0;
+            display: inline-block;
+            vertical-align: middle;
+
+            &:checked {
+                background: $color-main;
+                border: 2px solid transparent;
+
+                + span {
+                    color: $color-main;
+                }
+            }
+        }
+    }
+
+    .custom-checkbox {
+        position: relative;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        vertical-align: middle;
+
+        input {
+            opacity: 0;
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+
+            + label {
+
+                color: $color-black;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: 0 auto;
+                line-height: 25px;
+                font-size: 25px;
+                display: block;
+                text-align: center;
+                cursor: pointer;
+
+                &::before {
+                    content: '';
+                    border-radius: 50%;
+                    width: 25px;
+                    height: 25px;
+                    border: 2px solid rgba($color-grey, 0.3);
+                    display: inline-block;
+                }
+            }
+
+            &:checked {
+                + label {
+                    &::before {
+                        font-family: Flaticon;
+                        content: '\f122';
+                        border: 3px solid transparent;
+                        margin-left: -5px;
+                        color: $color-main;
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+    }
+    textarea {
+        @extend .rounded-10;
+        border: 1px solid rgba($color-grey, 0.3);
+        resize: none;
+        padding: 15px;
+        width: 100%;
+        outline: none;
+        &:focus {
+            border: 1px solid $color-main;
+            color: $color-main;
+        }
+        &::placeholder {
+            color: rgba($color-grey, 0.3);
+        }
+    }
+}

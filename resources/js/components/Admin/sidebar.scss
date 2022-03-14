@@ -1,0 +1,104 @@
+@import "../../../sass/variables";
+
+.main-navigation {
+    //background: $color-grey-light;
+    border-right: 1px solid $color-grey-light;
+    padding: 20px;
+    width: 320px;
+    height: 100%;
+    min-height: 100vh;
+
+    .notification {
+        font-size: 26px;
+        position: relative;
+        display: inline-block;
+        color: $color-grey-dark;
+        span.status {
+            @extend .rounded-30;
+            width: 13px;
+            height: 13px;
+            background: $color-blue;
+            display: inline-block;
+            position: absolute;
+            right: -2px;
+            top: 12px;
+        }
+    }
+
+    .navigation-section {
+        margin-top: 50px;
+        .section-title {
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bold;
+            color: rgba($color-grey, 0.5);
+        }
+        ul {
+            padding-left: 0;
+            list-style: none;
+            li {
+                a {
+                    //@include transition();
+                    color: $color-black;
+                    display: block;
+                    padding: 10px;
+                    padding-left: 0;
+                    font-size: 16px;
+                    font-weight: 500;
+                    i {
+                        display: inline-block;
+                        margin-right: 15px;
+                        font-size: 22px;
+                    }
+
+                    &:hover {
+                        color: $color-main;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.user {
+    &_controls {
+        position: fixed;
+        bottom: 20px;
+    }
+    &_logo {
+        border-radius: 50%;
+        margin-right: 15px;
+        width: 90px;
+        height: 90px;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+
+    &_description {
+        h3 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        p {
+            font-size: 14px;
+            color: $color-grey;
+        }
+        a {
+            @extend .rounded-5;
+            border: 1px solid $color-main;
+            padding: 5px 10px;
+            margin-top: 10px;
+            display: inline-block;
+            color: $color-main;
+            font-size: 12px;
+
+            &:hover {
+                background: $color-main;
+                color: $color-white;
+            }
+        }
+    }
+}
+

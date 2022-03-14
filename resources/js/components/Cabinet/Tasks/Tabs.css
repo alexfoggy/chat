@@ -1,0 +1,135 @@
+.color-main {
+  color: #E22A7F;
+}
+
+.color-yellow {
+  color: #FFD635;
+}
+
+.color-blue {
+  color: #1592E6;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.color-grey-light {
+  color: #F2F2F2;
+}
+
+.color-grey {
+  color: #646464;
+}
+
+.color-grey-dark {
+  color: #606060;
+}
+
+.color-black {
+  color: #000;
+}
+
+.bg-main {
+  background: #E22A7F;
+}
+
+.bg-yellow {
+  background: #FFD635;
+}
+
+.bg-blue {
+  background: #1592E6;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.bg-grey-light {
+  background: #F2F2F2;
+}
+
+.bg-grey {
+  background: #646464;
+}
+
+.bg-grey-dark {
+  background: #606060;
+}
+
+.bg-black {
+  background: #000;
+}
+
+.rounded-5,
+nav.tabs button span {
+  border-radius: 5px;
+}
+
+.rounded-10 {
+  border-radius: 10px;
+}
+
+.rounded-15 {
+  border-radius: 15px;
+}
+
+.rounded-20 {
+  border-radius: 20px;
+}
+
+.rounded-30 {
+  border-radius: 30px;
+}
+
+.rounded-50 {
+  border-radius: 50px;
+}
+
+nav.tabs {
+  display: flex;
+  align-items: center;
+}
+
+nav.tabs button {
+  flex: auto;
+  border: 0;
+  border-bottom: 4px solid #F2F2F2;
+  background: #fff;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: rgba(100, 100, 100, 0.5);
+  outline: none;
+}
+
+nav.tabs button:focus {
+  outline: none;
+}
+
+nav.tabs button:hover {
+  color: #646464;
+  border-bottom: 4px solid rgba(100, 100, 100, 0.3);
+}
+
+nav.tabs button:active {
+  color: #000;
+}
+
+nav.tabs button.active {
+  border-bottom: 4px solid #E22A7F;
+  color: #E22A7F;
+}
+
+nav.tabs button.active span {
+  border: 1px solid rgba(226, 42, 127, 0.3);
+}
+
+nav.tabs button span {
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  padding: 0 5px;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+}

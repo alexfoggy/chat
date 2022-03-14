@@ -1,0 +1,336 @@
+
+import React from 'react'
+import MicRecorder from 'mic-recorder-to-mp3'
+const Mp3Recorder = new MicRecorder({ bitRate: 128 });
+
+class Nicorder extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            //RECORDER
+            isRecording: false,
+            blobURL: '',
+            isBlocked: false,
+            //SEC
+            seconds: 0,
+            stopped: true,
+            //TIMER
+            time: 44,
+            nIntervId: null
+
+        }
+
+    }
+
+    // componentDidMount() {
+    //     navigator.getUserMedia({ audio: true },
+    //         () => {
+    //             console.log('Permission Granted');
+    //             this.setState({ isBlocked: false });
+    //         },
+    //         () => {
+    //             console.log('Permission Denied');
+    //             this.setState({ isBlocked: true })
+    //         },
+    //     );
+    // }
+
+    // //TIMER
+
+    // numberConverter = (value) => {
+    //     if (value < 10) {
+    //         return `0${value}`;
+    //     }
+    //     return `${value}`;
+    // }
+    // addConstMin = (value) => {
+    //     this.pauseTimer();
+    //     let time = value * 60;
+    //     this.setState({ time: time });
+    // }
+    // addHMS = (value) => {
+    //     this.pauseTimer();
+    //     let time = this.state.time;
+    //     if (value === 'h') {
+    //         time = time + 60 * 60;
+    //     } else if (value === 'm') {
+    //         time = time + 60;
+    //     } else if (value === 's') {
+    //         time = time + 1;
+    //     }
+    //     this.setState({ time: time });
+    // }
+    // timerStart = () => {
+    //     let { nIntervId } = this.state;
+    //     let { time } = this.state;
+    //     if (!nIntervId && time > 0) {
+    //         nIntervId = setInterval(() => {
+    //             if (time > 0) {
+    //                 time = time - 1;
+    //                 this.setState({ time: time });
+    //                 this.setState({ nIntervId: nIntervId });
+    //             } else {
+    //                 clearInterval(nIntervId);
+    //                 this.setState({ nIntervId: null });
+
+    //             }
+    //         }, 1000);
+    //     }
+    // }
+    // pauseTimer = () => {
+    //     let { nIntervId } = this.state;
+    //     if (nIntervId) {
+    //         clearInterval(nIntervId);
+    //         this.setState({ nIntervId: null });
+    //     }
+    // }
+    // resetTimer = () => {
+    //     this.pauseTimer();
+    //     this.setState({ time: 0 });
+    // }
+    // //TIMER
+
+
+    componentWillUnmount() {
+        clearInterval(this.timerID)
+    }
+    //SEC{
+
+    tick() {
+        this.setState({
+            seconds: this.state.seconds + 1
+        })
+    }
+    handleStart() {
+        if (this.state.stopped) {
+            this.timerID = setInterval(() => this.tick(), 1000)
+            this.setState({ stopped: false })
+        } else {
+            clearInterval(this.timerID)
+            this.setState({ stopped: true })
+        }
+    }
+    handlePause() {
+
+    }
+    handleReset() {
+        clearInterval(this.timerID)
+        this.setState({ seconds: 0, stopped: true })
+    }
+    correctValueFormat(value) {
+        return value < 10 ? '0' + value : value
+    }
+    transformTime() {
+        const current = this.state.seconds;
+        const hours = Math.floor((current % (60 * 60 * 24)) / (60 * 60))
+        const minutes = Math.floor((current % (60 * 60)) / 60)
+        const seconds = Math.floor((current % 60))
+
+        return {
+            hours: this.correctValueFormat(hours),
+            minutes: this.correctValueFormat(minutes),
+            seconds: this.correctValueFormat(seconds)
+        }
+    }
+    //SEC}
+
+    render() {
+
+        const { hours, minutes, seconds } = this.transformTime()
+
+        // console.log(this.props)
+
+
+        //TIMER
+
+        const numberConverter = (value) => {
+            if (value < 10) {
+                return `0${value}`;
+            }
+            return `${value}`;
+        }
+        const addConstMin = (value) => {
+            this.pauseTimer();
+            let time = value * 60;
+            this.setState({ time: time });
+        }
+        const addHMS = (value) => {
+            this.pauseTimer();
+            let time = this.state.time;
+            if (value === 'h') {
+                time = time + 60 * 60;
+            } else if (value === 'm') {
+                time = time + 60;
+            } else if (value === 's') {
+                time = time + 1;
+            }
+            this.setState({ time: time });
+        }
+        const timerStart = () => {
+            let { nIntervId } = this.state;
+            let { time } = this.state;
+            if (!nIntervId && time > 0) {
+                nIntervId = setInterval(() => {
+                    if (time > 0) {
+                        time = time - 1;
+                        this.setState({ time: time });
+                        this.setState({ nIntervId: nIntervId });
+                    } else {
+                        clearInterval(nIntervId);
+
+                        this.setState({ nIntervId: null });
+                        stop()
+                    }
+                }, 1000);
+            }
+        }
+        const pauseTimer = () => {
+            let { nIntervId } = this.state;
+            if (nIntervId) {
+                clearInterval(nIntervId);
+                this.setState({ nIntervId: null });
+            }
+        }
+        const resetTimer = () => {
+            this.pauseTimer();
+            this.setState({ time: 0 });
+        }
+        //TIMER
+        const hour = numberConverter(Math.floor(this.state.time / 60 / 60))
+        const minute = numberConverter(Math.floor((this.state.time - hour * 60 * 60) / 60))
+        const second = numberConverter(this.state.time - hour * 60 * 60 - minute * 60)
+
+
+
+        const start = () => {
+            this.handleStart()
+            timerStart()
+            if (this.state.isBlocked) {
+                console.log('Permission Denied');
+            } else {
+                Mp3Recorder
+                    .start()
+                    .then(() => {
+                        this.setState({ isRecording: true });
+                    }).catch((e) => console.error(e));
+            }
+        };
+        const pause = () => {
+            this.handlePause()
+            Mp3Recorder.pause()
+        }
+        const resume = () => {
+            this.handleStart()
+            timerStart()
+
+            Mp3Recorder
+                .resume()
+        }
+        const stop = () => {
+            this.handleReset()
+            Mp3Recorder
+                .stop()
+                .Wav()
+                .then(([buffer, blob]) => {
+                    const blobURL = URL.createObjectURL(blob)
+                    this.setState({ blobURL, isRecording: false });
+                }).catch((e) => console.log(e));
+            // .then(() => {
+            //     this.setState({ isRecording: false });
+            //   }).catch((e) => console.error(e));
+        };
+
+      
+        function detectSilence(stream, onSoundEnd = _ => { }, silence_delay = 5000, min_decibels = -80) {
+            const ctx = new AudioContext();
+            const analyser = ctx.createAnalyser();
+            const streamNode = ctx.createMediaStreamSource(stream);
+            streamNode.connect(analyser);
+            analyser.minDecibels = min_decibels;
+
+            const data = new Uint8Array(analyser.frequencyBinCount); // will hold our data
+            let silence_start = performance.now();
+            let triggered = false; // trigger only once per silence event
+
+            const loop = (time) => {
+                requestAnimationFrame(loop); // we'll loop every 60th of a second to check
+                analyser.getByteFrequencyData(data); // get current data
+                if (data.some(v => v)) { // if there is data above the given db limit
+                    if (triggered) {
+                        triggered = false;
+
+                    }
+                    silence_start = time; // set it to now
+                }
+                if (!triggered && time - silence_start > silence_delay) {
+                    onSoundEnd();
+                    triggered = true;
+                }
+                return (
+                    function Record() {
+                        if (!triggered && time - silence_start > silence_delay) {
+                            onSoundEnd();
+                            triggered = true;
+                        }
+
+                    }
+                )
+
+            }
+            loop();
+        }
+
+        const onSilence = () => {
+            pause()
+            console.log('Silence');
+        }
+
+
+        navigator.mediaDevices.getUserMedia({
+            audio: true
+        })
+            .then(stream => {
+                detectSilence(stream, onSilence, 5000, -70);
+                // do something else with the stream
+            }).catch(e => console.log(e));
+        //RECORDER 
+
+        return (
+            <div>
+                <button onClick={start} disabled={this.state.isRecording}> Record</button>
+                <button onClick={resume} disabled={!this.state.isRecording}>Resume</button>
+                <button onClick={stop} disabled={!this.state.isRecording}>Stop</button>
+
+                <audio src={this.state.blobURL} controls="controls" />
+                {console.log(<audio src={this.state.blobURL} controls="controls" />)}
+                <div className="wrapper">
+                    {/* <span onClick={() => this.handleStart()}>{this.state.stopped ? 'Start' : 'Pause'}</span> */}
+                    <div className="timer">
+                        {hours} : {minutes} : {seconds}
+                    </div>
+                </div>
+
+
+                <div className="wrapper">
+                    <div className="timer">
+                        <div className="timer__title">Timer</div>
+                        <div className="timer__time">
+                            <div className="timer__time-block">{hour}</div>
+                            <div className="timer__time-block">{minute}</div>
+                            <div className="timer__time-block">{second}</div>
+
+                        </div>
+                        {/* <div className="timer__control-block"> */}
+                        {/* <button onClick={this.timerStart}>Start</button> */}
+                        {/* <button onClick={this.pauseTimer}>Pause</button> */}
+                        {/* <button onClick={resetTimer}>Reset</button> */}
+                        {/* </div> */}
+                    </div>
+                </div>
+
+            </div>
+        );
+    }
+}
+
+export default Nicorder;

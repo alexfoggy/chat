@@ -1,0 +1,142 @@
+#chatassist {
+    position: fixed;
+    right: 5%;
+    top: 100%;
+    border: 1px #ddd solid;
+    width: 300px;
+    height: 500px;
+    border-radius: 10px 10px 0 0;
+
+    &.active {
+        top: calc(100% - 500px);
+    }
+
+    .wrapper {
+        overflow: hidden;
+        border-radius: 10px 10px 0 0;
+        position: relative;
+        height: 100%;
+    }
+
+    .open-close {
+        position: absolute;
+        right: 0;
+        top: -100px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px #eee solid;
+        background-color: #eee;
+        cursor: pointer;
+    }
+
+    .head-assist {
+        display: flex;
+        background-color: #43ab71;
+        align-items: center;
+        padding: 10px 16px;
+        color: #fff;
+
+        .image-assist {
+            width: 46px;
+            height: 46px;
+            margin-right: 10px;
+            border-radius: 50%;
+            background-color: #ddd;
+        }
+
+        .name-assist {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .work-assist {
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+    }
+    .body-assist {
+        height: 384px;
+        padding: 8px 6px;
+        overflow-y: auto;
+        .left-q,.right-q {
+            display: flex;
+            margin: 14px 0;
+        }
+        .date-msg {
+            padding: 0 4px;
+            font-size: 12px;
+            font-weight: thin;
+            color: #999;
+        }
+        .left-q {
+            .msg-text {
+                background: #f5f5f5;
+                border-radius: 8px;
+            }
+        }
+        .msg-block {
+            margin: 0 12px;
+            max-width: 70%;
+            border-radius: 6px;
+        }
+        .msg-text {
+            padding: 6px;
+        }
+        .right-q {
+            flex-direction: row-reverse;
+            .date-msg {
+                text-align: right;
+
+            }
+            .msg-text {
+                background: #43ab71;
+                color: #fff;
+                border-radius: 8px;
+            }
+        }
+        .small-image-assist {
+            width: 20px;
+            min-width: 20px;
+            height: 20px;
+            margin-top: 5px;
+            background-color: #43ab71;
+            border-radius: 50%;
+        }
+    }
+    .foot-assist {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        border-top: 1px #eee solid;
+        form {
+            height: 100%;
+            position: relative;
+
+            textarea {
+                width: 100%;
+                height: 100%;
+                border: 0;
+                outline: none;
+                resize: none;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 16px;
+                padding-right: 66px;
+            }
+            button {
+                position: absolute;
+                right: 0;
+                height: 100%;
+                width: 50px;
+                background-color: #43ab71;
+                border: 0;
+            }
+        }
+    }
+
+}

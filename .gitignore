@@ -1,0 +1,22 @@
+# IDE (PhpStorm) config directory
+/.idea
+/.vscode
+
+/node_modules
+/public/hot
+/public/storage
+/public/js/app.js
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+# lock files
+package-lock.json
+#webpack
+webpack.mix.js

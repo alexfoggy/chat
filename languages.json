@@ -1,0 +1,3882 @@
+[
+    {
+        "id": 1,
+        "locale": "ace",
+        "name": "Achinese",
+        "script": "Latn",
+        "native": "Aceh",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 2,
+        "locale": "af",
+        "name": "Afrikaans",
+        "script": "Latn",
+        "native": "Afrikaans",
+        "regional": "af_ZA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 3,
+        "locale": "agq",
+        "name": "Aghem",
+        "script": "Latn",
+        "native": "Aghem",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 4,
+        "locale": "ak",
+        "name": "Akan",
+        "script": "Latn",
+        "native": "Akan",
+        "regional": "ak_GH",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 5,
+        "locale": "an",
+        "name": "Aragonese",
+        "script": "Latn",
+        "native": "Aragon\u00e9s",
+        "regional": "an_ES",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 6,
+        "locale": "cch",
+        "name": "Atsam",
+        "script": "Latn",
+        "native": "Atsam",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 7,
+        "locale": "gn",
+        "name": "Guaran\u00ed",
+        "script": "Latn",
+        "native": "Ava\u00f1e\u2019\u1ebd",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 8,
+        "locale": "ae",
+        "name": "Avestan",
+        "script": "Latn",
+        "native": "Avesta",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 9,
+        "locale": "ay",
+        "name": "Aymara",
+        "script": "Latn",
+        "native": "Aymar aru",
+        "regional": "ay_PE",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 10,
+        "locale": "az",
+        "name": "Azerbaijani (Latin)",
+        "script": "Latn",
+        "native": "Az\u0259rbaycanca",
+        "regional": "az_AZ",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 11,
+        "locale": "id",
+        "name": "Indonesian",
+        "script": "Latn",
+        "native": "Bahasa Indonesia",
+        "regional": "id_ID",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 12,
+        "locale": "ms",
+        "name": "Malay",
+        "script": "Latn",
+        "native": "Bahasa Melayu",
+        "regional": "ms_MY",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 13,
+        "locale": "bm",
+        "name": "Bambara",
+        "script": "Latn",
+        "native": "Bamanakan",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 14,
+        "locale": "jv",
+        "name": "Javanese (Latin)",
+        "script": "Latn",
+        "native": "Basa Jawa",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 15,
+        "locale": "su",
+        "name": "Sundanese",
+        "script": "Latn",
+        "native": "Basa Sunda",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 16,
+        "locale": "bh",
+        "name": "Bihari",
+        "script": "Latn",
+        "native": "Bihari",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 17,
+        "locale": "bi",
+        "name": "Bislama",
+        "script": "Latn",
+        "native": "Bislama",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 18,
+        "locale": "nb",
+        "name": "Norwegian Bokm\u00e5l",
+        "script": "Latn",
+        "native": "Bokm\u00e5l",
+        "regional": "nb_NO",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 19,
+        "locale": "bs",
+        "name": "Bosnian",
+        "script": "Latn",
+        "native": "Bosanski",
+        "regional": "bs_BA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 20,
+        "locale": "br",
+        "name": "Breton",
+        "script": "Latn",
+        "native": "Brezhoneg",
+        "regional": "br_FR",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 21,
+        "locale": "ca",
+        "name": "Catalan",
+        "script": "Latn",
+        "native": "Catal\u00e0",
+        "regional": "ca_ES",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 22,
+        "locale": "ch",
+        "name": "Chamorro",
+        "script": "Latn",
+        "native": "Chamoru",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 23,
+        "locale": "ny",
+        "name": "Chewa",
+        "script": "Latn",
+        "native": "ChiChe\u0175a",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 24,
+        "locale": "kde",
+        "name": "Makonde",
+        "script": "Latn",
+        "native": "Chimakonde",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 25,
+        "locale": "sn",
+        "name": "Shona",
+        "script": "Latn",
+        "native": "ChiShona",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 26,
+        "locale": "co",
+        "name": "Corsican",
+        "script": "Latn",
+        "native": "Corsu",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 27,
+        "locale": "cy",
+        "name": "Welsh",
+        "script": "Latn",
+        "native": "Cymraeg",
+        "regional": "cy_GB",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 28,
+        "locale": "da",
+        "name": "Danish",
+        "script": "Latn",
+        "native": "Dansk",
+        "regional": "da_DK",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 29,
+        "locale": "se",
+        "name": "Northern Sami",
+        "script": "Latn",
+        "native": "Davvis\u00e1megiella",
+        "regional": "se_NO",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 30,
+        "locale": "de",
+        "name": "German",
+        "script": "Latn",
+        "native": "Deutsch",
+        "regional": "de_DE",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 31,
+        "locale": "luo",
+        "name": "Luo",
+        "script": "Latn",
+        "native": "Dholuo",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 32,
+        "locale": "nv",
+        "name": "Navajo",
+        "script": "Latn",
+        "native": "Din\u00e9 bizaad",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 33,
+        "locale": "dua",
+        "name": "Duala",
+        "script": "Latn",
+        "native": "Du\u00e1l\u00e1",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 34,
+        "locale": "et",
+        "name": "Estonian",
+        "script": "Latn",
+        "native": "Eesti",
+        "regional": "et_EE",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 35,
+        "locale": "na",
+        "name": "Nauru",
+        "script": "Latn",
+        "native": "Ekakair\u0169 Naoero",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 36,
+        "locale": "guz",
+        "name": "Ekegusii",
+        "script": "Latn",
+        "native": "Ekegusii",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 37,
+        "locale": "en",
+        "name": "English",
+        "script": "Latn",
+        "native": "English",
+        "regional": "en_GB",
+        "transcription_base_rate": "1.5",
+        "voice_over_only": 0
+    },
+    {
+        "id": 38,
+        "locale": "en-NA",
+        "name": "English (North American)",
+        "script": "Latn",
+        "native": "English",
+        "regional": "en_NA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 39,
+        "locale": "en-AU",
+        "name": "English (Australian)",
+        "script": "Latn",
+        "native": "Australian English",
+        "regional": "en_AU",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 40,
+        "locale": "en-GB",
+        "name": "English (British)",
+        "script": "Latn",
+        "native": "British English",
+        "regional": "en_GB",
+        "transcription_base_rate": "",
+        "voice_over_only": 1
+    },
+    {
+        "id": 41,
+        "locale": "en-ZA",
+        "name": "English (South African)",
+        "script": "Latn",
+        "native": "South Africa",
+        "regional": "en_ZA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 42,
+        "locale": "en-US",
+        "name": "English (U.S.)",
+        "script": "Latn",
+        "native": "U.S. English",
+        "regional": "en_US",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 43,
+        "locale": "en-FR",
+        "name": "English (French accent)",
+        "script": "Latn",
+        "native": "French Accent English",
+        "regional": "en_FR",
+        "transcription_base_rate": "",
+        "voice_over_only": 1
+    },
+    {
+        "id": 44,
+        "locale": "en-HI",
+        "name": "English (Indian)",
+        "script": "Latn",
+        "native": "Indian English",
+        "regional": "en_HI",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 45,
+        "locale": "en-GA",
+        "name": "English (Irish)",
+        "script": "Latn",
+        "native": "Irish English",
+        "regional": "en_GA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 46,
+        "locale": "es",
+        "name": "Spanish",
+        "script": "Latn",
+        "native": "Espa\u00f1ol",
+        "regional": "es_ES",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 47,
+        "locale": "eo",
+        "name": "Esperanto",
+        "script": "Latn",
+        "native": "Esperanto",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 48,
+        "locale": "eu",
+        "name": "Basque",
+        "script": "Latn",
+        "native": "Euskara",
+        "regional": "eu_ES",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 49,
+        "locale": "ewo",
+        "name": "Ewondo",
+        "script": "Latn",
+        "native": "Ewondo",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 50,
+        "locale": "ee",
+        "name": "Ewe",
+        "script": "Latn",
+        "native": "E\u028begbe",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 51,
+        "locale": "fil",
+        "name": "Filipino",
+        "script": "Latn",
+        "native": "Filipino",
+        "regional": "fil_PH",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 52,
+        "locale": "fr",
+        "name": "French",
+        "script": "Latn",
+        "native": "Fran\u00e7ais",
+        "regional": "fr_FR",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 53,
+        "locale": "fr-CA",
+        "name": "French (Canadian)",
+        "script": "Latn",
+        "native": "Fran\u00e7ais canadien",
+        "regional": "fr_CA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 54,
+        "locale": "fy",
+        "name": "Western Frisian",
+        "script": "Latn",
+        "native": "Frysk",
+        "regional": "fy_DE",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 55,
+        "locale": "fur",
+        "name": "Friulian",
+        "script": "Latn",
+        "native": "Furlan",
+        "regional": "fur_IT",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 56,
+        "locale": "fo",
+        "name": "Faroese",
+        "script": "Latn",
+        "native": "F\u00f8royskt",
+        "regional": "fo_FO",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 57,
+        "locale": "gaa",
+        "name": "Ga",
+        "script": "Latn",
+        "native": "Ga",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 58,
+        "locale": "ga",
+        "name": "Irish",
+        "script": "Latn",
+        "native": "Gaeilge",
+        "regional": "ga_IE",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 59,
+        "locale": "gv",
+        "name": "Manx",
+        "script": "Latn",
+        "native": "Gaelg",
+        "regional": "gv_GB",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 60,
+        "locale": "sm",
+        "name": "Samoan",
+        "script": "Latn",
+        "native": "Gagana fa\u2019a S\u0101moa",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 61,
+        "locale": "gl",
+        "name": "Galician",
+        "script": "Latn",
+        "native": "Galego",
+        "regional": "gl_ES",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 62,
+        "locale": "ki",
+        "name": "Kikuyu",
+        "script": "Latn",
+        "native": "Gikuyu",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 63,
+        "locale": "gd",
+        "name": "Scottish Gaelic",
+        "script": "Latn",
+        "native": "G\u00e0idhlig",
+        "regional": "gd_GB",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 64,
+        "locale": "ha",
+        "name": "Hausa",
+        "script": "Latn",
+        "native": "Hausa",
+        "regional": "ha_NG",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 65,
+        "locale": "bez",
+        "name": "Bena",
+        "script": "Latn",
+        "native": "Hibena",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 66,
+        "locale": "ho",
+        "name": "Hiri Motu",
+        "script": "Latn",
+        "native": "Hiri Motu",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 67,
+        "locale": "hr",
+        "name": "Croatian",
+        "script": "Latn",
+        "native": "Hrvatski",
+        "regional": "hr_HR",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 68,
+        "locale": "bem",
+        "name": "Bemba",
+        "script": "Latn",
+        "native": "Ichibemba",
+        "regional": "bem_ZM",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 69,
+        "locale": "io",
+        "name": "Ido",
+        "script": "Latn",
+        "native": "Ido",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 70,
+        "locale": "ig",
+        "name": "Igbo",
+        "script": "Latn",
+        "native": "Igbo",
+        "regional": "ig_NG",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 71,
+        "locale": "rn",
+        "name": "Rundi",
+        "script": "Latn",
+        "native": "Ikirundi",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 72,
+        "locale": "ia",
+        "name": "Interlingua",
+        "script": "Latn",
+        "native": "Interlingua",
+        "regional": "ia_FR",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 73,
+        "locale": "iu-Latn",
+        "name": "Inuktitut (Latin)",
+        "script": "Latn",
+        "native": "Inuktitut",
+        "regional": "iu_CA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 74,
+        "locale": "sbp",
+        "name": "Sileibi",
+        "script": "Latn",
+        "native": "Ishisangu",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 75,
+        "locale": "nd",
+        "name": "North Ndebele",
+        "script": "Latn",
+        "native": "IsiNdebele",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 76,
+        "locale": "nr",
+        "name": "South Ndebele",
+        "script": "Latn",
+        "native": "IsiNdebele",
+        "regional": "nr_ZA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 77,
+        "locale": "xh",
+        "name": "Xhosa",
+        "script": "Latn",
+        "native": "IsiXhosa",
+        "regional": "xh_ZA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 78,
+        "locale": "zu",
+        "name": "Zulu",
+        "script": "Latn",
+        "native": "IsiZulu",
+        "regional": "zu_ZA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 79,
+        "locale": "it",
+        "name": "Italian",
+        "script": "Latn",
+        "native": "Italiano",
+        "regional": "it_IT",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 80,
+        "locale": "ik",
+        "name": "Inupiaq",
+        "script": "Latn",
+        "native": "I\u00f1upiaq",
+        "regional": "ik_CA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 81,
+        "locale": "dyo",
+        "name": "Jola-Fonyi",
+        "script": "Latn",
+        "native": "Joola",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 82,
+        "locale": "kea",
+        "name": "Kabuverdianu",
+        "script": "Latn",
+        "native": "Kabuverdianu",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 83,
+        "locale": "kaj",
+        "name": "Jju",
+        "script": "Latn",
+        "native": "Kaje",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 84,
+        "locale": "mh",
+        "name": "Marshallese",
+        "script": "Latn",
+        "native": "Kajin M\u0327aje\u013c",
+        "regional": "mh_MH",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 85,
+        "locale": "kl",
+        "name": "Kalaallisut",
+        "script": "Latn",
+        "native": "Kalaallisut",
+        "regional": "kl_GL",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 86,
+        "locale": "kln",
+        "name": "Kalenjin",
+        "script": "Latn",
+        "native": "Kalenjin",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 87,
+        "locale": "kr",
+        "name": "Kanuri",
+        "script": "Latn",
+        "native": "Kanuri",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 88,
+        "locale": "kcg",
+        "name": "Tyap",
+        "script": "Latn",
+        "native": "Katab",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 89,
+        "locale": "kw",
+        "name": "Cornish",
+        "script": "Latn",
+        "native": "Kernewek",
+        "regional": "kw_GB",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 90,
+        "locale": "naq",
+        "name": "Nama",
+        "script": "Latn",
+        "native": "Khoekhoegowab",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 91,
+        "locale": "rof",
+        "name": "Rombo",
+        "script": "Latn",
+        "native": "Kihorombo",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 92,
+        "locale": "kam",
+        "name": "Kamba",
+        "script": "Latn",
+        "native": "Kikamba",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 93,
+        "locale": "kg",
+        "name": "Kongo",
+        "script": "Latn",
+        "native": "Kikongo",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 94,
+        "locale": "jmc",
+        "name": "Machame",
+        "script": "Latn",
+        "native": "Kimachame",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 95,
+        "locale": "rw",
+        "name": "Kinyarwanda",
+        "script": "Latn",
+        "native": "Kinyarwanda",
+        "regional": "rw_RW",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 96,
+        "locale": "asa",
+        "name": "Kipare",
+        "script": "Latn",
+        "native": "Kipare",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 97,
+        "locale": "rwk",
+        "name": "Rwa",
+        "script": "Latn",
+        "native": "Kiruwa",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 98,
+        "locale": "saq",
+        "name": "Samburu",
+        "script": "Latn",
+        "native": "Kisampur",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 99,
+        "locale": "ksb",
+        "name": "Shambala",
+        "script": "Latn",
+        "native": "Kishambaa",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 100,
+        "locale": "swc",
+        "name": "Congo Swahili",
+        "script": "Latn",
+        "native": "Kiswahili ya Kongo",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 101,
+        "locale": "sw",
+        "name": "Swahili",
+        "script": "Latn",
+        "native": "Kiswahili",
+        "regional": "sw_KE",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 102,
+        "locale": "dav",
+        "name": "Dawida",
+        "script": "Latn",
+        "native": "Kitaita",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 103,
+        "locale": "teo",
+        "name": "Teso",
+        "script": "Latn",
+        "native": "Kiteso",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 104,
+        "locale": "khq",
+        "name": "Koyra Chiini",
+        "script": "Latn",
+        "native": "Koyra ciini",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 105,
+        "locale": "ses",
+        "name": "Songhay",
+        "script": "Latn",
+        "native": "Koyraboro senni",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 106,
+        "locale": "mfe",
+        "name": "Morisyen",
+        "script": "Latn",
+        "native": "Kreol morisien",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 107,
+        "locale": "ht",
+        "name": "Haitian",
+        "script": "Latn",
+        "native": "Krey\u00f2l ayisyen",
+        "regional": "ht_HT",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 108,
+        "locale": "kj",
+        "name": "Kuanyama",
+        "script": "Latn",
+        "native": "Kwanyama",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 109,
+        "locale": "ksh",
+        "name": "K\u00f6lsch",
+        "script": "Latn",
+        "native": "K\u00f6lsch",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 110,
+        "locale": "ebu",
+        "name": "Kiembu",
+        "script": "Latn",
+        "native": "K\u0129embu",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 111,
+        "locale": "mer",
+        "name": "Kim\u00ee\u00eeru",
+        "script": "Latn",
+        "native": "K\u0129m\u0129r\u0169",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 112,
+        "locale": "lag",
+        "name": "Langi",
+        "script": "Latn",
+        "native": "K\u0268laangi",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 113,
+        "locale": "lah",
+        "name": "Lahnda",
+        "script": "Latn",
+        "native": "Lahnda",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 114,
+        "locale": "la",
+        "name": "Latin",
+        "script": "Latn",
+        "native": "Latine",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 115,
+        "locale": "lv",
+        "name": "Latvian",
+        "script": "Latn",
+        "native": "Latvie\u0161u",
+        "regional": "lv_LV",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 116,
+        "locale": "to",
+        "name": "Tongan",
+        "script": "Latn",
+        "native": "Lea fakatonga",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 117,
+        "locale": "lt",
+        "name": "Lithuanian",
+        "script": "Latn",
+        "native": "Lietuvi\u0173",
+        "regional": "lt_LT",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 118,
+        "locale": "li",
+        "name": "Limburgish",
+        "script": "Latn",
+        "native": "Limburgs",
+        "regional": "li_BE",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 119,
+        "locale": "ln",
+        "name": "Lingala",
+        "script": "Latn",
+        "native": "Ling\u00e1la",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 120,
+        "locale": "lg",
+        "name": "Ganda",
+        "script": "Latn",
+        "native": "Luganda",
+        "regional": "lg_UG",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 121,
+        "locale": "luy",
+        "name": "Oluluyia",
+        "script": "Latn",
+        "native": "Luluhia",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 122,
+        "locale": "lb",
+        "name": "Luxembourgish",
+        "script": "Latn",
+        "native": "L\u00ebtzebuergesch",
+        "regional": "lb_LU",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 123,
+        "locale": "hu",
+        "name": "Hungarian",
+        "script": "Latn",
+        "native": "Magyar",
+        "regional": "hu_HU",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 124,
+        "locale": "mgh",
+        "name": "Makhuwa-Meetto",
+        "script": "Latn",
+        "native": "Makua",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 125,
+        "locale": "mg",
+        "name": "Malagasy",
+        "script": "Latn",
+        "native": "Malagasy",
+        "regional": "mg_MG",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 126,
+        "locale": "mt",
+        "name": "Maltese",
+        "script": "Latn",
+        "native": "Malti",
+        "regional": "mt_MT",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 127,
+        "locale": "mtr",
+        "name": "Mewari",
+        "script": "Latn",
+        "native": "Mewari",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 128,
+        "locale": "mua",
+        "name": "Mundang",
+        "script": "Latn",
+        "native": "Mundang",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 129,
+        "locale": "mi",
+        "name": "M\u0101ori",
+        "script": "Latn",
+        "native": "M\u0101ori",
+        "regional": "mi_NZ",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 130,
+        "locale": "nl",
+        "name": "Dutch",
+        "script": "Latn",
+        "native": "Nederlands",
+        "regional": "nl_NL",
+        "transcription_base_rate": "2.5",
+        "voice_over_only": 0
+    },
+    {
+        "id": 131,
+        "locale": "nmg",
+        "name": "Kwasio",
+        "script": "Latn",
+        "native": "Ngumba",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 132,
+        "locale": "yav",
+        "name": "Yangben",
+        "script": "Latn",
+        "native": "Nuasue",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 133,
+        "locale": "nn",
+        "name": "Norwegian Nynorsk",
+        "script": "Latn",
+        "native": "Nynorsk",
+        "regional": "nn_NO",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 134,
+        "locale": "oc",
+        "name": "Occitan",
+        "script": "Latn",
+        "native": "Occitan",
+        "regional": "oc_FR",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 135,
+        "locale": "ang",
+        "name": "Old English",
+        "script": "Runr",
+        "native": "Old English",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 136,
+        "locale": "xog",
+        "name": "Soga",
+        "script": "Latn",
+        "native": "Olusoga",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 137,
+        "locale": "om",
+        "name": "Oromo",
+        "script": "Latn",
+        "native": "Oromoo",
+        "regional": "om_ET",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 138,
+        "locale": "ng",
+        "name": "Ndonga",
+        "script": "Latn",
+        "native": "OshiNdonga",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 139,
+        "locale": "hz",
+        "name": "Herero",
+        "script": "Latn",
+        "native": "Otjiherero",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 140,
+        "locale": "uz-Latn",
+        "name": "Uzbek (Latin)",
+        "script": "Latn",
+        "native": "O\u02bczbekcha",
+        "regional": "uz_UZ",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 141,
+        "locale": "nds",
+        "name": "Low German",
+        "script": "Latn",
+        "native": "Plattd\u00fc\u00fctsch",
+        "regional": "nds_DE",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 142,
+        "locale": "pl",
+        "name": "Polish",
+        "script": "Latn",
+        "native": "Polski",
+        "regional": "pl_PL",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 143,
+        "locale": "pt",
+        "name": "Portuguese",
+        "script": "Latn",
+        "native": "Portugu\u00eas",
+        "regional": "pt_PT",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 144,
+        "locale": "pt-BR",
+        "name": "Brazilian Portuguese",
+        "script": "Latn",
+        "native": "Portugu\u00eas do Brasil",
+        "regional": "pt_BR",
+        "transcription_base_rate": "1.5",
+        "voice_over_only": 0
+    },
+    {
+        "id": 145,
+        "locale": "ff",
+        "name": "Fulah",
+        "script": "Latn",
+        "native": "Pulaar",
+        "regional": "ff_SN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 146,
+        "locale": "pi",
+        "name": "Pahari-Potwari",
+        "script": "Latn",
+        "native": "P\u0101li",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 147,
+        "locale": "aa",
+        "name": "Afar",
+        "script": "Latn",
+        "native": "Qafar",
+        "regional": "aa_ER",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 148,
+        "locale": "ty",
+        "name": "Tahitian",
+        "script": "Latn",
+        "native": "Reo M\u0101ohi",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 149,
+        "locale": "ksf",
+        "name": "Bafia",
+        "script": "Latn",
+        "native": "Rikpa",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 150,
+        "locale": "ro",
+        "name": "Romanian",
+        "script": "Latn",
+        "native": "Rom\u00e2n\u0103",
+        "regional": "ro_RO",
+        "transcription_base_rate": "1.5",
+        "voice_over_only": 0
+    },
+    {
+        "id": 151,
+        "locale": "cgg",
+        "name": "Chiga",
+        "script": "Latn",
+        "native": "Rukiga",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 152,
+        "locale": "rm",
+        "name": "Romansh",
+        "script": "Latn",
+        "native": "Rumantsch",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 153,
+        "locale": "qu",
+        "name": "Quechua",
+        "script": "Latn",
+        "native": "Runa Simi",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 154,
+        "locale": "nyn",
+        "name": "Nyankole",
+        "script": "Latn",
+        "native": "Runyankore",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 155,
+        "locale": "ssy",
+        "name": "Saho",
+        "script": "Latn",
+        "native": "Saho",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 156,
+        "locale": "sc",
+        "name": "Sardinian",
+        "script": "Latn",
+        "native": "Sardu",
+        "regional": "sc_IT",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 157,
+        "locale": "de-CH",
+        "name": "Swiss High German",
+        "script": "Latn",
+        "native": "Schweiz",
+        "regional": "de_CH",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 158,
+        "locale": "gsw",
+        "name": "Swiss German",
+        "script": "Latn",
+        "native": "Schwiizert\u00fc\u00fctsch",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 159,
+        "locale": "trv",
+        "name": "Taroko",
+        "script": "Latn",
+        "native": "Seediq",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 160,
+        "locale": "seh",
+        "name": "Sena",
+        "script": "Latn",
+        "native": "Sena",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 161,
+        "locale": "nso",
+        "name": "Northern Sotho",
+        "script": "Latn",
+        "native": "Sesotho sa Leboa",
+        "regional": "nso_ZA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 162,
+        "locale": "st",
+        "name": "Southern Sotho",
+        "script": "Latn",
+        "native": "Sesotho",
+        "regional": "st_ZA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 163,
+        "locale": "tn",
+        "name": "Tswana",
+        "script": "Latn",
+        "native": "Setswana",
+        "regional": "tn_ZA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 164,
+        "locale": "sq",
+        "name": "Albanian",
+        "script": "Latn",
+        "native": "Shqip",
+        "regional": "sq_AL",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 165,
+        "locale": "sid",
+        "name": "Sidamo",
+        "script": "Latn",
+        "native": "Sidaamu Afo",
+        "regional": "sid_ET",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 166,
+        "locale": "ss",
+        "name": "Swati",
+        "script": "Latn",
+        "native": "Siswati",
+        "regional": "ss_ZA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 167,
+        "locale": "sk",
+        "name": "Slovak",
+        "script": "Latn",
+        "native": "Sloven\u010dina",
+        "regional": "sk_SK",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 168,
+        "locale": "sl",
+        "name": "Slovene",
+        "script": "Latn",
+        "native": "Sloven\u0161\u010dina",
+        "regional": "sl_SI",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 169,
+        "locale": "so",
+        "name": "Somali",
+        "script": "Latn",
+        "native": "Soomaali",
+        "regional": "so_SO",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 170,
+        "locale": "sr-Latn",
+        "name": "Serbian (Latin)",
+        "script": "Latn",
+        "native": "Srpski",
+        "regional": "sr_RS",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 171,
+        "locale": "sh",
+        "name": "Serbo-Croatian",
+        "script": "Latn",
+        "native": "Srpskohrvatski",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 172,
+        "locale": "fi",
+        "name": "Finnish",
+        "script": "Latn",
+        "native": "Suomi",
+        "regional": "fi_FI",
+        "transcription_base_rate": "4",
+        "voice_over_only": 0
+    },
+    {
+        "id": 173,
+        "locale": "sv",
+        "name": "Swedish",
+        "script": "Latn",
+        "native": "Svenska",
+        "regional": "sv_FI",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 174,
+        "locale": "sg",
+        "name": "Sango",
+        "script": "Latn",
+        "native": "S\u00e4ng\u00f6",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 175,
+        "locale": "tl",
+        "name": "Tagalog",
+        "script": "Latn",
+        "native": "Tagalog",
+        "regional": "tl_PH",
+        "transcription_base_rate": "1.8",
+        "voice_over_only": 0
+    },
+    {
+        "id": 176,
+        "locale": "tzm-Latn",
+        "name": "Central Atlas Tamazight (Latin)",
+        "script": "Latn",
+        "native": "Tamazight",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 177,
+        "locale": "kab",
+        "name": "Kabyle",
+        "script": "Latn",
+        "native": "Taqbaylit",
+        "regional": "kab_DZ",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 178,
+        "locale": "twq",
+        "name": "Tasawaq",
+        "script": "Latn",
+        "native": "Tasawaq senni",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 179,
+        "locale": "shi",
+        "name": "Tachelhit (Latin)",
+        "script": "Latn",
+        "native": "Tashelhit",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 180,
+        "locale": "nus",
+        "name": "Nuer",
+        "script": "Latn",
+        "native": "Thok Nath",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 181,
+        "locale": "vi",
+        "name": "Vietnamese",
+        "script": "Latn",
+        "native": "Ti\u1ebfng Vi\u1ec7t",
+        "regional": "vi_VN",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 182,
+        "locale": "tg-Latn",
+        "name": "Tajik (Latin)",
+        "script": "Latn",
+        "native": "Tojik\u012b",
+        "regional": "tg_TJ",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 183,
+        "locale": "lu",
+        "name": "Luba-Katanga",
+        "script": "Latn",
+        "native": "Tshiluba",
+        "regional": "ve_ZA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 184,
+        "locale": "ve",
+        "name": "Venda",
+        "script": "Latn",
+        "native": "Tshiven\u1e13a",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 185,
+        "locale": "tw",
+        "name": "Twi",
+        "script": "Latn",
+        "native": "Twi",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 186,
+        "locale": "tr",
+        "name": "Turkish",
+        "script": "Latn",
+        "native": "T\u00fcrk\u00e7e",
+        "regional": "tr_TR",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 187,
+        "locale": "ale",
+        "name": "Aleut",
+        "script": "Latn",
+        "native": "Unangax tunuu",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 188,
+        "locale": "ca-valencia",
+        "name": "Valencian",
+        "script": "Latn",
+        "native": "Valenci\u00e0",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 189,
+        "locale": "vai-Latn",
+        "name": "Vai (Latin)",
+        "script": "Latn",
+        "native": "Viyam\u00ed\u0129",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 190,
+        "locale": "vo",
+        "name": "Volap\u00fck",
+        "script": "Latn",
+        "native": "Volap\u00fck",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 191,
+        "locale": "fj",
+        "name": "Fijian",
+        "script": "Latn",
+        "native": "Vosa Vakaviti",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 192,
+        "locale": "wa",
+        "name": "Walloon",
+        "script": "Latn",
+        "native": "Walon",
+        "regional": "wa_BE",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 193,
+        "locale": "wae",
+        "name": "Walser",
+        "script": "Latn",
+        "native": "Walser",
+        "regional": "wae_CH",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 194,
+        "locale": "wen",
+        "name": "Sorbian",
+        "script": "Latn",
+        "native": "Wendic",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 195,
+        "locale": "wo",
+        "name": "Wolof",
+        "script": "Latn",
+        "native": "Wolof",
+        "regional": "wo_SN",
+        "transcription_base_rate": "5",
+        "voice_over_only": 0
+    },
+    {
+        "id": 196,
+        "locale": "ts",
+        "name": "Tsonga",
+        "script": "Latn",
+        "native": "Xitsonga",
+        "regional": "ts_ZA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 197,
+        "locale": "dje",
+        "name": "Zarma",
+        "script": "Latn",
+        "native": "Zarmaciine",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 198,
+        "locale": "yo",
+        "name": "Yoruba",
+        "script": "Latn",
+        "native": "\u00c8d\u00e8 Yor\u00f9b\u00e1",
+        "regional": "yo_NG",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 199,
+        "locale": "de-AT",
+        "name": "Austrian German",
+        "script": "Latn",
+        "native": "\u00d6sterreichisches Deutsch",
+        "regional": "de_AT",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 200,
+        "locale": "is",
+        "name": "Icelandic",
+        "script": "Latn",
+        "native": "\u00cdslenska",
+        "regional": "is_IS",
+        "transcription_base_rate": "4",
+        "voice_over_only": 0
+    },
+    {
+        "id": 201,
+        "locale": "cs",
+        "name": "Czech",
+        "script": "Latn",
+        "native": "\u010ce\u0161tina",
+        "regional": "cs_CZ",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 202,
+        "locale": "bas",
+        "name": "Basa",
+        "script": "Latn",
+        "native": "\u0181\u00e0s\u00e0a",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 203,
+        "locale": "mas",
+        "name": "Masai",
+        "script": "Latn",
+        "native": "\u0186l-Maa",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 204,
+        "locale": "haw",
+        "name": "Hawaiian",
+        "script": "Latn",
+        "native": "Hawaiian",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 205,
+        "locale": "el",
+        "name": "Greek",
+        "script": "Grek",
+        "native": "\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac",
+        "regional": "el_GR",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 206,
+        "locale": "uz",
+        "name": "Uzbek (Cyrillic)",
+        "script": "Cyrl",
+        "native": "\u040e\u0437\u0431\u0435\u043a",
+        "regional": "uz_UZ",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 207,
+        "locale": "az-Cyrl",
+        "name": "Azerbaijani (Cyrillic)",
+        "script": "Cyrl",
+        "native": "\u0410\u0437\u04d9\u0440\u0431\u0430\u0458\u04b9\u0430\u043d",
+        "regional": "uz_UZ",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 208,
+        "locale": "ab",
+        "name": "Abkhaz",
+        "script": "Cyrl",
+        "native": "\u0410\u04a7\u0441\u0443\u0430",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 209,
+        "locale": "os",
+        "name": "Ossetic",
+        "script": "Cyrl",
+        "native": "\u0418\u0440\u043e\u043d",
+        "regional": "os_RU",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 210,
+        "locale": "ky",
+        "name": "Kirghiz",
+        "script": "Cyrl",
+        "native": "\u041a\u044b\u0440\u0433\u044b\u0437",
+        "regional": "ky_KG",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 211,
+        "locale": "sr",
+        "name": "Serbian (Cyrillic)",
+        "script": "Cyrl",
+        "native": "\u0421\u0440\u043f\u0441\u043a\u0438",
+        "regional": "sr_RS",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 212,
+        "locale": "av",
+        "name": "Avaric",
+        "script": "Cyrl",
+        "native": "\u0410\u0432\u0430\u0440 \u043c\u0430\u0446\u04c0",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 213,
+        "locale": "ady",
+        "name": "Adyghe",
+        "script": "Cyrl",
+        "native": "\u0410\u0434\u044b\u0433\u044d\u0431\u0437\u044d",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 214,
+        "locale": "ba",
+        "name": "Bashkir",
+        "script": "Cyrl",
+        "native": "\u0411\u0430\u0448\u04a1\u043e\u0440\u0442 \u0442\u0435\u043b\u0435",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 215,
+        "locale": "be",
+        "name": "Belarusian",
+        "script": "Cyrl",
+        "native": "\u0411\u0435\u043b\u0430\u0440\u0443\u0441\u043a\u0430\u044f",
+        "regional": "be_BY",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 216,
+        "locale": "bg",
+        "name": "Bulgarian",
+        "script": "Cyrl",
+        "native": "\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438",
+        "regional": "bg_BG",
+        "transcription_base_rate": "1.8",
+        "voice_over_only": 0
+    },
+    {
+        "id": 217,
+        "locale": "kv",
+        "name": "Komi",
+        "script": "Cyrl",
+        "native": "\u041a\u043e\u043c\u0438 \u043a\u044b\u0432",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 218,
+        "locale": "mk",
+        "name": "Macedonian",
+        "script": "Cyrl",
+        "native": "\u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0438",
+        "regional": "mk_MK",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 219,
+        "locale": "mn",
+        "name": "Mongolian (Cyrillic)",
+        "script": "Cyrl",
+        "native": "\u041c\u043e\u043d\u0433\u043e\u043b",
+        "regional": "mn_MN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 220,
+        "locale": "ce",
+        "name": "Chechen",
+        "script": "Cyrl",
+        "native": "\u041d\u043e\u0445\u0447\u0438\u0439\u043d \u043c\u043e\u0442\u0442",
+        "regional": "ce_RU",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 221,
+        "locale": "ru",
+        "name": "Russian",
+        "script": "Cyrl",
+        "native": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
+        "regional": "ru_RU",
+        "transcription_base_rate": "1.5",
+        "voice_over_only": 0
+    },
+    {
+        "id": 222,
+        "locale": "sah",
+        "name": "Yakut",
+        "script": "Cyrl",
+        "native": "\u0421\u0430\u0445\u0430 \u0442\u044b\u043b\u0430",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 223,
+        "locale": "tt",
+        "name": "Tatar",
+        "script": "Cyrl",
+        "native": "\u0422\u0430\u0442\u0430\u0440 \u0442\u0435\u043b\u0435",
+        "regional": "tt_RU",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 224,
+        "locale": "tg",
+        "name": "Tajik (Cyrillic)",
+        "script": "Cyrl",
+        "native": "\u0422\u043e\u04b7\u0438\u043a\u04e3",
+        "regional": "tg_TJ",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 225,
+        "locale": "tk",
+        "name": "Turkmen",
+        "script": "Cyrl",
+        "native": "\u0422\u04af\u0440\u043a\u043c\u0435\u043d\u0447\u0435",
+        "regional": "tk_TM",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 226,
+        "locale": "uk",
+        "name": "Ukrainian",
+        "script": "Cyrl",
+        "native": "\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430",
+        "regional": "uk_UA",
+        "transcription_base_rate": "1.7",
+        "voice_over_only": 0
+    },
+    {
+        "id": 227,
+        "locale": "cv",
+        "name": "Chuvash",
+        "script": "Cyrl",
+        "native": "\u0427\u04d1\u0432\u0430\u0448 \u0447\u04d7\u043b\u0445\u0438",
+        "regional": "cv_RU",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 228,
+        "locale": "cu",
+        "name": "Church Slavic",
+        "script": "Cyrl",
+        "native": "\u0468\u0437\u044b\u043a\u044a \u0441\u043b\u043e\u0432\u0463\u043d\u044c\u0441\u043a\u044a",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 229,
+        "locale": "kk",
+        "name": "Kazakh",
+        "script": "Cyrl",
+        "native": "\u049a\u0430\u0437\u0430\u049b \u0442\u0456\u043b\u0456",
+        "regional": "kk_KZ",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 230,
+        "locale": "hy",
+        "name": "Armenian",
+        "script": "Armn",
+        "native": "\u0540\u0561\u0575\u0565\u0580\u0567\u0576",
+        "regional": "hy_AM",
+        "transcription_base_rate": "2.5",
+        "voice_over_only": 0
+    },
+    {
+        "id": 231,
+        "locale": "yi",
+        "name": "Yiddish",
+        "script": "Hebr",
+        "native": "\u05d9\u05d9\u05b4\u05d3\u05d9\u05e9",
+        "regional": "yi_US",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 232,
+        "locale": "he",
+        "name": "Hebrew",
+        "script": "Hebr",
+        "native": "\u05e2\u05d1\u05e8\u05d9\u05ea",
+        "regional": "he_IL",
+        "transcription_base_rate": "3.5",
+        "voice_over_only": 0
+    },
+    {
+        "id": 233,
+        "locale": "ug",
+        "name": "Uyghur",
+        "script": "Arab",
+        "native": "\u0626\u06c7\u064a\u063a\u06c7\u0631\u0686\u06d5",
+        "regional": "ug_CN",
+        "transcription_base_rate": "4",
+        "voice_over_only": 0
+    },
+    {
+        "id": 234,
+        "locale": "ur",
+        "name": "Urdu",
+        "script": "Arab",
+        "native": "\u0627\u0631\u062f\u0648",
+        "regional": "ur_PK",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 235,
+        "locale": "ar",
+        "name": "Arabic",
+        "script": "Arab",
+        "native": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+        "regional": "ar_AE",
+        "transcription_base_rate": "1.5",
+        "voice_over_only": 0
+    },
+    {
+        "id": 236,
+        "locale": "uz-Arab",
+        "name": "Uzbek (Arabic)",
+        "script": "Arab",
+        "native": "\u0627\u06c9\u0632\u0628\u06d0\u06a9",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 237,
+        "locale": "tg-Arab",
+        "name": "Tajik (Arabic)",
+        "script": "Arab",
+        "native": "\u062a\u0627\u062c\u06cc\u06a9\u06cc",
+        "regional": "tg_TJ",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 238,
+        "locale": "sd",
+        "name": "Sindhi",
+        "script": "Arab",
+        "native": "\u0633\u0646\u068c\u064a",
+        "regional": "sd_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 239,
+        "locale": "fa",
+        "name": "Persian",
+        "script": "Arab",
+        "native": "\u0641\u0627\u0631\u0633\u06cc",
+        "regional": "fa_IR",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 240,
+        "locale": "pa-Arab",
+        "name": "Punjabi (Arabic)",
+        "script": "Arab",
+        "native": "\u067e\u0646\u062c\u0627\u0628",
+        "regional": "pa_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 241,
+        "locale": "ps",
+        "name": "Pashto",
+        "script": "Arab",
+        "native": "\u067e\u069a\u062a\u0648",
+        "regional": "ps_AF",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 242,
+        "locale": "ks",
+        "name": "Kashmiri (Arabic)",
+        "script": "Arab",
+        "native": "\u06a9\u0623\u0634\u064f\u0631",
+        "regional": "ks_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 243,
+        "locale": "ku",
+        "name": "Kurdish",
+        "script": "Arab",
+        "native": "\u06a9\u0648\u0631\u062f\u06cc",
+        "regional": "ku_TR",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 244,
+        "locale": "dv",
+        "name": "Divehi",
+        "script": "Thaa",
+        "native": "\u078b\u07a8\u0788\u07ac\u0780\u07a8\u0784\u07a6\u0790\u07b0",
+        "regional": "dv_MV",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 245,
+        "locale": "ks-Deva",
+        "name": "Kashmiri (Devaganari)",
+        "script": "Deva",
+        "native": "\u0915\u0949\u0936\u0941\u0930",
+        "regional": "ks_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 246,
+        "locale": "kok",
+        "name": "Konkani",
+        "script": "Deva",
+        "native": "\u0915\u094b\u0902\u0915\u0923\u0940",
+        "regional": "kok_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 247,
+        "locale": "doi",
+        "name": "Dogri",
+        "script": "Deva",
+        "native": "\u0921\u094b\u0917\u0930\u0940",
+        "regional": "doi_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 248,
+        "locale": "ne",
+        "name": "Nepali",
+        "script": "Deva",
+        "native": "\u0928\u0947\u092a\u093e\u0932\u0940",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 249,
+        "locale": "pra",
+        "name": "Prakrit",
+        "script": "Deva",
+        "native": "\u092a\u094d\u0930\u093e\u0915\u0943\u0924",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 250,
+        "locale": "brx",
+        "name": "Bodo",
+        "script": "Deva",
+        "native": "\u092c\u0921\u093c\u094b",
+        "regional": "brx_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 251,
+        "locale": "bra",
+        "name": "Braj",
+        "script": "Deva",
+        "native": "\u092c\u094d\u0930\u091c \u092d\u093e\u0937\u093e",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 252,
+        "locale": "mr",
+        "name": "Marathi",
+        "script": "Deva",
+        "native": "\u092e\u0930\u093e\u0920\u0940",
+        "regional": "mr_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 253,
+        "locale": "mai",
+        "name": "Maithili",
+        "script": "Tirh",
+        "native": "\u092e\u0948\u0925\u093f\u0932\u0940",
+        "regional": "mai_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 254,
+        "locale": "raj",
+        "name": "Rajasthani",
+        "script": "Deva",
+        "native": "\u0930\u093e\u091c\u0938\u094d\u0925\u093e\u0928\u0940",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 255,
+        "locale": "sa",
+        "name": "Sanskrit",
+        "script": "Deva",
+        "native": "\u0938\u0902\u0938\u094d\u0915\u0943\u0924\u092e\u094d",
+        "regional": "sa_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 256,
+        "locale": "hi",
+        "name": "Hindi",
+        "script": "Deva",
+        "native": "\u0939\u093f\u0928\u094d\u0926\u0940",
+        "regional": "hi_IN",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 257,
+        "locale": "as",
+        "name": "Assamese",
+        "script": "Beng",
+        "native": "\u0985\u09b8\u09ae\u09c0\u09af\u09bc\u09be",
+        "regional": "as_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 258,
+        "locale": "bn",
+        "name": "Bengali",
+        "script": "Beng",
+        "native": "\u09ac\u09be\u0982\u09b2\u09be",
+        "regional": "bn_BD",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 259,
+        "locale": "mni",
+        "name": "Manipuri",
+        "script": "Beng",
+        "native": "\u09ae\u09c8\u09a4\u09c8",
+        "regional": "mni_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 260,
+        "locale": "pa",
+        "name": "Punjabi (Gurmukhi)",
+        "script": "Guru",
+        "native": "\u0a2a\u0a70\u0a1c\u0a3e\u0a2c\u0a40",
+        "regional": "pa_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 261,
+        "locale": "gu",
+        "name": "Gujarati",
+        "script": "Gujr",
+        "native": "\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0",
+        "regional": "gu_IN",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 262,
+        "locale": "or",
+        "name": "Oriya",
+        "script": "Orya",
+        "native": "\u0b13\u0b21\u0b3c\u0b3f\u0b06",
+        "regional": "or_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 263,
+        "locale": "ta",
+        "name": "Tamil",
+        "script": "Taml",
+        "native": "\u0ba4\u0bae\u0bbf\u0bb4\u0bcd",
+        "regional": "ta_IN",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 264,
+        "locale": "te",
+        "name": "Telugu",
+        "script": "Telu",
+        "native": "\u0c24\u0c46\u0c32\u0c41\u0c17\u0c41",
+        "regional": "te_IN",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 265,
+        "locale": "kn",
+        "name": "Kannada",
+        "script": "Knda",
+        "native": "\u0c95\u0ca8\u0ccd\u0ca8\u0ca1",
+        "regional": "kn_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 266,
+        "locale": "ml",
+        "name": "Malayalam",
+        "script": "Mlym",
+        "native": "\u0d2e\u0d32\u0d2f\u0d3e\u0d33\u0d02",
+        "regional": "ml_IN",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 267,
+        "locale": "si",
+        "name": "Sinhala",
+        "script": "Sinh",
+        "native": "\u0dc3\u0dd2\u0d82\u0dc4\u0dbd",
+        "regional": "si_LK",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 268,
+        "locale": "th",
+        "name": "Thai",
+        "script": "Thai",
+        "native": "\u0e44\u0e17\u0e22",
+        "regional": "th_TH",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 269,
+        "locale": "lo",
+        "name": "Lao",
+        "script": "Laoo",
+        "native": "\u0ea5\u0eb2\u0ea7",
+        "regional": "lo_LA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 270,
+        "locale": "bo",
+        "name": "Tibetan",
+        "script": "Tibt",
+        "native": "\u0f54\u0f7c\u0f51\u0f0b\u0f66\u0f90\u0f51\u0f0b",
+        "regional": "bo_IN",
+        "transcription_base_rate": "4",
+        "voice_over_only": 0
+    },
+    {
+        "id": 271,
+        "locale": "dz",
+        "name": "Dzongkha",
+        "script": "Tibt",
+        "native": "\u0f62\u0fab\u0f7c\u0f44\u0f0b\u0f41",
+        "regional": "dz_BT",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 272,
+        "locale": "my",
+        "name": "Burmese",
+        "script": "Mymr",
+        "native": "\u1019\u103c\u1014\u103a\u1019\u102c\u1018\u102c\u101e\u102c",
+        "regional": "my_MM",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 273,
+        "locale": "ka",
+        "name": "Georgian",
+        "script": "Geor",
+        "native": "\u1ca5\u10d0\u10e0\u10d7\u10e3\u10da\u10d8",
+        "regional": "ka_GE",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 274,
+        "locale": "byn",
+        "name": "Blin",
+        "script": "Ethi",
+        "native": "\u1265\u120a\u1295",
+        "regional": "byn_ER",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 275,
+        "locale": "tig",
+        "name": "Tigre",
+        "script": "Ethi",
+        "native": "\u1275\u130d\u1228",
+        "regional": "tig_ER",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 276,
+        "locale": "ti",
+        "name": "Tigrinya",
+        "script": "Ethi",
+        "native": "\u1275\u130d\u122d\u129b",
+        "regional": "ti_ET",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 277,
+        "locale": "am",
+        "name": "Amharic",
+        "script": "Ethi",
+        "native": "\u12a0\u121b\u122d\u129b",
+        "regional": "am_ET",
+        "transcription_base_rate": "2.5",
+        "voice_over_only": 0
+    },
+    {
+        "id": 278,
+        "locale": "wal",
+        "name": "Wolaytta",
+        "script": "Ethi",
+        "native": "\u12c8\u120b\u12ed\u1273\u1271",
+        "regional": "wal_ET",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 279,
+        "locale": "chr",
+        "name": "Cherokee",
+        "script": "Cher",
+        "native": "\u13e3\u13b3\u13a9",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 280,
+        "locale": "iu",
+        "name": "Inuktitut (Canadian Aboriginal Syllabics)",
+        "script": "Cans",
+        "native": "\u1403\u14c4\u1483\u144e\u1450\u1466",
+        "regional": "iu_CA",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 281,
+        "locale": "oj",
+        "name": "Ojibwa",
+        "script": "Cans",
+        "native": "\u140a\u14c2\u1511\u14c8\u142f\u14a7\u140e\u14d0",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 282,
+        "locale": "cr",
+        "name": "Cree",
+        "script": "Cans",
+        "native": "\u14c0\u1426\u1403\u152d\u140d\u140f\u1423",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 283,
+        "locale": "km",
+        "name": "Khmer",
+        "script": "Khmr",
+        "native": "\u1797\u17b6\u179f\u17b6\u1781\u17d2\u1798\u17c2\u179a",
+        "regional": "km_KH",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 284,
+        "locale": "mn-Mong",
+        "name": "Mongolian",
+        "script": "Mong",
+        "native": "\u182e\u1823\u1828\u182d\u182d\u1823\u182f \u182c\u1821\u182f\u1821",
+        "regional": "mn_MN",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 285,
+        "locale": "shi-Tfng",
+        "name": "Tachelhit (Tifinagh)",
+        "script": "Tfng",
+        "native": "\u2d5c\u2d30\u2d4e\u2d30\u2d63\u2d49\u2d56\u2d5c",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 286,
+        "locale": "tzm",
+        "name": "Central Atlas Tamazight (Tifinagh)",
+        "script": "Tfng",
+        "native": "\u2d5c\u2d30\u2d4e\u2d30\u2d63\u2d49\u2d56\u2d5c",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 287,
+        "locale": "yue",
+        "name": "Yue",
+        "script": "Hant",
+        "native": "\u5ee3\u5dde\u8a71",
+        "regional": "yue_HK",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 288,
+        "locale": "ja",
+        "name": "Japanese",
+        "script": "Jpan",
+        "native": "\u65e5\u672c\u8a9e",
+        "regional": "ja_JP",
+        "transcription_base_rate": "3",
+        "voice_over_only": 0
+    },
+    {
+        "id": 289,
+        "locale": "zh",
+        "name": "Chinese (Simplified)",
+        "script": "Hans",
+        "native": "\u7b80\u4f53\u4e2d\u6587",
+        "regional": "zh_CN",
+        "transcription_base_rate": "1.7",
+        "voice_over_only": 0
+    },
+    {
+        "id": 290,
+        "locale": "zh-Hant",
+        "name": "Chinese (Traditional)",
+        "script": "Hant",
+        "native": "\u7e41\u9ad4\u4e2d\u6587",
+        "regional": "zh_CN",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 291,
+        "locale": "ii",
+        "name": "Sichuan Yi",
+        "script": "Yiii",
+        "native": "\ua188\ua320\ua259",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 292,
+        "locale": "vai",
+        "name": "Vai (Vai)",
+        "script": "Vaii",
+        "native": "\ua559\ua524",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 293,
+        "locale": "jv-Java",
+        "name": "Javanese (Javanese)",
+        "script": "Java",
+        "native": "\ua9a7\ua9b1\ua997\ua9ae",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 294,
+        "locale": "ko",
+        "name": "Korean",
+        "script": "Hang",
+        "native": "\ud55c\uad6d\uc5b4",
+        "regional": "ko_KR",
+        "transcription_base_rate": "2.5",
+        "voice_over_only": 0
+    },
+    {
+        "id": 295,
+        "locale": "ARA",
+        "name": "Aramaic",
+        "script": "Latn",
+        "native": "Aramaic",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 296,
+        "locale": "DAR",
+        "name": "Dari",
+        "script": "Arab",
+        "native": "Dari",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 297,
+        "locale": "CHI",
+        "name": "Chichewa",
+        "script": "Latn",
+        "native": "Chichewa",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 299,
+        "locale": "FAR",
+        "name": "Farsi",
+        "script": "Arab",
+        "native": "Farsi",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 300,
+        "locale": "Nor",
+        "name": "Norwegian",
+        "script": "Latn",
+        "native": "Norwegian",
+        "regional": "",
+        "transcription_base_rate": "4",
+        "voice_over_only": 0
+    },
+    {
+        "id": 301,
+        "locale": "SPAL",
+        "name": "Spanish LA",
+        "script": "Latn",
+        "native": "Spanish Latin America",
+        "regional": "",
+        "transcription_base_rate": "1.5",
+        "voice_over_only": 0
+    },
+    {
+        "id": 302,
+        "locale": "fl",
+        "name": "Flemish",
+        "script": "Latn",
+        "native": "Vlaams",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 303,
+        "locale": "Pidgin Zulu",
+        "name": "Fanagalo",
+        "script": "Latn",
+        "native": "Pidgin Zulu",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 304,
+        "locale": "chin",
+        "name": "Chin",
+        "script": "Latn",
+        "native": "Chin",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 305,
+        "locale": "Hmong",
+        "name": "Hmong",
+        "script": "Latn",
+        "native": "Hmong",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 306,
+        "locale": "Karen",
+        "name": "Karen",
+        "script": "Tibt",
+        "native": "Karen",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 307,
+        "locale": "Zomi",
+        "name": "Zomi",
+        "script": "Latn",
+        "native": "Zou",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 308,
+        "locale": "en-Ar",
+        "name": "English (Hispanic)",
+        "script": "Latn",
+        "native": "English",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 1
+    },
+    {
+        "id": 309,
+        "locale": "en-SC",
+        "name": "English (Scandinavian)",
+        "script": "Latn",
+        "native": "English",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 1
+    },
+    {
+        "id": 310,
+        "locale": "en-Ara",
+        "name": "English (Arabic)",
+        "script": "Latn",
+        "native": "UAE",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 1
+    },
+    {
+        "id": 311,
+        "locale": "TET",
+        "name": "Tetum",
+        "script": "Latn",
+        "native": "T\u025bt\u028am",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 312,
+        "locale": "Balinese",
+        "name": "Balinese",
+        "script": "Latn",
+        "native": "Balinese",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 313,
+        "locale": "khi",
+        "name": "Khoisan",
+        "script": "Latn",
+        "native": "Khoisan",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 314,
+        "locale": "en-br",
+        "name": "English (British)",
+        "script": "Latn",
+        "native": "EN",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 1
+    },
+    {
+        "id": 315,
+        "locale": "rhg",
+        "name": "Rohingya",
+        "script": "Latn",
+        "native": "Ru\u00e1ingga",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 388,
+        "locale": "asl",
+        "name": "American Sign Language",
+        "script": "Latn",
+        "native": "English",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 389,
+        "locale": "aii",
+        "name": "Assyrian Neo-Aramaic",
+        "script": "Arab",
+        "native": "Assyrian Neo-Aramaic",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 390,
+        "locale": "az2",
+        "name": "Azerbaijani",
+        "script": "Cyrl",
+        "native": "Az\u0259rbaycanca",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 391,
+        "locale": "bal",
+        "name": "Balochi",
+        "script": "Arab",
+        "native": "\u0627\u06cc\u0631\u0627\u0646\u200e",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 392,
+        "locale": "bik",
+        "name": "Bikol",
+        "script": "Gujr",
+        "native": "Philippines",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 393,
+        "locale": "kh",
+        "name": "Cambodian",
+        "script": "Khmer",
+        "native": "Cambodian",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 394,
+        "locale": "cant1236",
+        "name": "Cantonese",
+        "script": "Latin",
+        "native": "Cantonese",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 395,
+        "locale": "kabu1256",
+        "name": "Cape Verdean Creole",
+        "script": "Latin",
+        "native": "Portuguese",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 396,
+        "locale": "ceb",
+        "name": "Cebuano",
+        "script": "Latin",
+        "native": "Philippines",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 397,
+        "locale": "chk",
+        "name": "Chuukese",
+        "script": "Latin",
+        "native": "Chuukese",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 398,
+        "locale": "dari1249",
+        "name": "Dari (Afghan Persian)",
+        "script": "Latin",
+        "native": "Dari (Afghan Persian)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 399,
+        "locale": "dyul1238",
+        "name": "Dioula",
+        "script": "Latin",
+        "native": "Dioula",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 400,
+        "locale": "edo",
+        "name": "Edo",
+        "script": "Latin",
+        "native": "Edo",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 401,
+        "locale": "efik1245",
+        "name": "Efik",
+        "script": "Latin",
+        "native": "Nigeria",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 402,
+        "locale": "fy2",
+        "name": "Frisian",
+        "script": "Latin",
+        "native": "Frisian",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 403,
+        "locale": "gor",
+        "name": "Gorani",
+        "script": "Latin",
+        "native": "Gorani",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 404,
+        "locale": "kala1399",
+        "name": "Greenlandic",
+        "script": "Latin",
+        "native": "Greenlandic",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 405,
+        "locale": "hait1244",
+        "name": "Haitian Creole",
+        "script": "Latin",
+        "native": "Haiti",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 406,
+        "locale": "hili1240",
+        "name": "Hiligaynon",
+        "script": "Latin",
+        "native": "Hiligaynon",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 407,
+        "locale": "iban1264",
+        "name": "Iban",
+        "script": "Latin",
+        "native": "Iban",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 408,
+        "locale": "ilok1237",
+        "name": "Ilocano",
+        "script": "Latin",
+        "native": "Philippines",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 409,
+        "locale": "east2534",
+        "name": "Inuktitut",
+        "script": "Latin",
+        "native": "Inuktitut",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 410,
+        "locale": "inup1234",
+        "name": "Inupiak",
+        "script": "Latin",
+        "native": "Inupiak",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 411,
+        "locale": "kich1262",
+        "name": "K&#039;iche&#039;",
+        "script": "Latin",
+        "native": "K&#039;iche&#039;",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 412,
+        "locale": "core1256",
+        "name": "Kikongo",
+        "script": "Latin",
+        "native": "Kikongo",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 413,
+        "locale": "colo1257",
+        "name": "Kichwa",
+        "script": "Latin",
+        "native": "Kichwa",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 414,
+        "locale": "rund1242",
+        "name": "Kirundi",
+        "script": "Latin",
+        "native": "Kirundi",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 415,
+        "locale": "kpel1252",
+        "name": "Kpelle",
+        "script": "Latin",
+        "native": "Kpelle",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 416,
+        "locale": "kur1",
+        "name": "Kurdish (Badini)",
+        "script": "Latin",
+        "native": "Kurdish (Badini)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 417,
+        "locale": "kur2",
+        "name": "Kurdish (Sorani)",
+        "script": "Latin",
+        "native": "Kurdish (Sorani)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 418,
+        "locale": "kur3",
+        "name": "Kurdish (Kurmanci)",
+        "script": "Latin",
+        "native": "Kurdish (Kurmanci)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 419,
+        "locale": "luxe1241",
+        "name": "Luxembourgish",
+        "script": "Latin",
+        "native": "Luxembourgish",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 420,
+        "locale": "maay1238",
+        "name": "Maay",
+        "script": "Latin",
+        "native": "Maay",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 421,
+        "locale": "cmn",
+        "name": "Mandarin",
+        "script": "Latin",
+        "native": "Mandarin",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 422,
+        "locale": "mani1303",
+        "name": "Maninka",
+        "script": "Latin",
+        "native": "Maninka",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 423,
+        "locale": "mo",
+        "name": "Moldovan",
+        "script": "Latin",
+        "native": "Moldovan",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 424,
+        "locale": "nde1",
+        "name": "Ndebele",
+        "script": "Latin",
+        "native": "Niger",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 425,
+        "locale": "nyanja1",
+        "name": "Nyanja",
+        "script": "Latin",
+        "native": "Nyanja",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 426,
+        "locale": "osse1243",
+        "name": "Ossetian",
+        "script": "Latin",
+        "native": "Ossetian",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 427,
+        "locale": "pali1273",
+        "name": "Pali",
+        "script": "Latin",
+        "native": "Pali",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 428,
+        "locale": "pag",
+        "name": "Pangasinan",
+        "script": "Latin",
+        "native": "Pangasinan",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 429,
+        "locale": "pap",
+        "name": "Papiamento",
+        "script": "Latin",
+        "native": "Papiamento",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 430,
+        "locale": "panj1256",
+        "name": "Punjabi",
+        "script": "Latin",
+        "native": "Punjabi",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 431,
+        "locale": "roma1329",
+        "name": "Romany",
+        "script": "Latin",
+        "native": "Romany",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 432,
+        "locale": "saam1281",
+        "name": "S\u00e1mi",
+        "script": "Latin",
+        "native": "S\u00e1mi",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 433,
+        "locale": "sang1327",
+        "name": "Sangho",
+        "script": "Latin",
+        "native": "Sangho",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 434,
+        "locale": "scot1245",
+        "name": "Scots Gaelic",
+        "script": "Latin",
+        "native": "Scots Gaelic",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 435,
+        "locale": "serb1264",
+        "name": "Serbian",
+        "script": "Latn",
+        "native": "Serbian",
+        "regional": "",
+        "transcription_base_rate": "2",
+        "voice_over_only": 0
+    },
+    {
+        "id": 436,
+        "locale": "sout2807",
+        "name": "Sesotho",
+        "script": "Latin",
+        "native": "Sesotho",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 437,
+        "locale": "setswana",
+        "name": "Setswana",
+        "script": "Latin",
+        "native": "Setswana",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 438,
+        "locale": "siswati",
+        "name": "Siswati",
+        "script": "Latin",
+        "native": "Siswati",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 439,
+        "locale": "snk",
+        "name": "Soninke",
+        "script": "Latin",
+        "native": "Soninke",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 440,
+        "locale": "sus",
+        "name": "Sussu",
+        "script": "Latin",
+        "native": "Sussu",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 441,
+        "locale": "tg1",
+        "name": "Tajik",
+        "script": "Latin",
+        "native": "Tajik",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 442,
+        "locale": "tong1318",
+        "name": "Tonga (Zambia)",
+        "script": "Latin",
+        "native": "Tonga (Zambia)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 443,
+        "locale": "uz2",
+        "name": "Uzbek",
+        "script": "Latin",
+        "native": "Uzbek",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 444,
+        "locale": "za",
+        "name": "Zhuang",
+        "script": "Latin",
+        "native": "Zhuang",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 445,
+        "locale": "turkmen",
+        "name": "Turkmen (Iraq)",
+        "script": "Latin",
+        "native": "Turkmen (Iraq)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 446,
+        "locale": "bai",
+        "name": "Bamileke (Cameroon)",
+        "script": "Latin",
+        "native": "Bamileke (Cameroon)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 447,
+        "locale": "dzongkha",
+        "name": "Dzongkha (Bhutan)",
+        "script": "Latin",
+        "native": "Dzongkha (Bhutan)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 448,
+        "locale": "ewondo",
+        "name": "Ewondo (Cameroon)",
+        "script": "Latin",
+        "native": "Ewondo (Cameroon)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 449,
+        "locale": "fan",
+        "name": "Fang (Gabun)",
+        "script": "Latin",
+        "native": "Fang (Gabun)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 450,
+        "locale": "fon1",
+        "name": "Fon (Benin)",
+        "script": "Latin",
+        "native": "Fon (Benin)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 451,
+        "locale": "kissi",
+        "name": "Kissi (Guinea)",
+        "script": "Latin",
+        "native": "Kissi (Guinea)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 452,
+        "locale": "kotot",
+        "name": "Kotokoli (Togo)",
+        "script": "Latin",
+        "native": "Kotokoli (Togo)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 453,
+        "locale": "berb1260",
+        "name": "Berber",
+        "script": "Latin",
+        "native": "Berber",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 454,
+        "locale": "mos",
+        "name": "Mossi",
+        "script": "Latin",
+        "native": "Mossi",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 455,
+        "locale": "tongan3",
+        "name": "Tongan (Tonga Islands)",
+        "script": "Latin",
+        "native": "Tongan (Tonga Islands)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 456,
+        "locale": "tonga3",
+        "name": "Tonga (Tonga Islands)",
+        "script": "Latin",
+        "native": "Tonga (Tonga Islands)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 457,
+        "locale": "pcm",
+        "name": "Nigerian Pidgin",
+        "script": "Latin",
+        "native": "Nigerian Pidgin",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 458,
+        "locale": "fr-af",
+        "name": "French (African)",
+        "script": "Latin",
+        "native": "French (African)",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 459,
+        "locale": "cnr",
+        "name": "Montenegrin",
+        "script": "Latn",
+        "native": "Montenegro",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 460,
+        "locale": "XK",
+        "name": "Albanian (Kosovo)",
+        "script": "Latn",
+        "native": "Shqip",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    },
+    {
+        "id": 461,
+        "locale": "fr-ch",
+        "name": "French (Swiss)",
+        "script": "Latn",
+        "native": "FR",
+        "regional": "",
+        "transcription_base_rate": "",
+        "voice_over_only": 0
+    }
+]
