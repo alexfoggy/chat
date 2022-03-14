@@ -13,7 +13,7 @@ $(document).on('click', '#sendMessage', function (e) {
     e.preventDefault();
     let msg = $(document).find('#textChatAssist').val();
     $(document).find('#textChatAssist').val('');
-    let url = "http://chat/api/sendmessage";
+    let url = "https://www.yolly.pro/api/sendmessage";
     key = $('#dataKey').attr('data-key');
     $.ajax({
         type: 'POST',
@@ -32,7 +32,7 @@ $(document).on('click', '#sendMessage', function (e) {
 
 function history() {
 
-    let url = "http://chat/api/history";
+    let url = "https://www.yolly.pro/api/history";
     $.ajax({
         type: 'POST',
         url: url,
@@ -49,7 +49,7 @@ function history() {
 
 $(document).ready(function () {
     let sitekey = $('#chatme').attr('data-key');
-    let url = "http://chat/api/checkme";
+    let url = "https://www.yolly.pro/api/checkme";
     $.ajax({
         type: 'POST',
         url: url,
@@ -100,6 +100,7 @@ $(document).ready(function () {
                     ' </svg>' +
                     ' </button>' +
                     '</form>' +
+                    '<div class="corpAuthors">Yolly</div>'+
                     '</div>' +
                     '</div>' +
                     '</div>';
@@ -114,7 +115,7 @@ $(document).ready(function () {
                     if (key == '') {
                         key = $('#dataKey').attr('data-key');
                     }
-                    let url = "http://chat/api/checkResponse";
+                    let url = "https://www.yolly.pro/api/checkResponse";
                     $.ajax({
                         type: 'POST',
                         url: url,
