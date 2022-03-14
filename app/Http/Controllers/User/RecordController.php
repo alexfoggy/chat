@@ -29,10 +29,10 @@ class RecordController extends Controller
         $ip = $request->ip();
         $msg = $request->input('msg');
 
-        $user = User::where('key',$ip)->first();
+        $user = UserSite::where('key',$ip)->first();
 
         if (!$user) {
-            $user = new User();
+            $user = new UserSite();
             $user->key = $ip;
             $user->push();
         }
@@ -57,7 +57,7 @@ class RecordController extends Controller
 
         $ip = $request->ip();
 
-        $user = User::where('key', $ip)->first();
+        $user = UserSite::where('key', $ip)->first();
 
         if ($user) {
 
@@ -85,7 +85,7 @@ class RecordController extends Controller
     {
 
         $ip = $request->ip();
-        $user = User::where('key',$ip)->first();
+        $user = UserSite::where('key',$ip)->first();
 
         if ($user) {
 

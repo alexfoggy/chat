@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sites;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,16 +17,12 @@ class PageController extends Controller
         return view('pages.main',get_defined_vars());
     }
 
-    public function profile()
+    public function domainKeyInfo(Request $request,$id)
     {
-        $user = Auth::user();
+        $site = Sites::where('id',$id)->first();
 
-        if($user) {
-            return view('pages.profile', get_defined_vars());
-        }
-        else {
-            abort(404);
-        }
+
+        return view('pages.keypage',get_defined_vars());
     }
 
     public function about()

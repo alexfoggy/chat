@@ -34,13 +34,13 @@ class SpeakerController extends Controller
     public function index(Request $request)
     {
 
-        $user = Auth::user();
-
-        $age = Carbon::parse($user->birth_date)->diff(Carbon::now())->y;
-
-        $dialects = Dialect::where('user_id',$user->id)->get();
-
-        $userTasks = Sites::where('user_id',$user->id)->get();
+//        $user = Auth::user();
+//
+//        $age = Carbon::parse($user->birth_date)->diff(Carbon::now())->y;
+//
+//        $dialects = Dialect::where('user_id',$user->id)->get();
+//
+//        $userTasks = Sites::where('user_id',$user->id)->get();
 
         return view('admin.speaker.index', get_defined_vars());
 

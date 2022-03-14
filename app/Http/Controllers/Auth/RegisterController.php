@@ -67,30 +67,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $type = '';
-        $user_type = UserType::where('title', 'speaker')->first();
-
-        if($user_type) {
-
-            $type = $user_type;
-
-        } else {
-
-            $type = UserType::create([
-                'title' => 'speaker',
-                'status' => true,
-            ]);
-        }
 
         $user = User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'token' => generateToken()
-        ]);
+            'token' => generateToken(),
+            'type'=>'user'
 
-        $user->type()->attach($type->id);
+        ]);
 
         return $user;
     }

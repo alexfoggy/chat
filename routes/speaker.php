@@ -1,9 +1,9 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('cabinet')->name('cabinet.')->middleware(['auth', 'verified', 'user.type:speaker', 'web'])->group(function () {
 
-    Route::get('/', 'Admin\SpeakerController@index')->name('speakerHome');
+Route::prefix('cabinet')->name('cabinet.')->middleware(['auth', 'verified', 'user.type:user', 'web'])->group(function () {
+    Route::get('/', 'Admin\SpeakerController@index');
     Route::get('/edit', 'Admin\SpeakerController@editPage')->name('edit');
     Route::post('/edit', 'Admin\SpeakerController@editSave');
 

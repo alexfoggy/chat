@@ -17,6 +17,9 @@ class CreateSitesTable extends Migration
             $table->id();
             $table->string('site_key');
             $table->string('site_route');
+            $table->string('site_image')->nullable();
+            $table->string('site_user_name');
+            $table->string('site_user_role')->nullable();
             $table->timestamps();
         });
     }
