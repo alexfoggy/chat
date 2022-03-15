@@ -11,7 +11,7 @@ class PageController extends Controller
 {
     public function main()
     {
-
+        dd(1);
         $users = User::get();
 
         return view('pages.main',get_defined_vars());
