@@ -7,7 +7,7 @@
             {{$newMsg->msg}}
         </div>
         <div class="date-msg">
-            {{\Illuminate\Support\Carbon::parse($newMsg->created_at)->format('H:m')}}
+            {{\Illuminate\Support\Carbon::parse($newMsg->created_at)->format('H:i')}}
         </div>
     </div>
 </div>

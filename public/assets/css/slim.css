@@ -2498,14 +2498,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #4E74F8;
-    border-color: #4E74F8;
+    background-color: #43ab71;
+    border-color: #43ab71;
+    transition:0.5s;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #1570c7;
-    border-color: #146abb;
+    opacity:0.6;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -3997,7 +3997,10 @@ input[type="button"].btn-block {
     margin-bottom: 0;
     list-style: none;
 }
-
+.heightFixedChat {
+    height:400px;
+    overflow:auto;
+}
 .nav-link {
     display: block;
     padding: 0.5rem 1rem;

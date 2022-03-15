@@ -7,14 +7,20 @@ $(document).on('click', '.open-close', function () {
 
 let key = $('#dataKey').attr('data-key');
 
+function gobot() {
+    //scroll to bottom
+    let d = $('.body-assist');
+    d.scrollTop(d.prop("scrollHeight"));
+
+}
 
 $(document).on('click', '#sendMessage', function (e) {
 
     e.preventDefault();
     let msg = $(document).find('#textChatAssist').val();
     $(document).find('#textChatAssist').val('');
-    let url = "https://www.yolly.pro/api/sendmessage";
-    key = $('#dataKey').attr('data-key');
+    let url = "https://chat/api/sendmessage";
+    key = $('#chatme').attr('data-key');
     $.ajax({
         type: 'POST',
         url: url,
@@ -25,6 +31,7 @@ $(document).on('click', '#sendMessage', function (e) {
         success: function (data) {
             $('#dataKey').attr('data-key', data.key);
             $('.body-assist').append(data.userText);
+            gobot();
         }
     });
 })
@@ -32,13 +39,14 @@ $(document).on('click', '#sendMessage', function (e) {
 
 function history() {
 
-    let url = "https://www.yolly.pro/api/history";
+    let url = "https://chat/api/history";
     $.ajax({
         type: 'POST',
         url: url,
         success: function (data) {
             if (data.status == true) {
                 $('.body-assist').append(data.userText);
+                gobot();
             } else {
                 console.log('key is not got');
             }
@@ -49,7 +57,7 @@ function history() {
 
 $(document).ready(function () {
     let sitekey = $('#chatme').attr('data-key');
-    let url = "https://www.yolly.pro/api/checkme";
+    let url = "https://chat/api/checkme";
     $.ajax({
         type: 'POST',
         url: url,
@@ -59,7 +67,6 @@ $(document).ready(function () {
         success: function (data) {
             if (data.status == true) {
                 $('head').append('<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet"> ');
-
 
                 let appendBlock = '<div id="chatassist">' +
                     '  <div class="open-close">' +
@@ -77,14 +84,14 @@ $(document).ready(function () {
                     ' <div class="wrapper">' +
                     '  <div class="head-assist">' +
                     ' <div class="image-assist">' +
-                    ' <img src="" alt="">' +
+                    ' <img src="'+data.image+'" alt="">' +
                     ' </div>' +
                     ' <div class="">' +
                     '<div class="name-assist">' +
-                    ' Joy Tailor' +
+                    data.name +
                     ' </div>' +
                     ' <div class="work-assist">' +
-                    ' loyar assist master' +
+                    data.role +
                     ' </div>' +
                     ' </div>' +
                     ' </div>' +
@@ -92,15 +99,14 @@ $(document).ready(function () {
                     ' </div>' +
                     ' <div class="foot-assist">' +
                     ' <form>' +
-                    ' <input type="hidden" data-key="" id="dataKey">' +
-                    ' <textarea name="" id="textChatAssist" placeholder="Text here..."></textarea>' +
+                    ' <input name="" id="textChatAssist" placeholder="Text here...">' +
                     '<button id="sendMessage">' +
                     '<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                     '<path d="M2 9L1.39589 3.56299C1.22297 2.0067 2.82469 0.864325 4.23983 1.53465L16.1842 7.19252C17.7093 7.91494 17.7093 10.0851 16.1842 10.8075L4.23983 16.4653C2.82469 17.1357 1.22297 15.9933 1.39589 14.437L2 9ZM2 9H9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
                     ' </svg>' +
                     ' </button>' +
                     '</form>' +
-                    '<div class="corpAuthors">Yolly</div>'+
+                    '<div class="corpAuthors">Yolly</div>' +
                     '</div>' +
                     '</div>' +
                     '</div>';
@@ -115,7 +121,7 @@ $(document).ready(function () {
                     if (key == '') {
                         key = $('#dataKey').attr('data-key');
                     }
-                    let url = "https://www.yolly.pro/api/checkResponse";
+                    let url = "https://chat/api/checkResponse";
                     $.ajax({
                         type: 'POST',
                         url: url,
@@ -124,7 +130,10 @@ $(document).ready(function () {
                         },
                         success: function (data) {
                             if (data.status == true) {
-                                $('.body-assist').append(data.userText);
+                                if (data.userText) {
+                                    $('.body-assist').append(data.userText);
+                                    gobot();
+                                }
                             } else {
                                 console.log('key is not got');
                             }

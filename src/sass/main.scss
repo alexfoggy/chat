@@ -10,15 +10,19 @@
     height: 500px;
     border-radius: 10px 10px 0 0;
     transition: 0.5s;
+
     &.active {
         top: calc(100% - 500px);
+
         .open-close {
             top: 0px;
             width: 40px;
             height: 40px;
+
             .open-assist {
                 display: none;
             }
+
             .close-assist {
                 display: block;
             }
@@ -30,6 +34,7 @@
         position: relative;
         height: 100%;
     }
+
     .open-close {
         position: absolute;
         right: 0;
@@ -44,29 +49,34 @@
         border-radius: 50%;
         border: 1px #43ab71 solid;
         background-color: #43ab71;
-        cursor: pointer; 
+        cursor: pointer;
 
         .open-assist {
             svg {
                 width: 30px;
                 height: 30px;
+
                 path {
                     //animation:dash 5s ease-in-out infinite;
                     stroke: #fff;
                 }
             }
         }
+
         .close-assist {
             display: none;
+
             svg {
                 width: 12px;
                 height: 12px;
+
                 path {
                     stroke: #fff;
                 }
             }
         }
     }
+
     // @keyframes dash {
     //     0% {
     //         stroke-dasharray:0px;
@@ -88,7 +98,14 @@
             height: 46px;
             margin-right: 10px;
             border-radius: 50%;
+            overflow: hidden;
             background-color: #ddd;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         .name-assist {
@@ -101,47 +118,62 @@
             text-transform: uppercase;
         }
     }
+
     .body-assist {
         height: 384px;
         padding: 8px 6px;
         overflow-y: auto;
-        .left-q,.right-q {
+        scroll-behavior: smooth;
+
+       
+
+        .left-q,
+        .right-q {
             display: flex;
             margin: 10px 0;
         }
+
         .date-msg {
             padding: 0 4px;
             font-size: 12px;
             font-weight: thin;
             color: #999;
         }
+
         .left-q {
             .msg-text {
                 background: #f5f5f5;
             }
         }
+
         .msg-block {
             margin: 0 12px;
             max-width: 70%;
             border-radius: 6px;
+            animation: fadein 1s linear;
         }
+
         .msg-text {
             padding: 4px 10px;
             border-radius: 10px;
             font-weight: 300;
             font-size: 14px;
         }
+
         .right-q {
             flex-direction: row-reverse;
+
             .date-msg {
                 text-align: right;
 
             }
+
             .msg-text {
                 background: #43ab71;
                 color: #fff;
             }
         }
+
         .small-image-assist {
             width: 20px;
             min-width: 20px;
@@ -151,12 +183,14 @@
             border-radius: 50%;
         }
     }
+
     .foot-assist {
         position: absolute;
         bottom: 0;
         width: 100%;
         height: 50px;
         border-top: 1px #eee solid;
+
         .corpAuthors {
             position: absolute;
             left: 100%;
@@ -164,14 +198,15 @@
             transform: rotate(90deg);
             font-size: 12px;
             color: #000;
-            z-index:999;
+            z-index: 999;
             height: 20px;
         }
+
         form {
             height: 50px;
             position: relative;
 
-            textarea {
+            input {
                 width: 100%;
                 height: 100%;
                 border: 0;
@@ -182,6 +217,7 @@
                 padding-left: 16px;
                 padding-right: 66px;
             }
+
             button {
                 position: absolute;
                 right: 0;
@@ -193,4 +229,29 @@
         }
     }
 
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.body-assist::-webkit-scrollbar {
+    width: 20px;
+}
+
+.body-assist::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 100px;
+}
+
+.body-assist::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
+    box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
 }
