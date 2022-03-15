@@ -12,11 +12,11 @@ class NotificationProvider extends ServiceProvider
 {
     public function boot()
     {
-        View::composer('components.admin.nav', function ($view) {
+        /*View::composer('components.admin.nav', function ($view) {
 
             $notif = Notification::where('user_id',Auth::user()->id)->orderBy('created_at','desc')->limit(10)->get();
 
             $view->notif = $notif;
-        });
+        });*/
     }
 }

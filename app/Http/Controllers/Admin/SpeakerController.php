@@ -8,6 +8,7 @@ use App\Http\Resources\ProjectResource;
 use App\Models\Country;
 use App\Models\Dialect;
 use App\Models\Language;
+use App\Models\msg;
 use App\Models\Project;
 use App\Models\Sites;
 use App\Notifications\NewTaskNotification;
@@ -34,16 +35,44 @@ class SpeakerController extends Controller
     public function index(Request $request)
     {
 
-//        $user = Auth::user();
-//
-//        $age = Carbon::parse($user->birth_date)->diff(Carbon::now())->y;
-//
-//        $dialects = Dialect::where('user_id',$user->id)->get();
-//
-//        $userTasks = Sites::where('user_id',$user->id)->get();
+        $user = Auth::user();
 
         return view('admin.speaker.index', get_defined_vars());
 
+    }
+
+    public function newsite(Request $request)
+    {
+
+        $user = Auth::user();
+
+        return view('admin.speaker.createsite', get_defined_vars());
+    }
+
+    public function domainslist(Request $request)
+    {
+        $user = Auth::user();
+        $domains = Sites::where('user_id',$user->id)->get();
+
+        return view('admin.speaker.listdomains', get_defined_vars());
+    }
+
+    public function oneDomain(Request $request,$id)
+    {
+        $domain = Sites::where('id',$id)->first();
+
+        return view('admin.speaker.oneDomain', get_defined_vars());
+    }
+
+    public function chatList(Request $request)
+    {
+        $user = Auth::user();
+
+        $sites = Sites::where('user_id',$user->id)->select('id')->get()->toArray();
+
+        $chats = msg::whereIn('site_id',$sites)->get()->groupBy('user_id');
+
+        return view('admin.speaker.chatList', get_defined_vars());
     }
 
     public function editPage(Request $request)

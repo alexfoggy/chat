@@ -26,7 +26,7 @@
                         </div>--}}
                     </div><!-- dropdown-menu-header -->
                     <div class="dropdown-activity-list">
-                        @if($notif->isNotEmpty())
+                    {{--    @if($notif->isNotEmpty())
                             @foreach($notif as $one_notif)
                                 <div class="activity-item">
                                     @if($one_notif->clickable == 1)
@@ -61,7 +61,7 @@
                                 <div class="col-8">You are welcome</div>
                             </div><!-- row -->
                         </div><!-- activity-item -->
-                    @endif
+                    @endif--}}
                 </div><!-- dropdown-activity-list -->
 
             </div><!-- dropdown-menu-right -->
@@ -77,7 +77,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <nav class="nav">
-                    @if(Auth::user()->type[0]->title == 'speaker')
+                   {{-- @if(Auth::user()->type[0]->title == 'speaker')
 
                         <a href="{{url('cabinet')}}" class="nav-link"><i
                                 class="icon ion-person"></i> {{trans('vars.view_profile',[],$lang)}}</a>
@@ -85,7 +85,7 @@
                                 class="icon ion-compose"></i> {{trans('vars.edit_profile',[],$lang)}}</a>
                         <a href="javascript:;" class="nav-link open-popup" data-open="modal-languages"><i
                                 class="icon fa fa-globe"></i>{{trans('vars.languages',[],$lang)}}</a>
-                        {{--                        <a href="page-activity.html" class="nav-link"><i class="icon ion-ios-bolt"></i> Activity Log</a>--}}
+                        --}}{{--                        <a href="page-activity.html" class="nav-link"><i class="icon ion-ios-bolt"></i> Activity Log</a>--}}{{--
                         <a href="{{url('cabinet','settings')}}" class="nav-link"><i
                                 class="icon ion-ios-gear"></i>{{trans('vars.acc_settings',[],$lang)}}</a>
                         <a href="{{url('accountOut')}}" class="nav-link "><i
@@ -97,7 +97,7 @@
                                 class="icon ion-ios-gear"></i>{{trans('vars.acc_settings',[],$lang)}}</a>
                         <a href="{{url('accountOut')}}" class="nav-link "><i
                                 class="icon ion-forward"></i>{{trans('vars.sign_out',[],$lang)}}</a>
-                    @endif
+                    @endif--}}
                 </nav>
             </div><!-- dropdown-menu -->
         </div><!-- dropdown -->
@@ -111,8 +111,30 @@
         <label class="sidebar-label">{{trans('vars.navigation',[],$lang)}}</label>
 
         <ul class="nav nav-sidebar">
-            @if(Auth::user()->type[0]->title == 'speaker')
+            @if(Auth::user()->type == 'user')
 
+                <li class="sidebar-nav-item">
+                    <a href="{{url('cabinet')}}" class="sidebar-nav-link"><i
+                            class="icon ion-ios-contact"></i>{{trans('vars.profile',[],$lang)}}</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="{{url('cabinet/chats')}}" class="sidebar-nav-link"><i
+                            class="icon ion-ios-chatboxes"></i>Чаты</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="{{url('cabinet/newsite')}}" class="sidebar-nav-link"><i
+                            class="fa fa-globe"></i>Add domain</a>
+                </li>
+
+                <li class="sidebar-nav-item">
+                    <a href="{{url('cabinet/domains')}}" class="sidebar-nav-link"><i
+                            class="fa fa-globe"></i>Your domains</a>
+                </li>
+                {{--<li class="sidebar-nav-item">
+                    <a href="{{url('cabinet','tasks')}}" class="sidebar-nav-link"><i
+                            class="icon icon ion-filing"></i>{{trans('vars.tasks',[],$lang)}}</a>
+                </li>--}}
+            @else
                 <li class="sidebar-nav-item">
                     <a href="{{url('cabinet')}}" class="sidebar-nav-link"><i
                             class="icon ion-ios-contact"></i>{{trans('vars.profile',[],$lang)}}</a>
@@ -120,37 +142,6 @@
                 <li class="sidebar-nav-item">
                     <a href="{{url('cabinet','tasks')}}" class="sidebar-nav-link"><i
                             class="icon icon ion-filing"></i>{{trans('vars.tasks',[],$lang)}}</a>
-                </li>
-            @elseif(Auth::user()->type[0]->title == 'project_manager')
-
-                <li class="sidebar-nav-item">
-                    <a href="{{url('manager','create')}}" class="sidebar-nav-link"><i
-                            class="icon ion-ios-contact"></i>{{trans('vars.create_project',[],$lang)}}</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <a href="{{url('manager','projects')}}" class="sidebar-nav-link"><i
-                            class="icon icon ion-filing"></i>{{trans('vars.projects',[],$lang)}}</a>
-                </li>
-            @else
-                <li class="sidebar-nav-item">
-                    <a href="{{url('admin','create')}}" class="sidebar-nav-link"><i
-                            class="icon icon ion-filing"></i>{{--{{trans('vars.projects',[],$lang)}}--}}Create project</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <a href="{{url('admin','projects')}}" class="sidebar-nav-link"><i
-                            class="icon icon ion-filing"></i>{{--{{trans('vars.projects',[],$lang)}}--}}Projects</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <a href="{{url('admin','create-user')}}" class="sidebar-nav-link"><i class="icon ion-person-add"></i>{{--{{trans('vars.projects',[],$lang)}}--}}Create project manager</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <a href="{{url('admin','pmlist')}}" class="sidebar-nav-link"><i class="fa fa-briefcase"></i>{{--{{trans('vars.projects',[],$lang)}}--}}Project managers</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <a href="{{url('admin','speakers')}}" class="sidebar-nav-link"><i class="icon ion-person-stalker"></i>{{--{{trans('vars.projects',[],$lang)}}--}}Speakers</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <a href="{{url('admin','translates').'?lang=en'}}" class="sidebar-nav-link"><i class="fa fa-globe"></i>{{--{{trans('vars.projects',[],$lang)}}--}}Translates</a>
                 </li>
             @endif
         </ul>

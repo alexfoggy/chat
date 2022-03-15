@@ -18,9 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PageController@main')->name('main');
 
 
-Route::post('createNewConnection', 'Controller@createConnection');
 
-Route::get('yourkey/{id?}', 'PageController@domainKeyInfo');
+//Route::get('yourkey/{id?}', 'PageController@domainKeyInfo');
 
 
 

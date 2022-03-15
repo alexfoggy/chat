@@ -3,7 +3,15 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::prefix('cabinet')->name('cabinet.')->middleware(['auth', 'verified', 'user.type:user', 'web'])->group(function () {
+    //GET
     Route::get('/', 'Admin\SpeakerController@index');
+    Route::get('/newsite', 'Admin\SpeakerController@newsite');
+    Route::get('/domains', 'Admin\SpeakerController@domainslist');
+    Route::get('/domain/{id?}', 'Admin\SpeakerController@oneDomain');
+    Route::get('/chats', 'Admin\SpeakerController@chatList');
+
+    //POST
+    Route::post('createNewConnection', 'Controller@createConnection');
     Route::get('/edit', 'Admin\SpeakerController@editPage')->name('edit');
     Route::post('/edit', 'Admin\SpeakerController@editSave');
 
