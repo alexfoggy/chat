@@ -16,6 +16,7 @@ class CreateUsersSiteTable extends Migration
         Schema::create('users_site', function (Blueprint $table) {
             $table->id();
             $table->string('key');
+            $table->unsignedBigInteger('site_id');
             $table->timestamps();
         });
     }

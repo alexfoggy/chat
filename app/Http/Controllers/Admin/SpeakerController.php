@@ -13,6 +13,7 @@ use App\Models\Project;
 use App\Models\Sites;
 use App\Notifications\NewTaskNotification;
 use App\User;
+use App\UserSite;
 use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -68,9 +69,11 @@ class SpeakerController extends Controller
     {
         $user = Auth::user();
 
-        $sites = Sites::where('user_id',$user->id)->select('id')->get()->toArray();
+        $sites = Sites::where('user_id',$user->id)->select('id')->get();
 
-        $chats = msg::whereIn('site_id',$sites)->get()->groupBy('user_id');
+        $userHasMsg = UserSite::whereIn('site_id',$sites)->select('id')->get();
+
+        $chats = msg::whereIn('site_id',$sites)->whereIn('user_id',$userHasMsg)->groupBy('site_id','user_id')->get();
 
         return view('admin.speaker.chatList', get_defined_vars());
     }

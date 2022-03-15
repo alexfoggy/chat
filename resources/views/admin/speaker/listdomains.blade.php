@@ -34,12 +34,24 @@
                     @foreach($domains as $one_domain)
                     <tr>
                         <td>
-                            <a href="{{url('cabinet',['domain',$one_domain->id])}}" class="tx-inverse tx-14 tx-medium d-block">{{$one_domain->site_route}}</a>
+                            <a href="{{url('cabinet',['domain',$one_domain->id])}}" class="tx-inverse tx-14 tx-medium d-block">
+                                @if($one_domain->test_status == 0)
+                                {{$one_domain->site_route}}
+                                @else
+                                Test key
+                                @endif
+                            </a>
                         </td>
                         <td class="tx-12">
+                            @if($one_domain->test_status == 0)
                          {{$one_domain->site_user_name}}
+                                @endif
                         </td>
-                        <td>{{$one_domain->site_user_role}}</td>
+                        <td>
+                            @if($one_domain->test_status == 0)
+                                {{$one_domain->site_user_role}}
+                                @endif
+                        </td>
                         <td>{{$one_domain->site_key}}</td>
                         <td>{{\Carbon\Carbon::parse($one_domain->created_at)->format('d.m.y')}}</td>
                         <td class="tx-center"><span class="square-8 bg-success mg-r-5 rounded-circle"></span> </td>

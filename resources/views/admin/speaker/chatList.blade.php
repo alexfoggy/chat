@@ -19,19 +19,21 @@
                 {{--                <a href="" class="messages-compose"><i class="icon ion-compose"></i></a>--}}
             </div><!-- slim-pageheader -->
 
-            <div class="messages-list ps ps--theme_default rounded-10">
+            <div class="messages-list rounded-10">
                 @foreach($chats as $one_chat)
-                    <a href="javascript:;" data-chat="{{$one_chat->last()->user_id}}" class="chatChange media @if($loop->first) active @endif">
+                    <a href="javascript:;" data-chat="{{$one_chat->user_id}}" data-user="{{$one_chat->site_id}}"
+                       class="chatChange media @if($loop->first) active @endif">
                         <div class="media-left">
                             <img src="http://via.placeholder.com/500x500" alt="">
                             <span class="square-10 bg-success"></span>
                         </div><!-- media-left -->
                         <div class="media-body">
-                            <div>
-                                <h6>@if($one_chat->last()->userStatus == 1) User @else You @endif:{{$one_chat->last()->msg}}</h6>
+                            <div class="pr-2">
+                                <h6>@if($one_chat->userStatus == 1) User @else You @endif</h6>
+                                <p>{{$one_chat->msg}}</p>
                             </div>
                             <div>
-                                <span>{{\Carbon\Carbon::parse($one_chat->last()->created_at)->format('h:m (d.m.y)')}}</span>
+                                <span>{{\Carbon\Carbon::parse($one_chat->created_at)->format('h:m')}}</span>
                             </div>
                         </div><!-- media-body -->
                     </a><!-- media -->
@@ -55,9 +57,17 @@
                 </div><!-- media -->
 
             </div><!-- message-header -->
-            <div class="message-body ps ps--theme_default" data-ps-id="a1f20a6d-8b9b-ff34-1a88-f7aff7e87af3">
+            <div class="message-body position-relative">
+                <div class="loading position-absolute" style="top:50%;left:50%;transform:translate(-50%,-50%)">
+                    <div class="sk-folding-cube">
+                        <div class="sk-cube1 sk-cube"></div>
+                        <div class="sk-cube2 sk-cube"></div>
+                        <div class="sk-cube4 sk-cube"></div>
+                        <div class="sk-cube3 sk-cube"></div>
+                    </div>
+                </div>
                 <div class="media-list heightFixedChat">
-                    @foreach($chats[1] as $one_msg)
+                    @foreach($chats as $one_msg)
                         @if($one_msg->userStatus == 2)
 
                             @include('messages.adminRight')
@@ -81,10 +91,13 @@
             <div class="message-footer">
                 <form class="row row-sm">
                     <div class="col-11 col-sm-11 col-xl-11">
-                        <input type="text" class="form-control" id="textChatAssist" placeholder="Type something here...">
+                        <input type="text" class="form-control" id="textChatAssist"
+                               placeholder="Type something here...">
                     </div><!-- col-8 -->
                     <div class="col-1 col-sm-1 col-xl-1 tx-right">
-                        <button class="btn-primary btn d-block w-100 rounded-10" id="sendmsg" data-id="{{$one_msg->user_id}}" data-site-id="{{$one_msg->site_id}}">Send <i class="fa fa-send"></i></button>
+                        <button class="btn-primary btn d-block w-100 rounded-10" id="sendmsg"
+                                data-id="{{$one_msg->user_id}}" data-site-id="{{$one_msg->site_id}}">Send <i
+                                class="fa fa-send"></i></button>
                     </div><!-- col-4 -->
                 </form><!-- row -->
             </div><!-- message-footer -->
@@ -96,7 +109,7 @@
 @push('scripts')
     <script>
 
-        function gobot(){
+        function gobot() {
             //scroll to bottom
             let d = $('.heightFixedChat');
             d.scrollTop(d.prop("scrollHeight"));
@@ -106,7 +119,7 @@
 
             e.preventDefault();
             let msg = $(document).find('#textChatAssist').val();
-            if(msg != '') {
+            if (msg != '') {
                 $(document).find('#textChatAssist').val('');
                 let url = "https://chat/api/sendmsgpanel";
                 let userid = $(this).attr('data-id');
@@ -130,26 +143,28 @@
 
         $(document).on('click', '.chatChange', function (e) {
             $('.media-list').fadeOut();
+            $('.loading').fadeIn();
             e.preventDefault();
-                $(document).find('#textChatAssist').val('');
-                let url = "https://chat/api/changechat";
-                let userid = $(this).attr('data-chat');
-                let siteid = $('#sendmsg').attr('data-site-id');
-                $('#sendmsg').attr('data-id',userid);
-                $.ajax({
-                    type: 'POST',
-                    url: url,
-                    data: {
-                        'user_id': userid,
-                        'site_id': siteid,
-                    },
-                    success: function (data) {
-                        $('.media-list').html('');
-                        $('.media-list').append(data.userText);
-                        $('.media-list').fadeIn();
-                        gobot();
-                    }
-                });
+            $(document).find('#textChatAssist').val('');
+            let url = "https://chat/api/changechat";
+            let userid = $(this).attr('data-chat');
+            let siteid = $(this).attr('data-user');
+            $('#sendmsg').attr('data-id', userid);
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: {
+                    'user_id': userid,
+                    'site_id': siteid,
+                },
+                success: function (data) {
+                    $('.media-list').html('');
+                    $('.media-list').append(data.userText);
+                    $('.media-list').fadeIn();
+                    $('.loading').fadeOut();
+                    gobot();
+                }
+            });
         });
 
         checkAns = setInterval(function () {
@@ -165,7 +180,7 @@
                 },
                 success: function (data) {
                     if (data.status == true) {
-                        if(data.userText) {
+                        if (data.userText) {
                             $('.media-list').append(data.userText);
                             gobot();
                         }

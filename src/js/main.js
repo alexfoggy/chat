@@ -22,7 +22,7 @@ $(document).on('click', '#sendMessage', function (e) {
     e.preventDefault();
     let msg = $(document).find('#textChatAssist').val();
     $(document).find('#textChatAssist').val('');
-    let url = "https://chat/api/sendmessage";
+    let url = "http://chat/api/sendmessage";
     key = $('#chatme').attr('data-key');
     $.ajax({
         type: 'POST',
@@ -39,13 +39,16 @@ $(document).on('click', '#sendMessage', function (e) {
     });
 })
 
+let sitekey = $('#chatme').attr('data-key');
 
 function history() {
-
-    let url = "https://chat/api/history";
+    let url = "http://chat/api/history";
     $.ajax({
         type: 'POST',
         url: url,
+        data: {
+            'key': sitekey
+        },
         success: function (data) {
             if (data.status == true) {
                 $('.body-assist').append(data.userText);
@@ -59,8 +62,7 @@ function history() {
 
 
 $(document).ready(function () {
-    let sitekey = $('#chatme').attr('data-key');
-    let url = "https://chat/api/checkme";
+    let url = "http://chat/api/checkme";
     $.ajax({
         type: 'POST',
         url: url,
@@ -124,7 +126,7 @@ $(document).ready(function () {
                     if (key == '') {
                         key = $('#dataKey').attr('data-key');
                     }
-                    let url = "https://chat/api/checkResponse";
+                    let url = "http://chat/api/checkResponse";
                     $.ajax({
                         type: 'POST',
                         url: url,

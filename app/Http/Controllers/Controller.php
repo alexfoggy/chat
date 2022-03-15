@@ -34,10 +34,29 @@ class Controller extends BaseController
         $newSite->site_user_name = $request->input('site_user_name') ?? 'Help assistent';
         $newSite->site_user_role = $request->input('site_user_role') ?? 'I/m here to help you';
         $newSite->site_key = \Ramsey\Uuid\Nonstandard\Uuid::uuid4();
+        $newSite->test_status = '0';
 
         $newSite->push();
 
-        return redirect('/yourkey/'.$newSite->id);
+        return redirect('/cabinet/domain/'.$newSite->id);
     }
+
+    public function createConnectionTest(Request $request){
+
+        $newSite = new Sites();
+
+        $newSite->user_id = Auth::user()->id;
+        $newSite->site_route = $request->ip();
+        $newSite->site_user_name = 'Test Yolly';
+        $newSite->site_user_role = 'I/m here to help you';
+        $newSite->site_key = \Ramsey\Uuid\Nonstandard\Uuid::uuid4();
+        $newSite->test_status = '1';
+
+        $newSite->push();
+
+        return redirect('/cabinet/domain/'.$newSite->id);
+    }
+
+
 
 }

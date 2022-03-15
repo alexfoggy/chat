@@ -32,11 +32,12 @@ class RecordController extends Controller
 
         $user = UserSite::where('key',$ip)->first();
 
-        if (!$user) {
+        /*if (!$user) {
             $user = new UserSite();
             $user->key = $ip;
+            $user->key = $ip;
             $user->push();
-        }
+        }*/
 
         $site = Sites::where('site_key',$key)->first();
 
@@ -136,13 +137,12 @@ class RecordController extends Controller
 
     public function history(Request $request)
     {
-
         $ip = $request->ip();
         $user = UserSite::where('key',$ip)->first();
+        $site = Sites::where('site_key',$request->input('key'))->first();
 
         if ($user) {
-
-            $responseMsg = msg::where('user_id', $user->id)->orderBy("created_at",'ASC')->get();
+            $responseMsg = msg::where('user_id', $user->id)->where('site_id',$site->id)->orderBy("created_at",'ASC')->get();
                 return response()->json([
                     'status' => true,
                     'userText' => view('messages.historyMsg', get_defined_vars())->render(),
@@ -156,14 +156,33 @@ class RecordController extends Controller
     public function checkIfKeyWorks(Request $request)
     {
         $siteCheck = Sites::where('site_key',$request->input('key'))->first();
-        if($siteCheck)
-        {
+        if($siteCheck) {
+            $domain = str_contains($request->server()['HTTP_ORIGIN'], ':'.$siteCheck->site_route.'/');
+
+            if ($domain == true || $siteCheck->test_status == 1) {
+                $newOrNot = false;
+                $ip = $request->ip();
+                $user = UserSite::where('key', $ip)->first();
+
+                if (!$user) {
+                    $user = new UserSite();
+                    $user->key = $ip;
+                    $user->site_id = $siteCheck->id;
+                    $user->push();
+                    $newOrNot = true;
+                }
+
                 return response()->json([
                     'status' => true,
-                    'name'=>$siteCheck->site_user_name ?? 'Yolly Man',
-                    'role'=>$siteCheck->site_user_role ?? 'Your own assistent',
-                    'image'=>$siteCheck->site_image ?? asset('/images/no-person.svg'),
+                    'user' => $newOrNot,
+                    'name' => $siteCheck->site_user_name ?? 'Yolly Man',
+                    'role' => $siteCheck->site_user_role ?? 'Your own assistent',
+                    'image' => $siteCheck->site_image ?? asset('/images/no-person.svg'),
                 ]);
+            }
+            return response()->json([
+                'status' => false
+            ]);
         }
         return response()->json([
             'status' => false

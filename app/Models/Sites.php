@@ -16,7 +16,8 @@ class Sites extends Model
         'site_route',
         'site_image',
         'site_user_name',
-        'site_role'
+        'site_role',
+        'test_status'
     ];
 
 

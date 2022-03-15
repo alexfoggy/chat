@@ -31,15 +31,21 @@
                     <div class="col-lg-12 my-2">
                         <input class="form-control" name="site_user_role" placeholder="Representor role" type="text">
                     </div><!-- col -->
+
                     <div class="col-lg-12 my-2">
                         <input class="form-control" name="site_route" placeholder="Domain name" type="text">
                     </div><!-- col -->
-                    <div class="col-lg-12 mt-2">
-                        <button class="btn btn-dark w-100">Create</button>
+                    <div class="col-lg-12 mt-2 d-flex justify-content-between">
+                        <button class="btn btn-dark">Create</button>
                     </div>
+
                 </div><!-- row -->
 
             </div>
+        </form>
+        <form action="{{url('cabinet','createNewConnectionTest')}}" method="POST">
+            @csrf
+            <button class="btn btn-indigo">Create test domain</button>
         </form>
     </div>
 

@@ -21,7 +21,7 @@ class UserSite extends Model
     protected $table = 'users_site';
 
     protected $fillable = [
-        'key',
+        'key','site_id'
     ];
 
 }

@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="slim-header-left">
             <h2 class="slim-logo"><a href="{{url('/cabinet')}}">
-                    Unicrowd <span class="tx-warning">{{Cookie::get('lang')}}</span>
+                    Yolly <span class="tx-warning">{{Cookie::get('lang')}}</span>
                     {{--                    {{dd($lang)}}--}}
                 </a></h2>
             <a href="" id="slimSidebarMenu" class="slim-sidebar-menu"><span></span></a>
@@ -108,7 +108,7 @@
 
 <div class="slim-body">
     <div class="slim-sidebar">
-        <label class="sidebar-label">{{trans('vars.navigation',[],$lang)}}</label>
+        <label class="sidebar-label">Menu</label>
 
         <ul class="nav nav-sidebar">
             @if(Auth::user()->type == 'user')
@@ -118,17 +118,14 @@
                             class="icon ion-ios-contact"></i>{{trans('vars.profile',[],$lang)}}</a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="{{url('cabinet/chats')}}" class="sidebar-nav-link"><i
-                            class="icon ion-ios-chatboxes"></i>Чаты</a>
+                    <a href="{{url('cabinet/chats')}}" class="sidebar-nav-link"><i class="icon ion-chatbox-working"></i>Чаты</a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="{{url('cabinet/newsite')}}" class="sidebar-nav-link"><i
-                            class="fa fa-globe"></i>Add domain</a>
+                    <a href="{{url('cabinet/newsite')}}" class="sidebar-nav-link"><i class="fa fa-plus"></i>Add domain</a>
                 </li>
 
                 <li class="sidebar-nav-item">
-                    <a href="{{url('cabinet/domains')}}" class="sidebar-nav-link"><i
-                            class="fa fa-globe"></i>Your domains</a>
+                    <a href="{{url('cabinet/domains')}}" class="sidebar-nav-link"><i class="fa fa-clone"></i>Your domains</a>
                 </li>
                 {{--<li class="sidebar-nav-item">
                     <a href="{{url('cabinet','tasks')}}" class="sidebar-nav-link"><i
@@ -147,7 +144,7 @@
         </ul>
     </div><!-- slim-sidebar -->
 
-    <div class="loading justify-content-center align-items-center position-fixed w-100 h-100"
+  {{--  <div class="loading justify-content-center align-items-center position-fixed w-100 h-100"
          style="display:none;top:0;left:0;background:rgba(255,255,255,.6);z-index:9999;">
         <div class="justify-content-center flex-column align-items-center d-flex w-100 h-100">
             <div class="sk-wave">
@@ -161,7 +158,7 @@
                 Loading...
             </div>
         </div>
-    </div>
+    </div>--}}
 
     <div class="errors-block">
 

@@ -39,6 +39,9 @@
 *::after {
     box-sizing: border-box;
 }
+.loading {
+    display:none;
+}
 .message-loading {
     text-align:center;
     font-size:18px;
@@ -236,7 +239,7 @@ a {
 }
 
 a:hover {
-    color: #115da4;
+    color: #43ab71;
     text-decoration: none;
 }
 
@@ -16843,7 +16846,7 @@ textarea.parsley-success:focus {
 }
 
 .slim-logo a {
-    color: #4E74F8;
+    color: #43ab71;
 }
 
 @media (min-width: 992px) {
@@ -17039,7 +17042,7 @@ textarea.parsley-success:focus {
 .header-notification .indicator {
     width: 7px;
     height: 7px;
-    background-color: #4E74F8;
+    background-color: #43ab71;
     border-radius: 100%;
     position: absolute;
     top: 6px;
@@ -17089,7 +17092,7 @@ textarea.parsley-success:focus {
     width: 45px;
     height: 45px;
     padding: 3px;
-    border: 1px solid #4E74F8;
+    border: 1px solid #43ab71;
     border-radius: 100%;
     object-fit:cover;
 }
@@ -18184,7 +18187,7 @@ textarea.parsley-success:focus {
     margin-bottom: 10px;
     color: #343a40;
     padding-left: 10px;
-    border-left: 4px solid #4662D4;
+    border-left: 4px solid #43ab71;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 18px;
@@ -18412,6 +18415,7 @@ textarea.parsley-success:focus {
 .sidebar-nav-link {
     padding: 0 20px;
     height: 42px;
+    font-size:16px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -18421,8 +18425,8 @@ textarea.parsley-success:focus {
 
 .sidebar-nav-link i {
     font-size: 24px;
-    color: #4E74F8;
-    margin-right: 8px;
+    color: #43ab71;
+    margin-right: 16px;
     width: 20px;
     text-align: center;
 }
@@ -20780,7 +20784,7 @@ textarea.parsley-success:focus {
     bottom: 0;
     left: -1px;
     width: 2px;
-    background-color: #4E74F8;
+    background-color: #43ab71;
     opacity: 0;
     transition: all 0.2s ease-in-out;
 }

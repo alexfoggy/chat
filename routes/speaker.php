@@ -12,6 +12,7 @@ Route::prefix('cabinet')->name('cabinet.')->middleware(['auth', 'verified', 'use
 
     //POST
     Route::post('createNewConnection', 'Controller@createConnection');
+    Route::post('createNewConnectionTest', 'Controller@createConnectionTest');
     Route::get('/edit', 'Admin\SpeakerController@editPage')->name('edit');
     Route::post('/edit', 'Admin\SpeakerController@editSave');
 

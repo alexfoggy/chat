@@ -21,6 +21,7 @@ class CreateSitesTable extends Migration
             $table->string('site_image')->nullable();
             $table->string('site_user_name');
             $table->string('site_user_role')->nullable();
+            $table->enum('test_status',[1,2])->nullable();
             $table->timestamps();
         });
     }
