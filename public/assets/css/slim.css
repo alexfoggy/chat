@@ -4001,7 +4001,7 @@ input[type="button"].btn-block {
     list-style: none;
 }
 .heightFixedChat {
-    height:400px;
+    height:495px;
     overflow:auto;
 }
 .nav-link {
@@ -5201,7 +5201,16 @@ input[type="button"].btn-block {
     display: flex;
     align-items: flex-start;
 }
-
+.media.chatChange.active {
+    border-left: 1px solid #43ab71;
+    background-color: #f1f4f2;
+}
+.messageStatus {
+    display:none;
+}
+.messageStatus.active {
+    display:block;
+}
 .media-body {
     flex: 1;
 }
@@ -20695,6 +20704,7 @@ textarea.parsley-success:focus {
 .container-messages.with-sidebar .message-body {
     position: relative;
     top: 0;
+    height:495px;
     bottom: 0;
     flex: 1;
 }

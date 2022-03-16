@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Chat;
 use App\Models\msg;
 use App\Models\Sites;
 use App\User;
@@ -29,8 +30,9 @@ class RecordController extends Controller
         $ip = $request->ip();
         $msg = $request->input('msg');
         $key = $request->input('key');
+        $site = Sites::where('site_key', $key)->first();
 
-        $user = UserSite::where('key',$ip)->first();
+        $user = UserSite::where('key', $ip)->where('site_id', $site->id)->first();
 
         /*if (!$user) {
             $user = new UserSite();
@@ -39,12 +41,20 @@ class RecordController extends Controller
             $user->push();
         }*/
 
-        $site = Sites::where('site_key',$key)->first();
+        $newChat = Chat::where('user_id', $user->id)->where('site_id', $site->id)->first();
+
+        if (!$newChat) {
+            $newChat = new Chat();
+            $newChat->user_id = $user->id;
+            $newChat->site_id = $site->id;
+            $newChat->save();
+        }
 
         $newMsg = new msg();
 
         $newMsg->msg = $msg;
         $newMsg->site_id = $site->id;
+        $newMsg->chat_id = $newChat->id;
         $newMsg->userStatus = 1;
         $newMsg->user_id = $user->id;
         $newMsg->sendStatus = 0;
@@ -52,9 +62,9 @@ class RecordController extends Controller
         $newMsg->save();
 
         return response()->json([
-            'key'=>$user->key,
-            'status'=> true,
-            'userText'=>view('messages.userMsg',get_defined_vars())->render(),
+            'key' => $user->key,
+            'status' => true,
+            'userText' => view('messages.userMsg', get_defined_vars())->render(),
         ]);
     }
 
@@ -64,18 +74,20 @@ class RecordController extends Controller
         $site_id = $request->input('site_id');
         $user_id = $request->input('user_id');
 
+        $chat = Chat::where('user_id', $user_id)->where('site_id', $site_id)->first();
 
         $one_msg = new msg();
         $one_msg->msg = $msg;
         $one_msg->userStatus = 2;
+        $one_msg->chat_id = $chat->id;
         $one_msg->user_id = $user_id;
         $one_msg->sendStatus = 0;
         $one_msg->site_id = $site_id;
         $one_msg->push();
 
         return response()->json([
-            'status'=> true,
-            'userText'=>view('messages.adminRight',get_defined_vars())->render(),
+            'status' => true,
+            'userText' => view('messages.adminRight', get_defined_vars())->render(),
         ]);
     }
 
@@ -89,16 +101,15 @@ class RecordController extends Controller
 
         if ($user) {
 
-            $responseMsg = msg::where('user_id', $user->id)->where('userStatus', 2)->where('sendStatus',0)->orderBy("created_at",'ASC')->get();
+            $responseMsg = msg::where('user_id', $user->id)->where('userStatus', 2)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
             if (count($responseMsg) > 0) {
-                msg::whereIn('id',$responseMsg->pluck('id'))->update(['sendStatus'=>1]);
+                msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
                 //$responseMsg->update(['sendStatus'=>1]);
                 return response()->json([
                     'status' => true,
                     'userText' => view('messages.assistMsg', get_defined_vars())->render(),
                 ]);
-            }
-            else {
+            } else {
                 return response()->json([
                     'status' => true,
                 ]);
@@ -112,23 +123,40 @@ class RecordController extends Controller
 
     public function checkResponsePanel(Request $request)
     {
-            $userId = $request->input('user_id');
-            $siteId = $request->input('site_id');
 
-            $responseMsg = msg::where('user_id', $userId)->where('site_id',$siteId)->where('userStatus', 1)->where('sendStatus',0)->orderBy("created_at",'ASC')->get();
+        $userId = $request->input('user_id');
+        $siteId = $request->input('site_id');
 
-            if (count($responseMsg) > 0) {
-                msg::whereIn('id',$responseMsg->pluck('id'))->update(['sendStatus'=>1]);
-                return response()->json([
-                    'status' => true,
-                    'userText' => view('messages.adminLeftEach', get_defined_vars())->render(),
-                ]);
+        $responseMsg = msg::where('user_id', $userId)->where('site_id', $siteId)->where('userStatus', 1)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
+
+        $youid = $request->input('yourId');
+
+        $sites = Sites::where('user_id', $youid)->select('id')->get()->toArray();
+        $siteUsers = UserSite::whereIn('site_id', $sites)->select('id')->get()->toArray();
+
+        $newMsgStatus = msg::whereIn('user_id', $siteUsers)->whereIn('site_id', $sites)->where('userStatus', 1)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
+
+        $data = [];
+
+        if (count($newMsgStatus) > 0) {
+            msg::whereIn('id', $newMsgStatus->pluck('id'))->update(['sendStatus' => 1]);
+
+            foreach ($newMsgStatus as $one_msg) {
+                $data[] = [$one_msg->site_id, $one_msg->user_id];
             }
-            else {
-                return response()->json([
-                    'status' => true,
-                ]);
-            }
+        }
+
+        msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
+        return response()->json([
+            'status' => true,
+            'userText' => view('messages.adminLeftEach', get_defined_vars())->render(),
+            'newMsg' => $data
+        ]);
+        /*  else {
+             return response()->json([
+                 'status' => true,
+             ]);
+         }*/
 
         return response()->json([
             'status' => false
@@ -138,15 +166,17 @@ class RecordController extends Controller
     public function history(Request $request)
     {
         $ip = $request->ip();
-        $user = UserSite::where('key',$ip)->first();
-        $site = Sites::where('site_key',$request->input('key'))->first();
+        $user = UserSite::where('key', $ip)->first();
+        $site = Sites::where('site_key', $request->input('key'))->first();
+        $chat = Chat::where('user_id',$user->id)->where('site_id',$site->id)->select('id')->orderBy('created_at','DESC')->first();
+
 
         if ($user) {
-            $responseMsg = msg::where('user_id', $user->id)->where('site_id',$site->id)->orderBy("created_at",'ASC')->get();
-                return response()->json([
-                    'status' => true,
-                    'userText' => view('messages.historyMsg', get_defined_vars())->render(),
-                ]);
+            $responseMsg = msg::where('user_id', $user->id)->where('site_id', $site->id)->where('chat_id',$chat->id)->orderBy("created_at", 'ASC')->get();
+            return response()->json([
+                'status' => true,
+                'userText' => view('messages.historyMsg', get_defined_vars())->render(),
+            ]);
         }
         return response()->json([
             'status' => false
@@ -155,14 +185,14 @@ class RecordController extends Controller
 
     public function checkIfKeyWorks(Request $request)
     {
-        $siteCheck = Sites::where('site_key',$request->input('key'))->first();
-        if($siteCheck) {
-            $domain = str_contains($request->server()['HTTP_ORIGIN'], ':'.$siteCheck->site_route.'/');
+        $siteCheck = Sites::where('site_key', $request->input('key'))->first();
+        if ($siteCheck) {
+            $domain = str_contains($request->server()['HTTP_ORIGIN'], ':' . $siteCheck->site_route . '/');
 
             if ($domain == true || $siteCheck->test_status == 1) {
                 $newOrNot = false;
                 $ip = $request->ip();
-                $user = UserSite::where('key', $ip)->first();
+                $user = UserSite::where('key', $ip)->where('site_id', $siteCheck->id)->first();
 
                 if (!$user) {
                     $user = new UserSite();
@@ -193,9 +223,7 @@ class RecordController extends Controller
     {
         $userId = $request->input('user_id');
         $siteId = $request->input('site_id');
-
         $responseMsg = msg::where('user_id', $userId)->where('site_id', $siteId)->orderBy("created_at", 'ASC')->get();
-
         if (count($responseMsg) > 0) {
             msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
             return response()->json([

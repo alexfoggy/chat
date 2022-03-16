@@ -76,6 +76,7 @@
     height: 384px;
     padding: 8px 6px;
     overflow-y: auto;
+    overflow-x: hidden;
     scroll-behavior: smooth; }
     #chatassist .body-assist .left-q,
     #chatassist .body-assist .right-q {
@@ -97,7 +98,8 @@
       padding: 4px 10px;
       border-radius: 10px;
       font-weight: 300;
-      font-size: 14px; }
+      font-size: 14px;
+      overflow: hidden; }
     #chatassist .body-assist .right-q {
       flex-direction: row-reverse; }
       #chatassist .body-assist .right-q .date-msg {

@@ -10,7 +10,6 @@ class msg extends Model
     protected $table = 'msg';
 
     protected $fillable = [
-        'user_id', 'site_id', 'msg','userStatus'
+        'user_id', 'site_id', 'chat_id','msg','userStatus'
     ];
-
 }

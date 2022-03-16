@@ -21,8 +21,9 @@
 
             <div class="messages-list rounded-10">
                 @foreach($chats as $one_chat)
-                    <a href="javascript:;" data-chat="{{$one_chat->user_id}}" data-user="{{$one_chat->site_id}}"
-                       class="chatChange media @if($loop->first) active @endif">
+                    <a href="javascript:;" data-chat="{{$one_chat->site_id}}" data-user="{{$one_chat->user_id}}"
+                       class="chatChange media @if($loop->first) active @endif"
+                       id="chat-{{$one_chat->site_id}}-{{$one_chat->user_id}}">
                         <div class="media-left">
                             <img src="http://via.placeholder.com/500x500" alt="">
                             <span class="square-10 bg-success"></span>
@@ -30,10 +31,11 @@
                         <div class="media-body">
                             <div class="pr-2">
                                 <h6>@if($one_chat->userStatus == 1) User @else You @endif</h6>
-                                <p>{{$one_chat->msg}}</p>
+                                <p>{{getLast($one_chat->user_id,$one_chat->site_id)}}</p>
                             </div>
                             <div>
                                 <span>{{\Carbon\Carbon::parse($one_chat->created_at)->format('h:m')}}</span>
+                                <div class="rounded-50 bg-success tx-12 tx-white px-2 messageStatus" data-msg="0"></div>
                             </div>
                         </div><!-- media-body -->
                     </a><!-- media -->
@@ -49,12 +51,12 @@
         <div class="messages-right rounded-10">
             <div class="message-header">
                 <a href="" class="message-back"><i class="fa fa-angle-left"></i></a>
-                <div class="media">
-                    <img src="http://via.placeholder.com/500x500" alt="">
-                    <div class="media-body">
-                        <h6>Joyce Chua</h6>
-                    </div><!-- media-body -->
-                </div><!-- media -->
+                {{-- <div class="media">
+                     <img src="http://via.placeholder.com/500x500" alt="">
+                     <div class="media-body">
+                         <h6>Joyce Chua</h6>
+                     </div><!-- media-body -->
+                 </div>--}}
 
             </div><!-- message-header -->
             <div class="message-body position-relative">
@@ -67,7 +69,7 @@
                     </div>
                 </div>
                 <div class="media-list heightFixedChat">
-                    @foreach($chats as $one_msg)
+                    @foreach($firstChat as $one_msg)
                         @if($one_msg->userStatus == 2)
 
                             @include('messages.adminRight')
@@ -144,12 +146,23 @@
         $(document).on('click', '.chatChange', function (e) {
             $('.media-list').fadeOut();
             $('.loading').fadeIn();
+
             e.preventDefault();
             $(document).find('#textChatAssist').val('');
+
             let url = "https://chat/api/changechat";
-            let userid = $(this).attr('data-chat');
-            let siteid = $(this).attr('data-user');
+            let userid = $(this).attr('data-user');
+            let siteid = $(this).attr('data-chat');
+
             $('#sendmsg').attr('data-id', userid);
+            $('#sendmsg').attr('data-site-id', siteid);
+
+            $('.chatChange').removeClass('active');
+            $(this).addClass('active');
+            let statusMsg = $(this).find('.messageStatus');
+            statusMsg.attr('data-msg','0');
+            statusMsg.removeClass('active');
+
             $.ajax({
                 type: 'POST',
                 url: url,
@@ -177,12 +190,23 @@
                 data: {
                     'user_id': userid,
                     'site_id': siteid,
+                    'yourId': {{\Illuminate\Support\Facades\Auth::user()->id}},
                 },
                 success: function (data) {
                     if (data.status == true) {
                         if (data.userText) {
                             $('.media-list').append(data.userText);
                             gobot();
+                        }
+                        if (data.newMsg) {
+                            for (let i = 0; i < data.newMsg.length; i++) {
+                                let block = $('#chat-' + data.newMsg[i][0] + '-' + data.newMsg[i][1]).find('.messageStatus');
+                                block.addClass('active');
+                                let k = parseInt(block.attr('data-msg'));
+                                k++;
+                                block.text(k);
+                                block.attr('data-msg', k);
+                            }
                         }
                     } else {
                         console.log('key is not got');

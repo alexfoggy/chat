@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Events\TaskCounterEvent;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProjectResource;
+use App\Http\Services\NotificationService;
+use App\Http\Services\RecordService;
+use App\Models\Chat;
 use App\Models\Country;
 use App\Models\Dialect;
 use App\Models\Language;
@@ -28,15 +31,21 @@ use Carbon\Carbon;
 class SpeakerController extends Controller
 {
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Project[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Resources\Json\AnonymousResourceCollection
-     */
+    private $recordService;
+
+    public function __construct(RecordService $recordService)
+    {
+        $this->recordService = $recordService;
+
+    }
     public function index(Request $request)
     {
 
         $user = Auth::user();
+
+        $mySites = Sites::where('user_id',$user->id)->select('id')->get()->toArray();
+
+        $lastMonth = UserSite::whereIn('site_id',$mySites)->get();
 
         return view('admin.speaker.index', get_defined_vars());
 
@@ -73,7 +82,11 @@ class SpeakerController extends Controller
 
         $userHasMsg = UserSite::whereIn('site_id',$sites)->select('id')->get();
 
-        $chats = msg::whereIn('site_id',$sites)->whereIn('user_id',$userHasMsg)->groupBy('site_id','user_id')->get();
+        $chatsArray = Chat::whereIn('site_id',$sites)->whereIn('user_id',$userHasMsg)->get();
+
+        $chats = msg::whereIn('chat_id',$chatsArray)->groupBy('chat_id')->get();
+
+        $firstChat = msg::where('chat_id',$chats->first()->chat_id)->get();
 
         return view('admin.speaker.chatList', get_defined_vars());
     }

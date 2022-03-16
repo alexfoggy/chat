@@ -35,7 +35,6 @@ class TaskController extends Controller
     {
         $this->recordService = $recordService;
         $this->notifService = $notifService;
-
     }
 
     /**
@@ -76,7 +75,6 @@ class TaskController extends Controller
         $records = Record::where('task_id', $id)->whereNotNull('duration')->get();
 
         $records_unsaved = Record::where('task_id', $id)->whereNull('duration')->get();
-
 
         return view('admin.speaker.taskDetails', get_defined_vars());
 

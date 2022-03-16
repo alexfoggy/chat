@@ -123,6 +123,7 @@
         height: 384px;
         padding: 8px 6px;
         overflow-y: auto;
+        overflow-x: hidden;
         scroll-behavior: smooth;
 
        
@@ -158,6 +159,7 @@
             border-radius: 10px;
             font-weight: 300;
             font-size: 14px;
+            overflow: hidden;
         }
 
         .right-q {

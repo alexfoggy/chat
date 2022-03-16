@@ -2,11 +2,17 @@
 
 namespace App\Http\Services;
 
+use App\Models\msg;
 use App\Models\Record;
 use Carbon\Carbon;
 
 class RecordService
 {
+
+    public static function getLast($user_id,$task_id){
+        return msg::where('user_id',$user_id)->where('task_id',$task_id)->select('msg')->orderBy('created_at','desc')->first();
+    }
+
     public static function getTime($records)
     {
 
@@ -31,5 +37,6 @@ class RecordService
         if ($records >= $task->length) return true;
         return false;
     }
+
 
 }

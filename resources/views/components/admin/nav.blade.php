@@ -114,8 +114,7 @@
             @if(Auth::user()->type == 'user')
 
                 <li class="sidebar-nav-item">
-                    <a href="{{url('cabinet')}}" class="sidebar-nav-link"><i
-                            class="icon ion-ios-contact"></i>{{trans('vars.profile',[],$lang)}}</a>
+                    <a href="{{url('cabinet')}}" class="sidebar-nav-link"><i class="fa fa-bank"></i>Главная</a>
                 </li>
                 <li class="sidebar-nav-item">
                     <a href="{{url('cabinet/chats')}}" class="sidebar-nav-link"><i class="icon ion-chatbox-working"></i>Чаты</a>
