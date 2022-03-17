@@ -191,6 +191,7 @@ class RecordController extends Controller
             if($domain == false){
                 $domain = str_contains($request->server()['HTTP_ORIGIN'], '.' . $siteCheck->site_route);
             }
+
             if ($domain == true || $siteCheck->test_status == 1) {
                 $newOrNot = false;
                 $ip = $request->ip();
