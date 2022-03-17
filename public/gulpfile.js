@@ -19,12 +19,12 @@ const gulp = require('gulp'),
 
 const path = {
     build: {
-        html: 'public/build/',
-        js: 'public/build/js/',
-        css: 'public/build/css/',
-        img: 'public/build/img/',
-        fonts: 'public/build/fonts/',
-        svg: 'public/build/svg/'
+        html: 'build/',
+        js: 'build/js/',
+        css: 'build/css/',
+        img: 'build/img/',
+        fonts: 'build/fonts/',
+        svg: 'build/svg/'
     },
     src: {
         html: 'src/*.html',
