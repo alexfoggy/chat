@@ -11,7 +11,7 @@ use App\Models\Chat;
 use App\Models\Country;
 use App\Models\Dialect;
 use App\Models\Language;
-use App\Models\msg;
+use App\Models\Msg;
 use App\Models\Project;
 use App\Models\Sites;
 use App\Notifications\NewTaskNotification;
@@ -84,9 +84,9 @@ class SpeakerController extends Controller
 
         $chatsArray = Chat::whereIn('site_id',$sites)->whereIn('user_id',$userHasMsg)->get();
 
-        $chats = msg::whereIn('chat_id',$chatsArray)->groupBy('chat_id')->get();
+        $chats = Msg::whereIn('chat_id',$chatsArray)->groupBy('chat_id')->get();
 
-        $firstChat = msg::where('chat_id',$chats->first()->chat_id)->get();
+        $firstChat = Msg::where('chat_id',$chats->first()->chat_id)->get();
 
         return view('admin.speaker.chatList', get_defined_vars());
     }
