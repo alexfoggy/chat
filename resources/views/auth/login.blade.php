@@ -58,10 +58,9 @@
             </form>
 
         </div><!-- signin-right -->
-        <div class="signin-left"
-             style="background-image: url('{{asset('images/recording-man.jpg')}}');background-size: cover;background-position: right center;">
+        <div class="signin-left bg-gray-900">
             <div class="signin-box tx-white">
-                <h2 class="slim-logo tx-50"><a href="/"><img src="{{asset('images/xcrowds-white.svg')}}" alt="" width="200"></a></h2>
+                <h2 class="slim-logo tx-50"><a href="/"><img src="{{asset('yolly.svg')}}" alt=""></a></h2>
 
                 <p>We are excited to launch our new company and product Slim. After being featured in too many magazines
                     to mention and having created an online stir, we know that ThemePixels is going to be big. We also

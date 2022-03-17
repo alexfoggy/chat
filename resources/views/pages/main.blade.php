@@ -1,22 +1,12 @@
 @extends('layouts.no-header')
 @section('content')
-    <div class="container pt-5">
-        <form class="row" action="{{url('createNewConnection')}}" method="POST">
-            @csrf
 
-            <div class="col-lg-4">
-                <input type="text" name="site_user_name" placeholder="Representor name">
-            </div>
-            <div class="col-lg-4">
-                <input type="text" name="site_user_role" placeholder="Representor role">
-            </div>
-            <div class="col-lg-4">
-                <input type="text" name="site_route" placeholder="Domain name">
-            </div>
-            <div class="col-lg-4">
-            <button>Create</button>
-            </div>
-        </form>
+    <div class="modal-backdrop bg-gray-900 w-100 d-flex justify-content-center align-items-center flex-column">
+        <img src="{{asset('yolly.svg')}}" alt="" class="w-25">
+        <div class="mt-5">
+        <a href="{{url('login')}}" class="btn btn-primary tx-bold mr-1 rounded-5">Login</a>
+        <a href="{{url('register')}}" class="btn bg-white tx-black ml-1 rounded-5">Register</a>
+        </div>
     </div>
 
 
