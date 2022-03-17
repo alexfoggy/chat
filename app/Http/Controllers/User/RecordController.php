@@ -211,7 +211,8 @@ class RecordController extends Controller
                 ]);
             }
             return response()->json([
-                'status' => false
+                'status' => false,
+                'msg'=>'domain is not in list'
             ]);
         }
         return response()->json([
