@@ -50,7 +50,7 @@ class RecordController extends Controller
             $newChat->save();
         }
 
-        $newMsg = new msg();
+        $newMsg = new Msg();
 
         $newMsg->msg = $msg;
         $newMsg->site_id = $site->id;
@@ -76,7 +76,7 @@ class RecordController extends Controller
 
         $chat = Chat::where('user_id', $user_id)->where('site_id', $site_id)->first();
 
-        $one_msg = new msg();
+        $one_msg = new Msg();
         $one_msg->msg = $msg;
         $one_msg->userStatus = 2;
         $one_msg->chat_id = $chat->id;
@@ -101,9 +101,9 @@ class RecordController extends Controller
 
         if ($user) {
 
-            $responseMsg = msg::where('user_id', $user->id)->where('userStatus', 2)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
+            $responseMsg = Msg::where('user_id', $user->id)->where('userStatus', 2)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
             if (count($responseMsg) > 0) {
-                msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
+                Msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
                 //$responseMsg->update(['sendStatus'=>1]);
                 return response()->json([
                     'status' => true,
@@ -127,26 +127,26 @@ class RecordController extends Controller
         $userId = $request->input('user_id');
         $siteId = $request->input('site_id');
 
-        $responseMsg = msg::where('user_id', $userId)->where('site_id', $siteId)->where('userStatus', 1)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
+        $responseMsg = Msg::where('user_id', $userId)->where('site_id', $siteId)->where('userStatus', 1)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
 
         $youid = $request->input('yourId');
 
         $sites = Sites::where('user_id', $youid)->select('id')->get()->toArray();
         $siteUsers = UserSite::whereIn('site_id', $sites)->select('id')->get()->toArray();
 
-        $newMsgStatus = msg::whereIn('user_id', $siteUsers)->whereIn('site_id', $sites)->where('userStatus', 1)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
+        $newMsgStatus = Msg::whereIn('user_id', $siteUsers)->whereIn('site_id', $sites)->where('userStatus', 1)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
 
         $data = [];
 
         if (count($newMsgStatus) > 0) {
-            msg::whereIn('id', $newMsgStatus->pluck('id'))->update(['sendStatus' => 1]);
+            Msg::whereIn('id', $newMsgStatus->pluck('id'))->update(['sendStatus' => 1]);
 
             foreach ($newMsgStatus as $one_msg) {
                 $data[] = [$one_msg->site_id, $one_msg->user_id];
             }
         }
 
-        msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
+        Msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
         return response()->json([
             'status' => true,
             'userText' => view('messages.adminLeftEach', get_defined_vars())->render(),
@@ -172,7 +172,7 @@ class RecordController extends Controller
 
 
         if ($user) {
-            $responseMsg = msg::where('user_id', $user->id)->where('site_id', $site->id)->where('chat_id',$chat->id)->orderBy("created_at", 'ASC')->get();
+            $responseMsg = Msg::where('user_id', $user->id)->where('site_id', $site->id)->where('chat_id',$chat->id)->orderBy("created_at", 'ASC')->get();
             return response()->json([
                 'status' => true,
                 'userText' => view('messages.historyMsg', get_defined_vars())->render(),
@@ -229,7 +229,7 @@ class RecordController extends Controller
         $siteId = $request->input('site_id');
         $responseMsg = msg::where('user_id', $userId)->where('site_id', $siteId)->orderBy("created_at", 'ASC')->get();
         if (count($responseMsg) > 0) {
-            msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
+            Msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
             return response()->json([
                 'status' => true,
                 'userText' => view('messages.adminChatEach', get_defined_vars())->render(),
