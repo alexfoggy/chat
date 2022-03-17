@@ -4,7 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Chat;
-use App\Models\msg;
+use App\Models\Msg;
 use App\Models\Sites;
 use App\User;
 use App\UserSite;
