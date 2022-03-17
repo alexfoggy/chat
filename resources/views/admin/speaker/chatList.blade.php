@@ -123,7 +123,7 @@
             let msg = $(document).find('#textChatAssist').val();
             if (msg != '') {
                 $(document).find('#textChatAssist').val('');
-                let url = "https://chat/api/sendmsgpanel";
+                let url = "https://yolly.pro/api/sendmsgpanel";
                 let userid = $(this).attr('data-id');
                 let siteid = $(this).attr('data-site-id');
                 $.ajax({
@@ -150,7 +150,7 @@
             e.preventDefault();
             $(document).find('#textChatAssist').val('');
 
-            let url = "https://chat/api/changechat";
+            let url = "https://yolly.pro/api/changechat";
             let userid = $(this).attr('data-user');
             let siteid = $(this).attr('data-chat');
 
@@ -183,7 +183,7 @@
         checkAns = setInterval(function () {
             let userid = $('#sendmsg').attr('data-id');
             let siteid = $('#sendmsg').attr('data-site-id');
-            let url = "https://chat/api/checkResponsePanel";
+            let url = "https://yolly.pro/api/checkResponsePanel";
             $.ajax({
                 type: 'POST',
                 url: url,
