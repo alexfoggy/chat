@@ -96,7 +96,6 @@ class RecordController extends Controller
     {
 
         $ip = $request->ip();
-        dd($request);
         $user = UserSite::where('key', $ip)->first();
 
         if ($user) {
@@ -185,6 +184,8 @@ class RecordController extends Controller
 
     public function checkIfKeyWorks(Request $request)
     {
+        dd($request);
+
         $siteCheck = Sites::where('site_key', $request->input('key'))->first();
         if ($siteCheck) {
             $domain = str_contains($request->server()['HTTP_ORIGIN'], '/' . $siteCheck->site_route);
