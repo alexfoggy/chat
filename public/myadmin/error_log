@@ -1,0 +1,1 @@
+[16-Dec-2021 14:39:36 Europe/Chisinau] PHP Fatal error:  Interface 'Twig\TokenParser\TokenParserInterface' not found in /home/hakimovm/gsmshop/m_d_n/vendor/twig/twig/src/TokenParser/AbstractTokenParser.php on line 22
