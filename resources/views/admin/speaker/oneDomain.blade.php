@@ -17,12 +17,12 @@
             <label class="section-label tx-gray-500 mb-5">Start working</label>
             <p class="mb-1">Link this between &lt;head&gt; &lt;/head&gt; tags</p>
             <code class="bg-gray-100 p-2 rounded-5 d-block">
-            &lt;link rel="stylesheet" href="https://www.yolly.pro/cdn/yolly.min.css"&gt;
+            &lt;link rel="stylesheet" href="https://yolly.pro/build/css/main.css"&gt;
             </code>
 
             <p class="mb-1 mt-3">Link it before &lt;/body&gt; tag</p>
             <code class="bg-gray-100 p-2 rounded-5 d-block">
-                &lt;script src="https://www.yolly.pro/cdn/yolly.min.js" data-key="{{$domain->site_key}}" id="chatme" defer&gt;&lt;/script&gt;
+                &lt;script src="https://yolly.pro/build/js/main.js" data-key="{{$domain->site_key}}" id="chatme" defer&gt;&lt;/script&gt;
             </code>
         </div>
     </div>
