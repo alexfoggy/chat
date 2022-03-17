@@ -22,7 +22,7 @@ $(document).on('click', '#sendMessage', function (e) {
     e.preventDefault();
     let msg = $(document).find('#textChatAssist').val();
     $(document).find('#textChatAssist').val('');
-    let url = "http://chat/api/sendmessage";
+    let url = "https://yolly.pro/api/sendmessage";
     key = $('#chatme').attr('data-key');
     $.ajax({
         type: 'POST',
@@ -42,7 +42,7 @@ $(document).on('click', '#sendMessage', function (e) {
 let sitekey = $('#chatme').attr('data-key');
 
 function history() {
-    let url = "http://chat/api/history";
+    let url = "https://yolly.pro/api/history";
     $.ajax({
         type: 'POST',
         url: url,
@@ -62,7 +62,7 @@ function history() {
 
 
 $(document).ready(function () {
-    let url = "http://chat/api/checkme";
+    let url = "https://yolly.pro/api/checkme";
     $.ajax({
         type: 'POST',
         url: url,
@@ -126,7 +126,7 @@ $(document).ready(function () {
                     if (key == '') {
                         key = $('#dataKey').attr('data-key');
                     }
-                    let url = "http://chat/api/checkResponse";
+                    let url = "https://yolly.pro/api/checkResponse";
                     $.ajax({
                         type: 'POST',
                         url: url,
