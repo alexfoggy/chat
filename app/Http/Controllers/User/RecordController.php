@@ -96,7 +96,7 @@ class RecordController extends Controller
     {
 
         $ip = $request->ip();
-
+        dd($request);
         $user = UserSite::where('key', $ip)->first();
 
         if ($user) {
