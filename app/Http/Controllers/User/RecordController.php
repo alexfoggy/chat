@@ -188,7 +188,7 @@ class RecordController extends Controller
         $siteCheck = Sites::where('site_key', $request->input('key'))->first();
         if ($siteCheck) {
             $domain = str_contains($request->server()['HTTP_ORIGIN'], ':' . $siteCheck->site_route . '/');
-
+            dd($domain,$request->server()['HTTP_ORIGIN'],':' . $siteCheck->site_route . '/');
             if ($domain == true || $siteCheck->test_status == 1) {
                 $newOrNot = false;
                 $ip = $request->ip();
