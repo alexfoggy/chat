@@ -100,7 +100,7 @@ class RecordController extends Controller
         if ($user) {
 
             $responseMsg = Msg::where('user_id', $user->id)->where('userStatus', 2)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
-            dd($responseMsg);
+
             if ($responseMsg->isNotEmpty()) {
                 Msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
                 //$responseMsg->update(['sendStatus'=>1]);
@@ -126,7 +126,6 @@ class RecordController extends Controller
         $userId = $request->input('user_id');
         $siteId = $request->input('site_id');
 
-        $responseMsg = Msg::where('user_id', $userId)->where('site_id', $siteId)->where('userStatus', 1)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
 
         $youid = $request->input('yourId');
 
@@ -138,14 +137,12 @@ class RecordController extends Controller
         $data = [];
 
         if (count($newMsgStatus) > 0) {
-            Msg::whereIn('id', $newMsgStatus->pluck('id'))->update(['sendStatus' => 1]);
 
             foreach ($newMsgStatus as $one_msg) {
                 $data[] = [$one_msg->site_id, $one_msg->user_id];
             }
         }
-
-        Msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
+        Msg::whereIn('id', $newMsgStatus->pluck('id'))->update(['sendStatus' => 1]);
         return response()->json([
             'status' => true,
             'userText' => view('messages.adminLeftEach', get_defined_vars())->render(),
