@@ -191,7 +191,7 @@ class RecordController extends Controller
     public function checkIfKeyWorks(Request $request)
     {
         //dd($_SERVER['REMOTE_ADDR'],$_SERVER['HTTP_X_FORWARDED_FOR']);
-        dd($_SERVER['X-Real-IP']);
+        dd($_SERVER[]);
         $siteCheck = Sites::where('site_key', $request->input('key'))->first();
         if ($siteCheck) {
             $domain = str_contains($request->server()['HTTP_ORIGIN'], '/' . $siteCheck->site_route);
