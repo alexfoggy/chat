@@ -134,15 +134,21 @@ class RecordController extends Controller
 
         $newMsgStatus = Msg::whereIn('user_id', $siteUsers)->whereIn('site_id', $sites)->where('userStatus', 1)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
 
+        $responseMsg = Msg::where('user_id', $userId)->where('site_id', $siteId)->where('userStatus', 1)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
+
+        dd($responseMsg);
+
         $data = [];
 
         if (count($newMsgStatus) > 0) {
+            Msg::whereIn('id', $newMsgStatus->pluck('id'))->update(['sendStatus' => 1]);
 
             foreach ($newMsgStatus as $one_msg) {
                 $data[] = [$one_msg->site_id, $one_msg->user_id];
             }
         }
-        Msg::whereIn('id', $newMsgStatus->pluck('id'))->update(['sendStatus' => 1]);
+
+        Msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
         return response()->json([
             'status' => true,
             'userText' => view('messages.adminLeftEach', get_defined_vars())->render(),
