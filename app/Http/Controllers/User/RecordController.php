@@ -147,6 +147,7 @@ class RecordController extends Controller
         }
 
         Msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
+        dd($responseMsg);
         return response()->json([
             'status' => true,
             'userText' => view('messages.adminLeftEach', get_defined_vars())->render(),
