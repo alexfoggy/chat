@@ -169,7 +169,7 @@ class RecordController extends Controller
         $site = Sites::where('site_key', $request->input('key'))->first();
         $chat = Chat::where('user_id',$user->id)->where('site_id',$site->id)->select('id')->orderBy('created_at','DESC')->first();
 
-        dd($chat,$ip);
+        dd($chat,$ip,$site,$user);
 
         if ($user) {
             $responseMsg = Msg::where('user_id', $user->id)->where('site_id', $site->id)->where('chat_id',$chat->id)->orderBy("created_at", 'ASC')->get();
