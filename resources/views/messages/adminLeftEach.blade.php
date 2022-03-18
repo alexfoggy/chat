@@ -1,4 +1,4 @@
-@foreach($newMsgStatus as $one_msg)
+@foreach($responseMsg as $one_msg)
 <div class="media">
     <div class="media-body">
         <div class="msg">
