@@ -97,7 +97,7 @@ class RecordController extends Controller
 
         $ip = $request->ip();
         $user = UserSite::where('key', $ip)->first();
-
+        DD($user);
         if ($user) {
 
             $responseMsg = Msg::where('user_id', $user->id)->where('userStatus', 2)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
