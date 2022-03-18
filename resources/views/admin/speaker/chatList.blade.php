@@ -102,7 +102,7 @@
                     </div><!-- col-8 -->
                     <div class="col-1 col-sm-1 col-xl-1 tx-right">
                         <button class="btn-primary btn d-block w-100 rounded-10" id="sendmsg"
-                                data-id="{{$firstChat->user_id}}" data-site-id="{{$firstChat->site_id}}">Send <i
+                                data-id="{{$firstChat[0]->user_id}}" data-site-id="{{$firstChat[0]->site_id}}">Send <i
                                 class="fa fa-send"></i></button>
                     </div><!-- col-4 -->
                 </form><!-- row -->
