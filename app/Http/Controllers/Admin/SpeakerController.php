@@ -88,7 +88,7 @@ class SpeakerController extends Controller
             $chatsArray = Chat::whereIn('site_id', $sites)->whereIn('user_id', $userHasMsg)->select('id')->get()->toArray();
 
             $chats = Msg::whereIn('chat_id', $chatsArray)->groupBy('chat_id')->get();
-            dd($chats,$chatsArray,$userHasMsg);
+
             $firstChat = Msg::where('chat_id', $chats->first()->chat_id)->get();
         }
         return view('admin.speaker.chatList', get_defined_vars());
