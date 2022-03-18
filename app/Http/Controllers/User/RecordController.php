@@ -136,6 +136,8 @@ class RecordController extends Controller
 
         $responseMsg = Msg::where('user_id', $userId)->where('site_id', $siteId)->where('userStatus', 1)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
 
+        dd($responseMsg);
+
         $data = [];
 
         if (count($newMsgStatus) > 0) {
@@ -147,7 +149,6 @@ class RecordController extends Controller
         Msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
         Msg::whereIn('id', $newMsgStatus->pluck('id'))->update(['sendStatus' => 1]);
 
-        dd($responseMsg);
         return response()->json([
             'status' => true,
             'userText' => view('messages.adminLeftEach', get_defined_vars())->render(),
