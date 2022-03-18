@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "391d7eac649624db570c7198b1c4099c",
+    "content-hash": "37d6a89ffd095cd6f978411c9644acd0",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -1396,6 +1396,54 @@
                 }
             ],
             "time": "2021-12-16T16:49:26+00:00"
+        },
+        {
+            "name": "jamalroger/laraadmin",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jamalroger/lara-admin.git",
+                "reference": "21c543c103f6ca393063da7b8ac90f9c22d4284e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jamalroger/lara-admin/zipball/21c543c103f6ca393063da7b8ac90f9c22d4284e",
+                "reference": "21c543c103f6ca393063da7b8ac90f9c22d4284e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 | ^8.0"
+            },
+            "default-branch": true,
+            "type": "project",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaraAdmin\\LaraAdminServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaraAdmin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "BELHARRADI JAMAL",
+                    "email": "belharradi.j@gmail.com"
+                }
+            ],
+            "description": "install phpadmin on laravel",
+            "support": {
+                "issues": "https://github.com/jamalroger/lara-admin/issues",
+                "source": "https://github.com/jamalroger/lara-admin/tree/main"
+            },
+            "time": "2021-09-25T02:47:42+00:00"
         },
         {
             "name": "laravel/framework",
@@ -9558,7 +9606,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "boyhagemann/waveform": 20
+        "boyhagemann/waveform": 20,
+        "jamalroger/laraadmin": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -9566,5 +9615,5 @@
         "php": "^7.2.5"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.2.0"
 }

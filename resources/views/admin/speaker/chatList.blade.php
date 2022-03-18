@@ -11,7 +11,7 @@
             <strong>{{trans('vars.sorry',[],$lang)}}</strong> {{session('status')}}
         </div>
     @endif
-
+    @if($chats)
     <div class="container container-messages with-sidebar">
         <div class="messages-left">
             <div class="slim-pageheader">
@@ -20,7 +20,8 @@
             </div><!-- slim-pageheader -->
 
             <div class="messages-list rounded-10">
-                @foreach($chats as $one_chat)
+                @if($chats)
+                    @foreach($chats as $one_chat)
                     <a href="javascript:;" data-chat="{{$one_chat->site_id}}" data-user="{{$one_chat->user_id}}"
                        class="chatChange media @if($loop->first) active @endif"
                        id="chat-{{$one_chat->site_id}}-{{$one_chat->user_id}}">
@@ -39,7 +40,8 @@
                             </div>
                         </div><!-- media-body -->
                     </a><!-- media -->
-                @endforeach
+                    @endforeach
+                @endif
 
             </div><!-- messages-list -->
 
@@ -69,7 +71,8 @@
                     </div>
                 </div>
                 <div class="media-list heightFixedChat">
-                    @foreach($firstChat as $one_msg)
+                    @if($firstChat)
+                        @foreach($firstChat as $one_msg)
                         @if($one_msg->userStatus == 2)
 
                             @include('messages.adminRight')
@@ -79,7 +82,8 @@
                             @include('messages.adminLeft')
 
                         @endif
-                    @endforeach
+                        @endforeach
+                    @endif
 
 
                 </div><!-- media-list -->
@@ -98,7 +102,7 @@
                     </div><!-- col-8 -->
                     <div class="col-1 col-sm-1 col-xl-1 tx-right">
                         <button class="btn-primary btn d-block w-100 rounded-10" id="sendmsg"
-                                data-id="{{$one_msg->user_id}}" data-site-id="{{$one_msg->site_id}}">Send <i
+                                data-id="{{$firstChat->user_id}}" data-site-id="{{$firstChat->site_id}}">Send <i
                                 class="fa fa-send"></i></button>
                     </div><!-- col-4 -->
                 </form><!-- row -->
@@ -106,7 +110,11 @@
         </div><!-- messages-right -->
         <div></div>
     </div>
+        @else
 
+        <div class="py-4 bg-gray-100 tx-center rounded-10 tx-20 tx-uppercase tx-primary"> You have no messages</div>
+
+    @endif
 @endsection
 @push('scripts')
     <script>

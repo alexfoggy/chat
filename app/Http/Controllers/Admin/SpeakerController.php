@@ -79,15 +79,18 @@ class SpeakerController extends Controller
         $user = Auth::user();
 
         $sites = Sites::where('user_id',$user->id)->select('id')->get();
+        $chats = '';
+        $firstChat = '';
+        if($sites->isNotEmpty()) {
 
-        $userHasMsg = UserSite::whereIn('site_id',$sites)->select('id')->get();
+            $userHasMsg = UserSite::whereIn('site_id', $sites)->select('id')->get();
 
-        $chatsArray = Chat::whereIn('site_id',$sites)->whereIn('user_id',$userHasMsg)->get();
+            $chatsArray = Chat::whereIn('site_id', $sites)->whereIn('user_id', $userHasMsg)->get();
 
-        $chats = Msg::whereIn('chat_id',$chatsArray)->groupBy('chat_id')->get();
+            $chats = Msg::whereIn('chat_id', $chatsArray)->groupBy('chat_id')->get();
 
-        $firstChat = Msg::where('chat_id',$chats->first()->chat_id)->get();
-
+            $firstChat = Msg::where('chat_id', $chats->first()->chat_id)->get();
+        }
         return view('admin.speaker.chatList', get_defined_vars());
     }
 

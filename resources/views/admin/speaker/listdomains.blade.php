@@ -3,12 +3,12 @@
     {{trans('vars.tasks',[],$lang)}}
 @endpush
 @section('content')
-    @if(session('status'))
-        <div class="alert alert-danger mg-b-0" role="alert">
+    @if (\Session::has('status'))
+        <div class="alert alert-{{\Session::get('status')['type']}}" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">×</span>
             </button>
-            <strong>{{trans('vars.sorry',[],$lang)}}</strong> {{session('status')}}
+            {!! \Session::get('status')['msg'] !!}
         </div>
     @endif
 
