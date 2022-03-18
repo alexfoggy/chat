@@ -97,10 +97,10 @@ class RecordController extends Controller
 
         $ip = $request->ip();
         $user = UserSite::where('key', $ip)->first();
-        DD($user);
         if ($user) {
 
             $responseMsg = Msg::where('user_id', $user->id)->where('userStatus', 2)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
+            dd($responseMsg);
             if (count($responseMsg) > 0) {
                 Msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
                 //$responseMsg->update(['sendStatus'=>1]);
