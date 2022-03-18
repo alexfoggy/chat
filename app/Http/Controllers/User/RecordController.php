@@ -136,8 +136,6 @@ class RecordController extends Controller
 
         $responseMsg = Msg::where('user_id', $userId)->where('site_id', $siteId)->where('userStatus', 1)->where('sendStatus', 0)->orderBy("created_at", 'ASC')->get();
 
-        dd($responseMsg);
-
         $data = [];
 
         if (count($newMsgStatus) > 0) {
