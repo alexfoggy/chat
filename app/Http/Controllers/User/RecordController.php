@@ -139,14 +139,14 @@ class RecordController extends Controller
         $data = [];
 
         if (count($newMsgStatus) > 0) {
-            Msg::whereIn('id', $newMsgStatus->pluck('id'))->update(['sendStatus' => 1]);
-
             foreach ($newMsgStatus as $one_msg) {
                 $data[] = [$one_msg->site_id, $one_msg->user_id];
             }
         }
 
         Msg::whereIn('id', $responseMsg->pluck('id'))->update(['sendStatus' => 1]);
+        Msg::whereIn('id', $newMsgStatus->pluck('id'))->update(['sendStatus' => 1]);
+
         dd($responseMsg);
         return response()->json([
             'status' => true,
