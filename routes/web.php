@@ -18,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PageController@main')->name('main');
 
 
+Route::get('/chanel', function (){
+    broadcast(new \App\Events\TaskStatusChange());
+});
+
+
+
 
 //Route::get('yourkey/{id?}', 'PageController@domainKeyInfo');
 
