@@ -19,7 +19,7 @@ Route::get('/', 'PageController@main')->name('main');
 
 
 Route::get('/chanel', function (){
-    broadcast(new \App\Events\TaskStatusChange());
+    response()->json(['hello'=>'response']);
 });
 
 
