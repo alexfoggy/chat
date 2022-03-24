@@ -257,3 +257,115 @@
     background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
     box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
 }
+
+.openformYolly {
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: #024ab1;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+        padding: 14px 28px;
+    }
+}
+
+.contactFormYollyPopup {
+    display: none;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 999;
+    .plenka {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.4);
+    }
+    .form {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        background-color: #fff;
+        z-index: 2;
+        padding: 20px;
+        border-radius: 6px;
+        max-width: 40%;
+    }
+    .close {
+        position: absolute;
+        left: 100%;
+        bottom: 100%;
+        z-index: 9;
+        cursor: pointer;
+        svg {
+            path {
+                stroke: #fff;
+            }
+        }
+    }
+    .textForm {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .inputs {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        input {
+            width: 49%;
+            margin: 8px 0;
+            padding: 8px 14px;
+            font-size: 14px;
+            border-radius: 4px;
+            border: 1px #ddd solid;
+        }
+        button {
+            width: 100%;
+            background:linear-gradient(45deg,#024ab1,#4c84e6);
+            color: #fff;
+            padding: 10px 20px;
+            border:0;
+            margin-top: 8px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            transition: 0.5s;
+            position: relative;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+    .loader {
+        display: none;
+        animation: loading 2s ease-out infinite;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        svg {
+            path {
+                stroke: #fff;
+            }
+        }
+    }
+}
+.op0 {
+    opacity: 0;
+}
+@keyframes loading {
+    0%{
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+    100% {
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+}

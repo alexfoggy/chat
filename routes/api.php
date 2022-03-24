@@ -15,3 +15,5 @@ Route::post('checkme', 'User\RecordController@checkIfKeyWorks');
 Route::post('changechat', 'User\RecordController@changeChat');
 
 Route::post('history', 'User\RecordController@history');
+
+Route::post('sendform', 'User\RecordController@sendForm');

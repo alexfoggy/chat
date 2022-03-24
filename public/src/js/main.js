@@ -4,179 +4,261 @@
 !function(a){"object"==typeof module&&"object"==typeof module.exports?module.exports=a(jQuery):a(jQuery)}(function(a){var b=function(b){if(this._opt=null,!this._isNotEmpty(b,"url"))throw new Error("Missing argument, example usage: $.simpleWebSocket({ url: 'ws://127.0.0.1:3000' }); ");this._opt=b,this._ws=null,this._reConnectTries=60,this._reConnectDeferred=null,this._dataType=this._prop(this._opt,"dataType","json"),this._listeners=[];var c=this;return this._api=function(){return{connect:function(){return a.extend(c._api,c._reConnect.apply(c,[]))},isConnected:function(a){return a?(a.apply(this,[c._isConnected.apply(c,[])]),c._api):c._isConnected.apply(c,[])},send:function(b){return a.extend(c._api,c._send.apply(c,[b]))},listen:function(b){return a.extend(c._api,c._listenReconnect.apply(c,[b]))},remove:function(a){return c._remove.apply(c,[a]),c._api},removeAll:function(){return c._removeAll.apply(c,[]),c._api},close:function(){return c._close.apply(c,[]),c._reset.apply(c,[]),c._api}}}(),this._api};return b.prototype={_createWebSocket:function(a){var b;if(!(b=a.protocols?void 0!==window.MozWebSocket?new MozWebSocket(a.url,a.protocols):window.WebSocket?new WebSocket(a.url,a.protocols):null:void 0!==window.MozWebSocket?new MozWebSocket(a.url):window.WebSocket?new WebSocket(a.url):null))throw new Error("Error, websocket could not be initialized.");return b},_bindSocketEvents:function(b,c){var d=this;a(b).bind("open",c.open).bind("close",c.close).bind("message",function(a){try{if("function"==typeof c.message)if(d._dataType&&"json"===d._dataType.toLowerCase()){var b=JSON.parse(a.originalEvent.data);c.message.call(this,b)}else if(d._dataType&&"xml"===d._dataType.toLowerCase()){var e=new DOMParser,f=e.parseFromString(a.originalEvent.data,"text/xml");c.message.call(this,f)}else c.message.call(this,a.originalEvent.data)}catch(a){"function"==typeof c.error&&c.error.call(this,a)}}).bind("error",function(a){"function"==typeof c.error&&c.error.call(this,a)})},_webSocket:function(a){var b=this._createWebSocket(a);return this._bindSocketEvents(b,a),b},_getSocketEventHandler:function(a){var b=this;return{open:function(b){var c=this;a&&a.resolve(c)},close:function(b){a&&a.rejectWith(b)},message:function(a){for(var c=0,d=b._listeners.length;c<d;c++)try{b._listeners[c].deferred.notify.apply(b,[a])}catch(a){}},error:function(c){b._ws=null;for(var d=0,e=b._listeners.length;d<e;d++)b._listeners[d].deferred.reject.apply(b,[c]);a&&a.rejectWith.apply(b,[c])}}},_connect:function(){var b=a.Deferred();if(this._ws)if(2===this._ws.readyState||3===this._ws.readyState)this._ws.close();else{if(0===this._ws.readyState)return b.promise();if(1===this._ws.readyState)return b.resolve(this._ws),b.promise()}return this._ws=this._webSocket(a.extend(this._opt,this._getSocketEventHandler(b))),b.promise()},_reset:function(){this._reConnectTries=this._prop(this._opt,"attempts",60),this._reConnectDeferred=a.Deferred()},_close:function(){this._ws&&(this._ws.close(),this._ws=null)},_isConnected:function(){return null!==this._ws&&1===this._ws.readyState},_reConnectTry:function(){var a=this;this._connect().done(function(){a._reConnectDeferred.resolve.apply(a,[a._ws])}).fail(function(b){a._reConnectTries--,a._reConnectTries>0?window.setTimeout(function(){a._reConnect.apply(a,[])},a._prop.apply(a,[a._opt,"timeout",1e4])):a._reConnectDeferred.rejectWith.apply(a,[b])})},_reConnect:function(){var a=this;return this._reConnectDeferred&&"pending"===this._reConnectDeferred.state()||this._reset(),this._ws&&1===this._ws.readyState?this._reConnectDeferred.resolve(this._ws):this._reConnectTry(),a._reConnectDeferred.promise.apply(a,[])},_preparePayload:function(a){return this._opt.dataType&&"text"===this._opt.dataType.toLowerCase()?a:this._opt.dataType&&"xml"===this._opt.dataType.toLowerCase()?a:(this._opt.dataType&&this._opt.dataType.toLowerCase(),JSON.stringify(a))},_send:function(b){var c=this,d=a.Deferred();return function(a){c._reConnect.apply(c,[]).done(function(b){b.send(a),d.resolve.apply(c,[c._api])}).fail(function(a){d.rejectWith.apply(c,[a])})}(this._preparePayload(b)),d.promise()},_indexOfListener:function(a){for(var b=0,c=this._listeners.length;b<c;b++)if(this._listeners[b].listener===a)return b;return-1},_isNotEmpty:function(a,b){return void 0!==a&&null!==a&&void 0!==b&&null!==b&&""!==b&&void 0!==a[b]&&null!==a[b]&&""!==a[b]},_prop:function(a,b,c){return this._isNotEmpty(a,b)?a[b]:c},_listen:function(b){var c=this,d=a.Deferred();return c._reConnect.apply(c,[]).done(function(){d.progress(function(){b.apply(this,arguments)}),c._remove.apply(c,[b]),c._listeners.push({deferred:d,listener:b})}).fail(function(a){d.reject(a)}),d.promise()},_listenReconnect:function(b){var c=a.Deferred(),d=this;return this._listen(b).fail(function(){c.notify(arguments),d._listenReconnect.apply(d,[b])}).done(function(){c.resolve()}),c.promise()},_remove:function(a){var b=this._indexOfListener(a);-1!==b&&(this._listeners[b].deferred.resolve(),this._listeners.splice(b,1))},_removeAll:function(){for(var a=0,b=this._listeners.length;a<b;a++)this._listeners[a].deferred.resolve();this._listeners=[]}},a.extend({simpleWebSocket:function(a){return new b(a)}}),a.simpleWebSocket});
 
 
-var webSocket = $.simpleWebSocket({ url: 'ws://yolly.pro/chanel' });
+let url = "https://chat/api/checkme";
+let key = 'aa129087-1461-4c2b-b249-0d568638a653';
+let session = document.cookie.replace(/(?:(?:^|.*;\s*)sessionYolly\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
-    // reconnected listening
-    webSocket.listen(function(message) {
-        console.log(message.text);
+console.log(session);
+
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: {
+            'key': key,
+            'session':session,
+        },
+        success: function (data) {
+            if(data.status == true){
+            if(data.session == true){
+                document.cookie = "sessionYolly="+data.sessionYolly;
+            }
+        }
+        else {
+            
+            }
+        }
     });
 
-    webSocket.send({ 'text': 'hello' }).done(function() {
-        alert('success');
-    }).fail(function(e) {
-        alert('erorr');
-    });
-
-
-
-let chatasisit = $(document).find('#chatassist');
-let checkAns = '';
-
-$(document).on('click', '.open-close', function () {
-    $('#chatassist').toggleClass('active');
+$(document).on('click','.openformYolly',function(){
+    $('.contactFormYollyPopup').fadeIn();
 })
 
-let key = $('#dataKey').attr('data-key');
+$(document).on('click','.close',function(){
+    $('.contactFormYollyPopup').fadeOut();
+})
 
-function gobot() {
-    //scroll to bottom
-    let d = $('.body-assist');
-    d.scrollTop(d.prop("scrollHeight"));
-
-}
-
-$(document).on('click', '#sendMessage', function (e) {
-
+$(document).on('submit','#formYolly',function(e){
     e.preventDefault();
-    let msg = $(document).find('#textChatAssist').val();
-    $(document).find('#textChatAssist').val('');
-    let url = "https://yolly.pro/api/sendmessage";
-    key = $('#chatme').attr('data-key');
+    $('.sendButton').addClass('op0');
+    $('.loader').fadeIn();
+    
+    let url = "https://chat/api/sendform";
+    let form = $(this).serialize();
+
     $.ajax({
-        type: 'POST',
-        url: url,
-        data: {
-            'msg': msg,
-            'key': key
-        },
-        success: function (data) {
-            $('#dataKey').attr('data-key', data.key);
-            $('.body-assist').append(data.userText);
-            gobot();
-        }
-    });
+                type: 'POST',
+                url: url,
+                data: form,
+                success: function (data) {
+                    console.log(1);
+                }
+            });
+
+    setTimeout(function(){
+        $('.loader').fadeOut();
+        $('.sendButton').text('Was sent')
+        $('.sendButton').removeClass('op0');
+    },4000);
 })
 
-let sitekey = $('#chatme').attr('data-key');
+// $.fn.yollyform = function(options) {
 
-function history() {
-    let url = "https://yolly.pro/api/history";
-    $.ajax({
-        type: 'POST',
-        url: url,
-        data: {
-            'key': sitekey
-        },
-        success: function (data) {
-            if (data.status == true) {
-                $('.body-assist').append(data.userText);
-                gobot();
-            } else {
-                console.log('key is not got');
-            }
-        }
-    });
-}
+//     var settings = $.extend({
+//         // These are the defaults.
+//         color: "#556b2f",
+//         backgroundColor: "white"
+//     }, options );
 
+//     let url = "https://chat/api/checkme";
+//     $.ajax({
+//         type: 'POST',
+//         url: url,
+//         data: {
+//             'key': sitekey
+//         },
+//         success: function (data) {
+//             console.log(1);
+//         }
+//     });
 
-$(document).ready(function () {
-    let url = "https://yolly.pro/api/checkme";
-    $.ajax({
-        type: 'POST',
-        url: url,
-        data: {
-            'key': sitekey
-        },
-        success: function (data) {
-            if (data.status == true) {
-                $('head').append('<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet"> ');
-
-                let appendBlock = '<div id="chatassist">' +
-                    '  <div class="open-close">' +
-                    ' <div class="open-assist">' +
-                    ' <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-                    '   <path d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 11.4876 1.36093 12.891 2 14.1272L1 19L5.8728 18C7.10904 18.6391 8.51237 19 10 19Z" stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
-                    ' </svg>' +
-                    ' </div>' +
-                    ' <div class="close-assist">' +
-                    '<svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-                    ' <path d="M1 1L5 5M1 5L5 1" stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
-                    ' </svg>' +
-                    ' </div>' +
-                    '</div>' +
-                    ' <div class="wrapper">' +
-                    '  <div class="head-assist">' +
-                    ' <div class="image-assist">' +
-                    ' <img src="'+data.image+'" alt="">' +
-                    ' </div>' +
-                    ' <div class="">' +
-                    '<div class="name-assist">' +
-                    data.name +
-                    ' </div>' +
-                    ' <div class="work-assist">' +
-                    data.role +
-                    ' </div>' +
-                    ' </div>' +
-                    ' </div>' +
-                    ' <div class="body-assist">' +
-                    ' </div>' +
-                    ' <div class="foot-assist">' +
-                    ' <form>' +
-                    ' <input name="" id="textChatAssist" placeholder="Text here...">' +
-                    '<button id="sendMessage">' +
-                    '<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-                    '<path d="M2 9L1.39589 3.56299C1.22297 2.0067 2.82469 0.864325 4.23983 1.53465L16.1842 7.19252C17.7093 7.91494 17.7093 10.0851 16.1842 10.8075L4.23983 16.4653C2.82469 17.1357 1.22297 15.9933 1.39589 14.437L2 9ZM2 9H9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
-                    ' </svg>' +
-                    ' </button>' +
-                    '</form>' +
-                    '<div class="corpAuthors">Yolly</div>' +
-                    '</div>' +
-                    '</div>' +
-                    '</div>';
-
-                $('body').append(appendBlock);
-
-                history();
-
-
-
-                checkAns = setInterval(function () {
-                    if (key == '') {
-                        key = $('#dataKey').attr('data-key');
-                    }
-                    let url = "https://yolly.pro/api/checkResponse";
-                    $.ajax({
-                        type: 'POST',
-                        url: url,
-                        data: {
-                            'key': key
-                        },
-                        success: function (data) {
-                            if (data.status == true) {
-                                if (data.userText) {
-                                    $('.body-assist').append(data.userText);
-                                    gobot();
-                                }
-                            } else {
-                                console.log('key is not got');
-                            }
-                        },
-                    });
-                }, 1000);
-
-
-
-            } else {
-                console.log('your sitekey is incorrect');
-            }
-        },
-        error: function () {
-            console.log('some error appeared');
-        }
-    });
+// }
 
 
 
 
+// var webSocket = $.simpleWebSocket({ url: 'ws://yolly.pro/chanel' });
 
-});
+//     // reconnected listening
+//     webSocket.listen(function(message) {
+//         console.log(message.text);
+//     });
+
+//     webSocket.send({ 'text': 'hello' }).done(function() {
+//         alert('success');
+//     }).fail(function(e) {
+//         alert('erorr');
+//     });
+
+
+
+// let chatasisit = $(document).find('#chatassist');
+// let checkAns = '';
+
+// $(document).on('click', '.open-close', function () {
+//     $('#chatassist').toggleClass('active');
+// })
+
+// let key = $('#dataKey').attr('data-key');
+
+// function gobot() {
+//     //scroll to bottom
+//     let d = $('.body-assist');
+//     d.scrollTop(d.prop("scrollHeight"));
+
+// }
+
+// $(document).on('click', '#sendMessage', function (e) {
+
+//     e.preventDefault();
+//     let msg = $(document).find('#textChatAssist').val();
+//     $(document).find('#textChatAssist').val('');
+//     let url = "https://yolly.pro/api/sendmessage";
+//     key = $('#chatme').attr('data-key');
+//     $.ajax({
+//         type: 'POST',
+//         url: url,
+//         data: {
+//             'msg': msg,
+//             'key': key
+//         },
+//         success: function (data) {
+//             $('#dataKey').attr('data-key', data.key);
+//             $('.body-assist').append(data.userText);
+//             gobot();
+//         }
+//     });
+// })
+
+// let sitekey = $('#chatme').attr('data-key');
+
+// function history() {
+//     let url = "https://yolly.pro/api/history";
+//     $.ajax({
+//         type: 'POST',
+//         url: url,
+//         data: {
+//             'key': sitekey
+//         },
+//         success: function (data) {
+//             if (data.status == true) {
+//                 $('.body-assist').append(data.userText);
+//                 gobot();
+//             } else {
+//                 console.log('key is not got');
+//             }
+//         }
+//     });
+// }
+
+
+// $(document).ready(function () {
+//     let url = "https://yolly.pro/api/checkme";
+//     $.ajax({
+//         type: 'POST',
+//         url: url,
+//         data: {
+//             'key': sitekey
+//         },
+//         success: function (data) {
+//             if (data.status == true) {
+//                 $('head').append('<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet"> ');
+
+//                 let appendBlock = '<div id="chatassist">' +
+//                     '  <div class="open-close">' +
+//                     ' <div class="open-assist">' +
+//                     ' <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+//                     '   <path d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 11.4876 1.36093 12.891 2 14.1272L1 19L5.8728 18C7.10904 18.6391 8.51237 19 10 19Z" stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+//                     ' </svg>' +
+//                     ' </div>' +
+//                     ' <div class="close-assist">' +
+//                     '<svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+//                     ' <path d="M1 1L5 5M1 5L5 1" stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+//                     ' </svg>' +
+//                     ' </div>' +
+//                     '</div>' +
+//                     ' <div class="wrapper">' +
+//                     '  <div class="head-assist">' +
+//                     ' <div class="image-assist">' +
+//                     ' <img src="'+data.image+'" alt="">' +
+//                     ' </div>' +
+//                     ' <div class="">' +
+//                     '<div class="name-assist">' +
+//                     data.name +
+//                     ' </div>' +
+//                     ' <div class="work-assist">' +
+//                     data.role +
+//                     ' </div>' +
+//                     ' </div>' +
+//                     ' </div>' +
+//                     ' <div class="body-assist">' +
+//                     ' </div>' +
+//                     ' <div class="foot-assist">' +
+//                     ' <form>' +
+//                     ' <input name="" id="textChatAssist" placeholder="Text here...">' +
+//                     '<button id="sendMessage">' +
+//                     '<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+//                     '<path d="M2 9L1.39589 3.56299C1.22297 2.0067 2.82469 0.864325 4.23983 1.53465L16.1842 7.19252C17.7093 7.91494 17.7093 10.0851 16.1842 10.8075L4.23983 16.4653C2.82469 17.1357 1.22297 15.9933 1.39589 14.437L2 9ZM2 9H9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+//                     ' </svg>' +
+//                     ' </button>' +
+//                     '</form>' +
+//                     '<div class="corpAuthors">Yolly</div>' +
+//                     '</div>' +
+//                     '</div>' +
+//                     '</div>';
+
+//                 $('body').append(appendBlock);
+
+//                 history();
+
+
+
+//                 checkAns = setInterval(function () {
+//                     if (key == '') {
+//                         key = $('#dataKey').attr('data-key');
+//                     }
+//                     let url = "https://yolly.pro/api/checkResponse";
+//                     $.ajax({
+//                         type: 'POST',
+//                         url: url,
+//                         data: {
+//                             'key': key
+//                         },
+//                         success: function (data) {
+//                             if (data.status == true) {
+//                                 if (data.userText) {
+//                                     $('.body-assist').append(data.userText);
+//                                     gobot();
+//                                 }
+//                             } else {
+//                                 console.log('key is not got');
+//                             }
+//                         },
+//                     });
+//                 }, 1000);
+
+
+
+//             } else {
+//                 console.log('your sitekey is incorrect');
+//             }
+//         },
+//         error: function () {
+//             console.log('some error appeared');
+//         }
+//     });
+
+
+
+
+
+// });

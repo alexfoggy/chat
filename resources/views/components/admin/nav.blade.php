@@ -116,13 +116,12 @@
                 <li class="sidebar-nav-item">
                     <a href="{{url('cabinet')}}" class="sidebar-nav-link"><i class="fa fa-bank"></i>Главная</a>
                 </li>
-                <li class="sidebar-nav-item">
+               {{-- <li class="sidebar-nav-item">
                     <a href="{{url('cabinet/chats')}}" class="sidebar-nav-link"><i class="icon ion-chatbox-working"></i>Чаты</a>
-                </li>
+                </li>--}}
                 <li class="sidebar-nav-item">
                     <a href="{{url('cabinet/newsite')}}" class="sidebar-nav-link"><i class="fa fa-plus"></i>Add domain</a>
                 </li>
-
                 <li class="sidebar-nav-item">
                     <a href="{{url('cabinet/domains')}}" class="sidebar-nav-link"><i class="fa fa-clone"></i>Your domains</a>
                 </li>

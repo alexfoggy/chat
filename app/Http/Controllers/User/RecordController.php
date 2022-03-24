@@ -190,8 +190,6 @@ class RecordController extends Controller
 
     public function checkIfKeyWorks(Request $request)
     {
-        //dd($_SERVER['REMOTE_ADDR'],$_SERVER['HTTP_X_FORWARDED_FOR']);
-        //dd($_SERVER);
         $siteCheck = Sites::where('site_key', $request->input('key'))->first();
         if ($siteCheck) {
             $domain = str_contains($request->server()['HTTP_ORIGIN'], '/' . $siteCheck->site_route);
@@ -201,23 +199,27 @@ class RecordController extends Controller
 
             if ($domain == true || $siteCheck->test_status == 1) {
                 $newOrNot = false;
+                $newSession = false;
                 $ip = $request->ip();
-                $user = UserSite::where('key', $ip)->where('site_id', $siteCheck->id)->first();
+                $user = UserSite::where('key', $request->input('session'))->where('site_id', $siteCheck->id)->first();
 
                 if (!$user) {
                     $user = new UserSite();
-                    $user->key = $ip;
+                    $user->key = Uuid::uuid4();
                     $user->site_id = $siteCheck->id;
                     $user->push();
                     $newOrNot = true;
+                    $newSession = true;
                 }
 
                 return response()->json([
                     'status' => true,
+                    'session'=>$newSession,
+                    'sessionYolly'=>$user->key,
                     'user' => $newOrNot,
-                    'name' => $siteCheck->site_user_name ?? 'Yolly Man',
+/*                    'name' => $siteCheck->site_user_name ?? 'Yolly Man',
                     'role' => $siteCheck->site_user_role ?? 'Your own assistent',
-                    'image' => $siteCheck->site_image ?? asset('/images/no-person.svg'),
+                    'image' => $siteCheck->site_image ?? asset('/images/no-person.svg'),*/
                 ]);
             }
             return response()->json([
@@ -250,5 +252,11 @@ class RecordController extends Controller
         return response()->json([
             'status' => false
         ]);
+    }
+
+    public function sendForm (Request $request){
+        $macAddr = exec('getmac');
+        dd($macAddr);
+        dd($request);
     }
 }
