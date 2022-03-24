@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Events\TaskCounterEvent;
+use App\Form;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProjectResource;
 use App\Http\Services\NotificationService;
@@ -23,6 +24,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
 use Ramsey\Uuid\Uuid;
 use function RingCentral\Psr7\str;
@@ -248,28 +250,38 @@ class SpeakerController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Project $project
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request)
+
+    public function creatFormPage(Request $request)
     {
 
 
+        return view('forms.createForm', get_defined_vars());
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\Models\Project $project
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Project $project)
+
+    public function formsForSites()
     {
-        //
+        $sites = Sites::where('user_id',Auth::user()->id)->get();
+
+        return view('forms.listsites',get_defined_vars());
+    }
+
+    public function siteForms($siteId)
+    {
+        $forms = Form::where('site_id',$siteId)->where('user_id',Auth::user()->id)->get();
+
+        return view('forms.siteForms',get_defined_vars());
+    }
+
+    public function createAndSave(Request $request)
+    {
+        $valid = Validator::make($request->all(),
+        [
+            'head'=>'required'
+        ]);
+
+
+        return view('forms.siteForms',get_defined_vars());
     }
 
     public function generateTasks(Request $request)

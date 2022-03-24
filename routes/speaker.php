@@ -9,6 +9,9 @@ Route::prefix('cabinet')->name('cabinet.')->middleware(['auth', 'verified', 'use
     Route::get('/domains', 'Admin\SpeakerController@domainslist');
     Route::get('/domain/{id?}', 'Admin\SpeakerController@oneDomain');
     Route::get('/chats', 'Admin\SpeakerController@chatList');
+    Route::get('/forms', 'Admin\SpeakerController@formsForSites');
+    Route::get('/form/{id?}', 'Admin\SpeakerController@siteForms');
+    Route::get('/createform/{id?}', 'Admin\SpeakerController@creatFormPage');
 
     //POST
     Route::post('createNewConnection', 'Controller@createConnection');
@@ -16,6 +19,7 @@ Route::prefix('cabinet')->name('cabinet.')->middleware(['auth', 'verified', 'use
     Route::post('deletedomain', 'Controller@deleteDomain');
     Route::get('/edit', 'Admin\SpeakerController@editPage')->name('edit');
     Route::post('/edit', 'Admin\SpeakerController@editSave');
+    Route::post('/createandsave', 'Admin\SpeakerController@createAndSave');
 
     Route::get('settings','Admin\SpeakerController@settingsPage');
     Route::get('tasks','Admin\TaskController@speakerTaskList');
