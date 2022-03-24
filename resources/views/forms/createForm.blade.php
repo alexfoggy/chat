@@ -36,7 +36,7 @@
 
         <label class="section-title">Fields</label>
 
-        <div class="row">
+        <div class="row appendPR">
             <div class="col-lg-12 mb-3 d-flex align-items-center">
                 <input class="form-control" placeholder="Placehoder" value="Your name" type="text" name="pr[0]">
                 <span class="btn-danger ml-4 px-2 py-1 rounded delete-field"><i class="fa fa-close"></i></span>
@@ -49,10 +49,14 @@
                 <input class="form-control" placeholder="Placehoder" value="Your Phone" type="text" name="pr[-2]">
                 <span class="btn-danger ml-4 px-2 py-1 rounded delete-field"><i class="fa fa-close"></i></span>
             </div><!-- col -->
-            <div class="col-lg-12">
-                <button type="submit" class="btn btn-primary rounded">Create and save</button>
-            </div>
+
         </div><!-- row -->
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary rounded">Create and save</button>
+                <span type="submit" class="btn btn-indigo rounded newRow"><i class="fa fa-plus mr-1"></i> New row</span>
+            </div>
+        </div>
 
     </form>
 
@@ -65,5 +69,31 @@
         $('.select2').select2({
             minimumResultsForSearch: ''
         });
+
+        let i = -3;
+
+        $('.newRow').on('click',function (){
+
+            let row = ('<div class="col-lg-12 mb-3 d-flex align-items-center">'+
+                '<input class="form-control" placeholder="Placehoder" value="Your Phone" type="text" name="pr['+i+']">'+
+                '<span class="btn-danger ml-4 px-2 py-1 rounded delete-field"><i class="fa fa-close"></i></span></div>');
+
+            $(".appendPR").append(row);
+
+            i--;
+
+        })
+
+        $(document).on('click','.delete-field',function (){
+
+            if($('.appendPR .col-lg-12').length > 3) {
+                $(this).closest('.col-lg-12').remove();
+            }
+            else
+            {
+                alertAppend('minimum 3 fields','danger');
+            }
+        })
+
     </script>
 @endpush
