@@ -27,7 +27,7 @@ let appendBlock = $(settings.append);
     if(appendBlock.length == 1){
         let session = document.cookie.replace(/(?:(?:^|.*;\s*)sessionYolly\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
-    let url = "https://chat/api/checkme";
+    let url = "https://yolly.pro/api/checkme";
     $.ajax({
         type: 'POST',
         url: url,
@@ -68,7 +68,7 @@ $(document).on('submit','#formYolly',function(e){
     $('.sendButton').addClass('op0');
     $('.loader').fadeIn();
     let session = document.cookie.replace(/(?:(?:^|.*;\s*)sessionYolly\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    let url = "https://chat/api/sendform/"+settings.form_key+'/'+session;
+    let url = "https://yolly.pro/api/sendform/"+settings.form_key+'/'+session;
     let form = $(this).serializeArray();
 
     $.ajax({
