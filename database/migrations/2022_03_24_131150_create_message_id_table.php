@@ -17,7 +17,6 @@ class CreateMessageIdTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('site_id');
-            $table->unsignedBigInteger('user_user_id');
             $table->timestamps();
         });
     }

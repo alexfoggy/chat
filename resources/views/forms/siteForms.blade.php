@@ -19,11 +19,11 @@
         <div class="row">
             @if($forms->isNotEmpty())
                 @foreach($forms as $one_form)
-                    <div class="col-2">
-                        <div class="card">
-                            <div class="card-body d-flex align-items-center justify-content-between">
+                    <div class="col-6 mt-4">
+                        <div class="card rounded">
+                            <div class="card-body  py-2 d-flex align-items-center justify-content-between">
                                 <h5 class="card-title tx-dark tx-medium my-0">{{$one_form->head ?? 'Your form'}}</h5>
-                                <a href="{{url('cabinet',['formpage',$one_form->id])}}" class="btn btn-indigo rounded">check
+                                <a href="{{url('cabinet',['oneform',$one_form->site_id,$one_form->id])}}" class="btn btn-indigo rounded">check
                                     form</a>
                             </div>
                         </div><!-- card -->

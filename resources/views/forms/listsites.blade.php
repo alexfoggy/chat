@@ -17,8 +17,8 @@
             @if($sites->isNotEmpty())
             @foreach($sites as $one_site)
             <div class="col-2">
-                <div class="card">
-                    <div class="card-body d-flex align-items-center justify-content-between">
+                <div class="card rounded">
+                    <div class="card-body py-3 d-flex align-items-center justify-content-between">
                         <h5 class="card-title tx-dark tx-medium my-0">{{$one_site->site_route}}</h5>
                         <a href="{{url('cabinet',['form',$one_site->id])}}" class="btn btn-indigo rounded">Forms</a>
                     </div>

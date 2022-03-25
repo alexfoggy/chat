@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\ProjectResource;
 use App\Http\Services\NotificationService;
 use App\Http\Services\RecordService;
+use App\Input;
 use App\Models\Chat;
 use App\Models\Country;
 use App\Models\Dialect;
@@ -217,21 +218,6 @@ class SpeakerController extends Controller
         ]);
     }
 
-    public function create()
-    {
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return string
-     */
-    public function store(Request $request)
-    {
-
-    }
 
     public function settingsPage(Project $project)
     {
@@ -239,22 +225,9 @@ class SpeakerController extends Controller
         return view('admin.speaker.settings', get_defined_vars());
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Models\Project $project
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Project $project)
-    {
-        //
-    }
-
 
     public function creatFormPage(Request $request)
     {
-
-
         return view('forms.createForm', get_defined_vars());
     }
 
@@ -262,6 +235,9 @@ class SpeakerController extends Controller
     public function formsForSites()
     {
         $sites = Sites::where('user_id',Auth::user()->id)->get();
+        if(!$sites){
+            return redirect('cabinet');
+        }
 
         return view('forms.listsites',get_defined_vars());
     }
@@ -269,7 +245,9 @@ class SpeakerController extends Controller
     public function siteForms($siteId)
     {
         $forms = Form::where('site_id',$siteId)->where('user_id',Auth::user()->id)->get();
-
+        if(!$forms){
+            return redirect('cabinet');
+        }
         return view('forms.siteForms',get_defined_vars());
     }
 
@@ -277,15 +255,71 @@ class SpeakerController extends Controller
     {
         $valid = Validator::make($request->all(),
         [
-            'head'=>'required'
+            'head'=>'required',
+            'type'=>'required',
+        ]);
+
+        if($valid->fails()){
+            return redirect('cabinet/createform/'.$request->input('id'))->with('status',['msg'=>'You missed some fields','type'=>'danger']);
+        }
+
+        $pq = $request->input('pq');
+
+        if(count($pq) < 2){
+            return redirect('cabinet/createform/'.$request->input('id'))->with('status',['msg'=>'You missed some fields','type'=>'danger']);
+        }
+
+        $form = Form::updateOrCreate([
+            'user_id'=>Auth::user()->id,
+            'site_id'=>$request->input('id'),
+            'id'=>$request->input('form_id'),
+
+        ],[
+            'type'=>$request->input('type'),
+            'formkey'=>$request->input('formkey') ?? Uuid::uuid4(),
+            'head'=>$request->input('head'),
         ]);
 
 
-        return view('forms.siteForms',get_defined_vars());
+        foreach($request->input('pr') as $key => $value){
+            $newInput = Input::updateOrCreate([
+                'id'=>$key,
+                'form_id'=>$form->id,
+            ],[
+                'type'=>$pq[$key],
+                'placeholder'=>$value
+            ]);
+        }
+
+
+       return redirect('cabinet/oneform/'.$form->site_id.'/'.$form->id)->with('status',['msg'=>'Successfully created','type'=>'success']);
     }
 
-    public function generateTasks(Request $request)
+    public function oneForm(Request $request,$site_id,$form_id)
     {
+        $form = Form::where('site_id',$site_id)->where('id',$form_id)->first();
+        $inputs = Input::where('form_id',$form_id)->get();
 
+        if(!$form || !$inputs){
+           return redirect('cabinet');
+        }
+
+        return view('forms.oneForm',get_defined_vars());
+    }
+
+    public function formDelete(Request $request,$id)
+    {
+        Form::where('id',$id)->delete();
+        Input::where('form_id',$id)->delete();
+
+        return response()->json(['status'=>true]);
+    }
+
+    public function editFormPage(Request $request,$form_id)
+    {
+        $form = Form::where('user_id',Auth::user()->id)->where('id',$form_id)->first();
+        $inputs = Input::where('form_id',$form_id)->get();
+
+        return view('forms.editForm',get_defined_vars());
     }
 }

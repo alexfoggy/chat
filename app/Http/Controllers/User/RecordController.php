@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Form;
 use App\Http\Controllers\Controller;
+use App\Input;
+use App\Message;
+use App\Message_id;
 use App\Models\Chat;
 use App\Models\Msg;
 use App\Models\Sites;
@@ -190,7 +194,7 @@ class RecordController extends Controller
 
     public function checkIfKeyWorks(Request $request)
     {
-        $siteCheck = Sites::where('site_key', $request->input('key'))->first();
+        $siteCheck = Sites::where('site_key', $request->input('site_key'))->first();
         if ($siteCheck) {
             $domain = str_contains($request->server()['HTTP_ORIGIN'], '/' . $siteCheck->site_route);
             if($domain == false){
@@ -200,6 +204,9 @@ class RecordController extends Controller
             if ($domain == true || $siteCheck->test_status == 1) {
                 $newOrNot = false;
                 $newSession = false;
+                $formStatus = false;
+                $formBlock = '';
+
                 $ip = $request->ip();
                 $user = UserSite::where('key', $request->input('session'))->where('site_id', $siteCheck->id)->first();
 
@@ -212,14 +219,23 @@ class RecordController extends Controller
                     $newSession = true;
                 }
 
+
+                $form = Form::where('formkey', $request->input('form_key'))->first();
+
+                if ($form) {
+                    $inputs = Input::where('form_id', $form->id)->get();
+                    $formStatus = true;
+                    $formBlock = view('forms.formRender', ['inputs' => $inputs, 'form' => $form])->render();
+                }
+
                 return response()->json([
                     'status' => true,
-                    'session'=>$newSession,
-                    'sessionYolly'=>$user->key,
+                    'session' => $newSession,
+                    'sessionYolly' => $user->key,
                     'user' => $newOrNot,
-/*                    'name' => $siteCheck->site_user_name ?? 'Yolly Man',
-                    'role' => $siteCheck->site_user_role ?? 'Your own assistent',
-                    'image' => $siteCheck->site_image ?? asset('/images/no-person.svg'),*/
+                    'form' => $formBlock,
+                    'form_status' => $formStatus,
+
                 ]);
             }
             return response()->json([
@@ -254,9 +270,43 @@ class RecordController extends Controller
         ]);
     }
 
-    public function sendForm (Request $request){
-        $macAddr = exec('getmac');
-        dd($macAddr);
-        dd($request);
+    public function sendForm(Request $request, $formkey, $session)
+    {
+
+        $messages = $request->input('form');
+
+
+        $user = UserSite::where('key', $session)->first();
+
+        $newMsgMain = new Message_id();
+
+        $newMsgMain->user_id = $user->id;
+        $newMsgMain->site_id = $user->site_id;
+
+        $newMsgMain->push();
+
+        $form = Form::where('formkey', $formkey)->first();
+
+        if ($form) {
+
+            foreach ($messages as $msg) {
+                if (Input::where('form_id', $form->id)->where('id', $msg['name'])->first()) {
+
+                    $newMsg = new Message();
+
+                    $newMsg->message_id = $newMsgMain->id;
+                    $newMsg->input_id = $msg['name'];
+                    $newMsg->msg_value = $msg['value'];
+
+                    $newMsg->save();
+                }
+                else {
+                    return response()->json(['status'=>false]);
+                }
+            }
+            return response()->json(['status'=>true]);
+        }
+        return response()->json(['status'=>false]);
+
     }
 }

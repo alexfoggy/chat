@@ -9,15 +9,16 @@
 
 @endpush
 @section('content')
-    @if(session('status'))
-        <div class="alert alert-danger mg-b-0" role="alert">
+    @if (\Session::has('status'))
+        <div class="alert alert-{{\Session::get('status')['type']}}" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">×</span>
             </button>
-            <strong>{{trans('vars.sorry',[],$lang)}}</strong> {{session('status')}}
+            {!! \Session::get('status')['msg'] !!}
         </div>
     @endif
-    <form action="{{url('cabinet',['createandsave'])}}" class="section-wrapper">
+    <form action="{{url('cabinet',['createandsave']).'?id='.request()->segment(3)}}" class="section-wrapper" method="POST">
+        @csrf
         <label class="section-title">Create form</label>
         <p class="mg-b-20 mg-sm-b-40"></p>
 
@@ -27,6 +28,7 @@
             </div><!-- col -->
             <div class="col-lg-6">
                 <select name="type" id="" class="select2 w-100">
+                    <option value=""></option>
                     <option value="popup">Popup</option>
                     <option value="static">Static</option>
                 </select>
@@ -39,14 +41,26 @@
         <div class="row appendPR">
             <div class="col-lg-12 mb-3 d-flex align-items-center">
                 <input class="form-control" placeholder="Placehoder" value="Your name" type="text" name="pr[0]">
+                <select name="pq[0]" id="" class="select2 w-100">
+                    <option value="req">Required</option>
+                    <option value="miss">Not required</option>
+                </select>
                 <span class="btn-danger ml-4 px-2 py-1 rounded delete-field"><i class="fa fa-close"></i></span>
             </div><!-- col -->
             <div class="col-lg-12 mb-3 d-flex align-items-center">
                 <input class="form-control" placeholder="Placehoder" value="Your email" type="text" name="pr[-1]">
+                <select name="pq[-1]" id="" class="select2 w-100">
+                    <option value="req">Required</option>
+                    <option value="miss">Not required</option>
+                </select>
                 <span class="btn-danger ml-4 px-2 py-1 rounded delete-field"><i class="fa fa-close"></i></span>
             </div><!-- col -->
             <div class="col-lg-12 mb-3 d-flex align-items-center">
                 <input class="form-control" placeholder="Placehoder" value="Your Phone" type="text" name="pr[-2]">
+                <select name="pq[-2]" id="" class="select2 w-100">
+                    <option value="req">Required</option>
+                    <option value="miss">Not required</option>
+                </select>
                 <span class="btn-danger ml-4 px-2 py-1 rounded delete-field"><i class="fa fa-close"></i></span>
             </div><!-- col -->
 
@@ -76,9 +90,14 @@
 
             let row = ('<div class="col-lg-12 mb-3 d-flex align-items-center">'+
                 '<input class="form-control" placeholder="Placehoder" value="Your Phone" type="text" name="pr['+i+']">'+
+                '<select name="pq['+i+']" id="" class="select2 w-100"><option value="req">Required</option><option value="miss">Not required</option></select>'+
                 '<span class="btn-danger ml-4 px-2 py-1 rounded delete-field"><i class="fa fa-close"></i></span></div>');
 
             $(".appendPR").append(row);
+
+            $('.select2').select2({
+                minimumResultsForSearch: ''
+            });
 
             i--;
 

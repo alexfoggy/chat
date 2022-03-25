@@ -8,5 +8,5 @@ class Form extends Model
 {
     protected $table = 'form';
 
-    protected $fillable = ['user_id','site_id','head','type'];
+    protected $fillable = ['user_id','site_id','formkey','head','type'];
 }

@@ -126,7 +126,7 @@
                     <a href="{{url('cabinet/domains')}}" class="sidebar-nav-link"><i class="fa fa-clone"></i>Your domains</a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="{{url('cabinet/forms')}}" class="sidebar-nav-link"><i class="fa fa-clone"></i>Forms</a>
+                    <a href="{{url('cabinet/forms')}}" class="sidebar-nav-link"><i class="icon ion-filing"></i>Forms</a>
                 </li>
                 {{--<li class="sidebar-nav-item">
                     <a href="{{url('cabinet','tasks')}}" class="sidebar-nav-link"><i
