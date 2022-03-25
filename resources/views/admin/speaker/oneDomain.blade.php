@@ -67,14 +67,12 @@
             <code class="bg-gray-100 p-2 rounded-5 d-block">
 
                 &lt;script&gt;
-                <pre>
-                $(window).yollyform({
+                <pre class="">$(window).yollyform({
                     site_key: "site key",
                     form_key: "form key",
                     append:'#block', // div where appear form
                     type:'static', // type or static or popup
-                });
-                </pre>
+                });</pre>
                 &lt;/script&gt;
             </code>
         </div>
