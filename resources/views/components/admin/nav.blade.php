@@ -128,6 +128,9 @@
                 <li class="sidebar-nav-item">
                     <a href="{{url('cabinet/forms')}}" class="sidebar-nav-link"><i class="icon ion-filing"></i>Forms</a>
                 </li>
+                <li class="sidebar-nav-item">
+                    <a href="{{url('cabinet/feedbacks')}}" class="sidebar-nav-link"><i class="fa fa-envelope-o"></i>Feedbacks</a>
+                </li>
                 {{--<li class="sidebar-nav-item">
                     <a href="{{url('cabinet','tasks')}}" class="sidebar-nav-link"><i
                             class="icon icon ion-filing"></i>{{trans('vars.tasks',[],$lang)}}</a>

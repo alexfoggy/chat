@@ -353,7 +353,7 @@
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr style="border-bottom: 1px #d4d8df solid;">
                             <td class="logo" style="text-align: center;">
-                                <h1><a href="#">Unicrowd.ai</a></h1>
+                                <h1><a href="#">Yolly.pro</a></h1>
                             </td>
                         </tr>
                     </table>
@@ -410,7 +410,7 @@
             </tr>
             <tr>
                 <td class="bg_light" style="text-align: center;">
-                    <p>Unicrowd.ai team part of <a href="www.polilingua.com">Polilingua.com</a> </p>
+                    <p>Yolly.pro</p>
                 </td>
             </tr>
             </tbody></table>

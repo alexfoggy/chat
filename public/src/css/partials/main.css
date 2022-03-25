@@ -174,8 +174,9 @@
   position: fixed;
   right: 0;
   bottom: 0;
-  background-color: #024ab1;
+  background: linear-gradient(45deg, #024ab1, #4c84e6);
   color: #fff;
+  border-radius: 6px 0 0 0;
   padding: 10px 20px;
   cursor: pointer;
   transition: 0.4s; }
@@ -204,7 +205,8 @@
     z-index: 2;
     padding: 20px;
     border-radius: 6px;
-    max-width: 40%; }
+    max-width: 40%;
+    min-width: 40%; }
   .contactFormYollyPopup .close {
     position: absolute;
     left: 100%;
@@ -213,10 +215,6 @@
     cursor: pointer; }
     .contactFormYollyPopup .close svg path {
       stroke: #fff; }
-  .contactFormYollyPopup .textForm {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px; }
   .contactFormYollyPopup .inputs {
     display: flex;
     align-items: center;
@@ -229,28 +227,6 @@
       font-size: 14px;
       border-radius: 4px;
       border: 1px #ddd solid; }
-    .contactFormYollyPopup .inputs button {
-      width: 100%;
-      background: linear-gradient(45deg, #024ab1, #4c84e6);
-      color: #fff;
-      padding: 10px 20px;
-      border: 0;
-      margin-top: 8px;
-      border-radius: 6px;
-      text-transform: uppercase;
-      transition: 0.5s;
-      position: relative; }
-      .contactFormYollyPopup .inputs button:hover {
-        opacity: 0.7; }
-  .contactFormYollyPopup .loader {
-    display: none;
-    animation: loading 2s ease-out infinite;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); }
-    .contactFormYollyPopup .loader svg path {
-      stroke: #fff; }
 
 .op0 {
   opacity: 0; }
@@ -260,3 +236,63 @@
     transform: translate(-50%, -50%) rotate(0deg); }
   100% {
     transform: translate(-50%, -50%) rotate(360deg); } }
+
+.contactFormYollyPopup button, #chatYollyStatic button {
+  width: 100%;
+  background: linear-gradient(45deg, #024ab1, #4c84e6);
+  color: #fff;
+  padding: 10px 20px;
+  border: 0;
+  margin-top: 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  position: relative; }
+  .contactFormYollyPopup button:hover, #chatYollyStatic button:hover {
+    opacity: 0.7; }
+
+.contactFormYollyPopup .loader, #chatYollyStatic .loader {
+  display: none;
+  animation: loading 2s ease-out infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+  .contactFormYollyPopup .loader svg path, #chatYollyStatic .loader svg path {
+    stroke: #fff; }
+
+.contactFormYollyPopup .headYolly, #chatYollyStatic .headYolly {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  transition: 0.5s; }
+  .contactFormYollyPopup .headYolly.active, #chatYollyStatic .headYolly.active {
+    color: #43ab71;
+    text-align: center;
+    margin-bottom: 0; }
+
+#chatYollyStatic {
+  max-width: 1024px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px #ddd solid;
+  border-radius: 6px; }
+  #chatYollyStatic .w-100 {
+    width: 100% !important; }
+  #chatYollyStatic .half-w {
+    width: 49%; }
+    #chatYollyStatic .half-w input {
+      width: 100%;
+      margin: 8px 0;
+      padding: 8px 14px;
+      font-size: 14px;
+      border-radius: 4px;
+      border: 1px #ddd solid; }
+    #chatYollyStatic .half-w p {
+      margin-bottom: 0;
+      font-size: 14px; }
+  #chatYollyStatic .YollyRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; }

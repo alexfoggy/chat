@@ -11,12 +11,12 @@
                       stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
-        <div class="textForm">
+        <div class="headYolly">
             {{$form->head}}
         </div>
         <form action="###" id="formYolly" class="inputs">
             @foreach($inputs as $one_inp)
-            <input type="text" placeholder="{{$one_inp->placeholder}}" name="{{$one_inp->id}}" @if($one_inp->type == 'req') required @endif>
+            <input  @if($loop->last) @if(!(count($inputs) % 2) == 0) class="w-100" @endif @endif type="text" placeholder="{{$one_inp->placeholder}}" name="{{$one_inp->id}}" @if($one_inp->type == 'req') required @endif>
             @endforeach
             <button type="submit"><span class="sendButton">Send</span>
                 <div class="loader">

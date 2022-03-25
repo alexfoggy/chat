@@ -11,6 +11,14 @@ $.fn.yollyform = function(options) {
         site_key: "4f5179df-f8ac-4b50-b79e-40852a239d39",
         form_key: "ea604317-2d20-4ce0-9acf-e887bb68976a",
         append:'#yollyform',
+        type:'static',
+        successFunction:function(){
+            $('#formYolly input').val(' ');
+            $('#formYolly').slideUp();
+            $('.headYolly').addClass('active');
+            $('.headYolly').text(settings.successMessage);
+        },
+        successMessage:'Thank you, we will contact you',
     }, options );
 
 
@@ -27,6 +35,8 @@ let appendBlock = $(settings.append);
             'site_key':settings.site_key,
             'form_key':settings.form_key,
             'session':session,
+            'type':settings.type,
+
         },
         success: function (data) {
             if(data.session == true){
@@ -66,24 +76,18 @@ $(document).on('submit','#formYolly',function(e){
                 url: url,
                 data: {'form':form},
                 success: function (data) {
-                    console.log(1);
+                    if(data.status == true){
+                        $('.loader').fadeOut();
+                        $('.sendButton').text('Was sent')
+                        $('.sendButton').removeClass('op0');
+                        settings.successFunction.call();
+                    }
                 }
             });
-
-    setTimeout(function(){
-        $('.loader').fadeOut();
-        $('.sendButton').text('Was sent')
-        $('.sendButton').removeClass('op0');
-    },4000);
 })
-
-
 
 }
 
-$(window).yollyform({
-    append:'#block',
-});
 
 
 

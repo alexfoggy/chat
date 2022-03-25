@@ -14,6 +14,7 @@ Route::prefix('cabinet')->name('cabinet.')->middleware(['auth', 'verified', 'use
     Route::get('/oneform/{site_id?}/{form_id?}', 'Admin\SpeakerController@oneForm');
     Route::get('/createform/{id?}', 'Admin\SpeakerController@creatFormPage');
     Route::get('/editform/{id?}', 'Admin\SpeakerController@editFormPage');
+    Route::get('/feedbacks/', 'Admin\SpeakerController@feedbackList');
 
     //POST
     Route::post('createNewConnection', 'Controller@createConnection');

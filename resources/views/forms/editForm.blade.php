@@ -40,6 +40,7 @@
         <div class="row appendPR">
             @foreach($inputs as $one_inp)
                 <div class="col-lg-12 mb-3 d-flex align-items-center">
+                    <span class="px-2 py-1 bg-indigo h-100 d-flex align-items-center tx-white"><i class="icon ion-arrow-move"></i></span>
                     <input class="form-control" placeholder="Placehoder" value="{{$one_inp->placeholder}}"type="text" name="pr[{{$one_inp->id}}]">
                     <select name="pq[{{$one_inp->id}}]" id="" class="select2 w-100" >
                         <option value="req" @if($one_inp->type == 'req') checked @endif>Required</option>
@@ -63,8 +64,13 @@
 @endsection
 @push('scripts')
     <script src="{{asset('assets/js/select2/js/select2.full.min.js')}}"></script>
-
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script>
+
+        $( function() {
+            $( ".appendPR" ).sortable();
+        } );
+
         $('.select2').select2({
             minimumResultsForSearch: ''
         });

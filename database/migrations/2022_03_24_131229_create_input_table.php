@@ -19,6 +19,7 @@ class CreateInputTable extends Migration
             $table->enum('type',['miss','req']);
             $table->string('placeholder');
             $table->string('title')->nullable();
+            $table->integer('position');
             $table->timestamps();
         });
     }

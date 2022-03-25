@@ -17,6 +17,7 @@ use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Ramsey\Uuid\Uuid;
 
@@ -223,9 +224,14 @@ class RecordController extends Controller
                 $form = Form::where('formkey', $request->input('form_key'))->first();
 
                 if ($form) {
-                    $inputs = Input::where('form_id', $form->id)->get();
+                    $inputs = Input::where('form_id', $form->id)->orderBy('position','asc')->get();
                     $formStatus = true;
-                    $formBlock = view('forms.formRender', ['inputs' => $inputs, 'form' => $form])->render();
+                    if($request->input('type') == 'static'){
+                        $formBlock = view('forms.formRenderStatic', ['inputs' => $inputs, 'form' => $form])->render();
+                    }
+                    else {
+                        $formBlock = view('forms.formRender', ['inputs' => $inputs, 'form' => $form])->render();
+                    }
                 }
 
                 return response()->json([
@@ -275,7 +281,6 @@ class RecordController extends Controller
 
         $messages = $request->input('form');
 
-
         $user = UserSite::where('key', $session)->first();
 
         $newMsgMain = new Message_id();
@@ -304,6 +309,15 @@ class RecordController extends Controller
                     return response()->json(['status'=>false]);
                 }
             }
+            $site = Sites::where('id',$user->site_id)->first();
+            $userHost = User::where('id',$site->user_id)->first();
+            $feedbackList = Message_id::where('id',$newMsgMain->id)->with('children')->first();
+
+            Mail::send('mailForms.newFeedback', ['user' => $userHost,'site'=>$site,'messages'=>$feedbackList], function ($m) use ($userHost) {
+                $m->to($userHost->email, $userHost->first_name)->subject("You got new message from you website");
+            });
+
+
             return response()->json(['status'=>true]);
         }
         return response()->json(['status'=>false]);

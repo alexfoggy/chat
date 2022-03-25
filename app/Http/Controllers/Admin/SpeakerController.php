@@ -9,6 +9,8 @@ use App\Http\Resources\ProjectResource;
 use App\Http\Services\NotificationService;
 use App\Http\Services\RecordService;
 use App\Input;
+use App\Message;
+use App\Message_id;
 use App\Models\Chat;
 use App\Models\Country;
 use App\Models\Dialect;
@@ -281,16 +283,18 @@ class SpeakerController extends Controller
         ]);
 
 
+        $i = 0;
         foreach($request->input('pr') as $key => $value){
             $newInput = Input::updateOrCreate([
                 'id'=>$key,
                 'form_id'=>$form->id,
             ],[
                 'type'=>$pq[$key],
-                'placeholder'=>$value
+                'placeholder'=>$value,
+                'position'=>$i,
             ]);
+            $i++;
         }
-
 
        return redirect('cabinet/oneform/'.$form->site_id.'/'.$form->id)->with('status',['msg'=>'Successfully created','type'=>'success']);
     }
@@ -321,5 +325,13 @@ class SpeakerController extends Controller
         $inputs = Input::where('form_id',$form_id)->get();
 
         return view('forms.editForm',get_defined_vars());
+    }
+
+    public function feedbackList(Request $request)
+    {
+        $sites = Sites::where('user_id',Auth::user()->id)->select('id')->get()->toArray();
+        $feedbackList = Message_id::whereIn('site_id',$sites)->with('children')->get();
+
+        return view('forms.feedbackList',get_defined_vars());
     }
 }
