@@ -67,7 +67,7 @@
             <code class="bg-gray-100 p-2 rounded-5 d-block">
 
                 &lt;script&gt;
-                <pre class="">
+                <pre class="tx-danger">
                 $(window).yollyform({
                     site_key: "site key",
                     form_key: "form key",
