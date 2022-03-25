@@ -69,7 +69,7 @@
                 &lt;script&gt;
                 <pre class="tx-danger">
                 $(window).yollyform({
-                    site_key: "site key",
+                    site_key: "{{$domain->site_key}}",
                     form_key: "form key",
                     append:'#block', // div where appear form
                     type:'static', // type or static or popup
