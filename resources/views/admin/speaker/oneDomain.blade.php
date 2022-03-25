@@ -12,7 +12,7 @@
         </div>
     @endif
 
-    <div class="section-wrapper mg-t-20">
+   {{-- <div class="section-wrapper mg-t-20">
         <form class="invoice-notes" action="{{url('cabinet','createNewConnection')}}?id={{$domain->id}}" method="POST" enctype="multipart/form-data">
             @csrf
             <label class="section-label tx-gray-500 mb-5">Chat settings</label>
@@ -38,17 +38,17 @@
                                for="customFile">{{trans('vars.choose_avatar',[],$lang)}}</label>
                     </div>
                 </div>
-               {{-- <div class="col-lg-3">
+               --}}{{-- <div class="col-lg-3">
                     <span>Representor name</span>
                     <input class="form-control" name="site_route" placeholder="Domain name" type="text">
-                </div>--}}
+                </div>--}}{{--
                 <div class="col-lg-12 mt-4">
                     <button class="btn btn-primary w-100">Save changes</button>
                 </div>
             </div>
 
         </form>
-    </div>
+    </div>--}}
 
 
     <div class="section-wrapper mg-t-20">
@@ -61,7 +61,21 @@
 
             <p class="mb-1 mt-3">Link it before &lt;/body&gt; tag</p>
             <code class="bg-gray-100 p-2 rounded-5 d-block">
-                &lt;script src="https://yolly.pro/build/js/main.js" data-key="{{$domain->site_key}}" id="chatme" defer&gt;&lt;/script&gt;
+                &lt;script src="https://yolly.pro/build/js/main.js"&gt;&lt;/script&gt;
+            </code>
+
+            <code class="bg-gray-100 p-2 rounded-5 d-block">
+
+                &lt;script&gt;
+
+                $(window).yollyform({
+                site_key: "site key",
+                form_key: "form key",
+                append:'#block', // div where appear form
+                type:'static', // type or static or popup
+                });
+
+                &lt;/script&gt;
             </code>
         </div>
     </div>
