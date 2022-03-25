@@ -11,7 +11,6 @@ $.fn.yollyform = function(options) {
         site_key: "4f5179df-f8ac-4b50-b79e-40852a239d39",
         form_key: "ea604317-2d20-4ce0-9acf-e887bb68976a",
         append:'#yollyform',
-        type:'static',
         successFunction:function(){
             $('#formYolly input').val(' ');
             $('#formYolly').slideUp();

@@ -226,7 +226,7 @@ class RecordController extends Controller
                 if ($form) {
                     $inputs = Input::where('form_id', $form->id)->orderBy('position','asc')->get();
                     $formStatus = true;
-                    if($request->input('type') == 'static'){
+                    if($form->type == 'static'){
                         $formBlock = view('forms.formRenderStatic', ['inputs' => $inputs, 'form' => $form])->render();
                     }
                     else {

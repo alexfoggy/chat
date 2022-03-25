@@ -44,7 +44,7 @@
 
         <div class="row appendPR">
             @foreach($inputs as $one_inp)
-            <div class="col-lg-12 mb-3 d-flex align-items-center">
+            <div class="col-lg-12 mb-3 d-flex align-items-center flex-wrap">
                 <input class="form-control" placeholder="Placehoder" value="{{$one_inp->placeholder}}" readonly type="text" name="pr[{{$one_inp->id}}]">
                 <select name="pq[{{$one_inp->id}}]" id="" class="select2 w-100" disabled>
                     <option value="req" @if($one_inp->type == 'req') checked @endif>Required</option>

@@ -21,8 +21,11 @@
                 @foreach($forms as $one_form)
                     <div class="col-lg-6 mt-4">
                         <div class="card rounded">
-                            <div class="card-body  py-2 d-flex align-items-center justify-content-between">
+                            <div class="card-body flex-wrap py-2 d-flex justify-content-between">
+                                <div class="">
                                 <h5 class="card-title tx-dark tx-medium my-0">{{$one_form->head ?? 'Your form'}}</h5>
+                                <h6 class="tx-12 tx-warning">Form key: {{$one_form->formkey}}</h6>
+                                </div>
                                 <a href="{{url('cabinet',['oneform',$one_form->site_id,$one_form->id])}}" class="btn btn-indigo rounded">check
                                     form</a>
                             </div>
