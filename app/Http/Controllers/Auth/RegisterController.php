@@ -77,7 +77,6 @@ class RegisterController extends Controller
             'type'=>'user'
 
         ]);
-
         return $user;
     }
 }
