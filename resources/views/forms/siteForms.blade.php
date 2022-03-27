@@ -21,7 +21,7 @@
                 @foreach($forms as $one_form)
                     <div class="col-lg-6 mt-4">
                         <div class="card rounded">
-                            <div class="card-body flex-wrap py-2 d-flex justify-content-between">
+                            <div class="card-body flex-wrap py-3 d-flex justify-content-between align-items-center">
                                 <div class="">
                                 <h5 class="card-title tx-dark tx-medium my-0 mb-2">{{$one_form->head ?? 'Your form'}}</h5>
                                 <h6 class="tx-12mb-0">Form key: <span class="tx-warning">{{$one_form->formkey}}</span></h6>

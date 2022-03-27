@@ -280,6 +280,7 @@ class SpeakerController extends Controller
             'type'=>$request->input('type'),
             'formkey'=>$request->input('formkey') ?? Uuid::uuid4(),
             'head'=>$request->input('head'),
+            'popup_head'=>$request->input('popup-head'),
         ]);
 
 

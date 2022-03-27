@@ -27,10 +27,12 @@
                 <input class="form-control" placeholder="Form head" type="text" value="{{$form->head ?? ''}}" name="head">
             </div><!-- col -->
             <div class="col-lg-6">
-                <select name="type" id="" class="select2 w-100">
-                    <option value="popup" @if($form->type == 'popup') checked @endif>Popup</option>
-                    <option value="static" @if($form->type == 'static') checked @endif>Static</option>
+                <select name="type" id="" class="select2 w-100 select-action" data-select="popup" data-appear="popupHead">
+                    <option>No selected</option>
+                    <option value="popup" @if($form->type == 'popup') selected @endif>Popup</option>
+                    <option value="static" @if($form->type == 'static') selected @endif>Static</option>
                 </select>
+                <input type="text" name="popup-head" class="form-control mt-2 popupHead" placeholder="{{$form->popup_head}}">
             </div><!-- col -->
 
         </div><!-- row -->
@@ -67,74 +69,7 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script>
 
-        $( function() {
-            $( ".appendPR" ).sortable();
-        } );
-
-        $('.select2').select2({
-            minimumResultsForSearch: ''
-        });
-
-        let i = -3;
-
-        $('.newRow').on('click',function (){
-
-            let row = ('<div class="col-lg-12 mb-3 d-flex align-items-center">'+
-                '<input class="form-control" placeholder="Placehoder" value="Your Phone" type="text" name="pr['+i+']">'+
-                '<select name="pq['+i+']" id="" class="select2 w-100"><option value="req">Required</option><option value="miss">Not required</option></select>'+
-                '<span class="btn-danger ml-4 px-2 py-1 rounded delete-field"><i class="fa fa-close"></i></span></div>');
-
-            $(".appendPR").append(row);
-
-            $('.select2').select2({
-                minimumResultsForSearch: ''
-            });
-
-            i--;
-
-        })
-
-        $(document).on('click','.delete-field',function (){
-
-            if($('.appendPR .col-lg-12').length > 3) {
-
-                let id = $(this).attr('data-id');
-
-                if(id) {
-
-                    let apr = confirm('Are you sure ?');
-
-                    if (apr == true) {
-
-                        let $this = $(this);
-
-                        $.ajaxSetup({
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            }
-                        });
-                        $.ajax({
-                            type: 'POST',
-                            url: '/cabinet/inputdelete/' + id,
-                            success: function (response) {
-                                if (response.status == true) {
-                                    $this.closest('.col-lg-12').remove();
-                                } else {
-                                    alertAppend(response.msg, 'danger');
-                                }
-                            }
-                        });
-                    }
-                }
-                else {
-                    $(this).closest('.col-lg-12').remove();
-                }
-            }
-            else
-            {
-                alertAppend('minimum 3 fields','danger');
-            }
-        })
+        start();
 
     </script>
 @endpush

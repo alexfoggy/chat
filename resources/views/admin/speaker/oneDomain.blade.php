@@ -89,7 +89,7 @@
     <div class="section-wrapper mg-t-20 border-danger" id="deleteDomain">
         <form class="invoice-notes" action="{{url('cabinet','deletedomain')}}?id={{$domain->id}}" method="POST">
             @csrf
-            <label class="section-label tx-gray-500 mb-5">Delete account</label>
+            <label class="section-label tx-gray-500 mb-5">Delete website</label>
             <div class="row">
                 <div class="col-lg-12">
                     <span class="tx-16">Site domain name: <span class="tx-bold tx-warning">{{$domain->site_route}}</span></span>

@@ -18,6 +18,7 @@ class CreateFormTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('site_id');
             $table->string('head');
+            $table->string('popup_head')->nullable();
             $table->string('formkey');
             $table->enum('type',['popup','static']);
             $table->timestamps();

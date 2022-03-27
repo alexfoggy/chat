@@ -25,12 +25,12 @@
                 <p class="mg-b-20 mg-sm-b-40">Fill it.</p>
 
                 <div class="row">
-                    <div class="col-lg-12 my-2">
-                        <input class="form-control" name="site_user_name" placeholder="Representor name" type="text">
-                    </div><!-- col -->
-                    <div class="col-lg-12 my-2">
-                        <input class="form-control" name="site_user_role" placeholder="Representor role" type="text">
-                    </div><!-- col -->
+{{--                    --}}{{--<div class="col-lg-12 my-2">--}}
+{{--                        <input class="form-control" name="site_user_name" placeholder="Representor name" type="text">--}}
+{{--                    </div><!-- col -->--}}
+{{--                    <div class="col-lg-12 my-2">--}}
+{{--                        <input class="form-control" name="site_user_role" placeholder="Representor role" type="text">--}}
+{{--                    </div><!-- col -->--}}
 
                     <div class="col-lg-12 my-2">
                         <input class="form-control" name="site_route" placeholder="Domain name" type="text">

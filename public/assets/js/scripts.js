@@ -100,3 +100,103 @@ $('.lang-change').on('click', function () {
 
 })
 
+$(document).on('change', '.select-action', function () {
+    let select = $(this).attr('data-select');
+    let appear = $(this).attr('data-appear');
+
+    if (select == $(this).val()) {
+        $('.' + appear).show();
+    } else {
+        $('.' + appear).hide();
+    }
+})
+
+
+function start(){
+    $( function() {
+        $( ".appendPR" ).sortable();
+    } );
+
+
+    $('.select2').select2({
+        minimumResultsForSearch: ''
+    });
+}
+
+
+
+let i = -3;
+
+$('.newRow').on('click',function (){
+
+    let row = ('<div class="col-lg-12 mb-3 d-flex align-items-center">'+
+        '<span class="px-2 py-1 bg-indigo h-100 d-flex align-items-center tx-white"><i class="icon ion-arrow-move"></i></span>'+
+        '<input class="form-control" placeholder="Placehoder" value="Your value" type="text" name="pr['+i+']">'+
+        '<select name="pq['+i+']" id="" class="select2 w-100"><option value="req">Required</option><option value="miss">Not required</option></select>'+
+        '<span class="btn-danger ml-4 px-2 py-1 rounded delete-field"><i class="fa fa-close"></i></span></div>');
+
+    $(".appendPR").append(row);
+
+    start();
+
+    i--;
+
+})
+
+$(document).on('click','.delete-field',function (){
+
+    if($('.appendPR .col-lg-12').length > 3) {
+
+        let id = $(this).attr('data-id');
+
+        if(id) {
+
+            let apr = confirm('Are you sure ?');
+
+            if (apr == true) {
+
+                let $this = $(this);
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: '/cabinet/inputdelete/' + id,
+                    success: function (response) {
+                        if (response.status == true) {
+                            $this.closest('.col-lg-12').remove();
+                        } else {
+                            alertAppend(response.msg, 'danger');
+                        }
+                    }
+                });
+            }
+        }
+        else {
+            $(this).closest('.col-lg-12').remove();
+        }
+    }
+    else
+    {
+        alertAppend('minimum 3 fields','danger');
+    }
+})
+
+$(document).ready(function () {
+
+    let selects = $('.select-action');
+
+    selects.each(function () {
+        let select = $(this).attr('data-select');
+        let appear = $(this).attr('data-appear');
+
+        if (select == $(this).val()) {
+            $('.' + appear).show();
+        } else {
+            $('.' + appear).hide();
+        }
+    })
+})
