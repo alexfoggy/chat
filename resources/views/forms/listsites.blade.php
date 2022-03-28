@@ -17,6 +17,7 @@
             <div class="card-header">
                 <h6 class="slim-card-title">Your domains</h6>
             </div><!-- card-header -->
+            @if($sites->isNotEmpty())
             <div class="table-responsive">
                 <table class="table mg-b-0 tx-13">
                     <thead>
@@ -29,7 +30,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @if($sites->isNotEmpty())
+
                         @foreach($sites as $one_site)
                     <tr>
                         <td>
@@ -46,15 +47,16 @@
                         </td>
                     </tr>
                         @endforeach
-                    @else
-                        <p class="col-lg-12">You have no websites added</p>
-                        <div class="col-lg-12">
-                            <a href="{{url('cabinet/newsite')}}" class="btn btn-primary">Add website</a>
-                        </div>
-                        @endif
+
                     </tbody>
                 </table>
             </div><!-- table-responsive -->
+            @else
+                <p class="col-lg-12">You have no websites added</p>
+                <div class="col-lg-12">
+                    <a href="{{url('cabinet/newsite')}}" class="btn btn-primary">Add website</a>
+                </div>
+            @endif
         </div>
     </div>
 

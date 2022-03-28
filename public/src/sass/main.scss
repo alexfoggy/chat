@@ -227,6 +227,7 @@
                 width: 50px;
                 background-color: #43ab71;
                 border: 0;
+                cursor: pointer;
             }
         }
     }
@@ -325,6 +326,7 @@
             font-size: 14px;
             border-radius: 4px;
             border: 1px #ddd solid;
+            box-sizing: border-box;
         }
    
     }
@@ -396,6 +398,7 @@
     .half-w {
         width: 49%;
         input {
+            box-sizing: border-box;
             width: 100%;
             margin: 8px 0;
             padding: 8px 14px;

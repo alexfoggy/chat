@@ -1,5 +1,5 @@
 <div class="openformYolly">
-    Contact us
+    {{$form->popup_head}}
 </div>
 
 <div class="contactFormYollyPopup">
