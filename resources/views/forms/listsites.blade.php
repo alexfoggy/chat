@@ -38,7 +38,7 @@
                                 {{$one_site->site_route}}
                             </a>
                         </td>
-                        <td>d430350a-907f-4b8f-a61d-dc7ec6d7fe35</td>
+                        <td>{{$one_site->site_key}}</td>
 
                         <td class="tx-center"><span class="square-8 bg-success mg-r-5 rounded-circle"></span> </td>
                         <td class="tx-center">Forms count</td>
