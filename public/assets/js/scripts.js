@@ -223,4 +223,4 @@ $(document).on('click','.delete-it',function () {
             }
         });
     }
-}
+});
