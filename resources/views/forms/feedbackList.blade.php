@@ -30,7 +30,7 @@
                     @foreach($one_message->children as $one_inp)
                     <li class="list-group-item">
                         <p class="mg-b-0 d-flex align-items-center justify-content-between">
-                            <strong class="tx-inverse tx-medium">{{$one_inp->input->placeholder}}:</strong>
+                            <strong class="tx-inverse tx-medium">@if($one_inp->input){{$one_inp->input->placeholder}}@endif:</strong>
                             <span class="text-muted">{{$one_inp->msg_value}}</span></p>
                     </li>
                     @endforeach
