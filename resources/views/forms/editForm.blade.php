@@ -76,5 +76,28 @@
 
         start();
 
+
+        $(document).on('click','.delete-it',function () {
+            let apr = confirm('Are you sure ?');
+            if (apr == true) {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: '/cabinet/formdelete/{{$form->id}}',
+                    success: function (response) {
+                        if (response.status == true) {
+                            location.reload();
+                        } else {
+                            alertAppend(response.msg, 'danger');
+                        }
+                    }
+                });
+            }
+        });
+
     </script>
 @endpush
