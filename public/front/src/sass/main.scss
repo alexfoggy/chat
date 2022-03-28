@@ -456,11 +456,13 @@ body {
     .text-block {
         padding: 20px;
     }
+    .main-screen {
+        .col-lg-7,.col-lg-5 {
+            height: 100vh;
+        }
+    }
     .mob-rev {
         flex-direction: column-reverse;
-        .col-lg-7,.col-lg-5 {
-            height: 50vh;
-        }
     }
 }
 
