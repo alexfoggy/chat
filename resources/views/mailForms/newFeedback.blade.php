@@ -2,12 +2,12 @@
 
 
 @section('content')
-<tr>
+<tr style="width:100%">
     <td>
         <h2>Hello dear {{$user->first_name}}</h2>
     </td>
 </tr>
-<tr>
+<tr style="width:100%">
     <td>
         <p>You got new message from you website</p>
     </td>
