@@ -266,6 +266,7 @@ class SpeakerController extends Controller
         }
 
         $pq = $request->input('pq');
+        $valid = $request->input('valid');
 
         if(count($pq) < 2){
             return redirect('cabinet/createform/'.$request->input('id'))->with('status',['msg'=>'You missed some fields','type'=>'danger']);
@@ -293,6 +294,7 @@ class SpeakerController extends Controller
                 'type'=>$pq[$key],
                 'placeholder'=>$value,
                 'position'=>$i,
+                'valid'=>$valid[$key],
             ]);
             $i++;
         }

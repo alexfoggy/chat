@@ -88,6 +88,20 @@ $(document).on('submit','#formYolly',function(e){
 }
 
 
+// number valid 
+
+    $(document).on('keydown','.number_only',function () {
+        var isValid = false;
+        var regex = /^[0-9-+()]*$/;
+        isValid = regex.test($(this).val());
+        if(isValid){
+        $(this).parent().append('<div class="error">error</div>');
+        }
+        else {
+            $(this).parent().find('.error').remove();
+        }
+        return isValid;
+    });
 
 
 // let url = "https://chat/api/checkme";

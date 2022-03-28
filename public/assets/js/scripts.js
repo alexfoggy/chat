@@ -118,9 +118,7 @@ function start(){
     } );
 
 
-    $('.select2').select2({
-        minimumResultsForSearch: ''
-    });
+    $('.select2').select2();
 }
 
 
@@ -132,14 +130,18 @@ $('.newRow').on('click',function (){
     let row = ('<div class="col-lg-12 mb-3 d-flex align-items-center">'+
         '<span class="px-2 py-1 bg-indigo h-100 d-flex align-items-center tx-white"><i class="icon ion-arrow-move"></i></span>'+
         '<input class="form-control" placeholder="Placehoder" value="Your value" type="text" name="pr['+i+']">'+
-        '<select name="pq['+i+']" id="" class="select2 w-100"><option value="req">Required</option><option value="miss">Not required</option></select>'+
+        '<select name="valid['+i+']" id="" class="select2 w-25">'+
+            '<option value="text">Text</option>'+
+            '<option value="number">Number</option>'+
+            '<option value="email">Email</option>'+
+        '</select>'+
+        '<select name="pq['+i+']" id="" class="select2 w-25"><option value="req">Required</option><option value="miss">Not required</option></select>'+
         '<span class="btn-danger ml-4 px-2 py-1 rounded delete-field"><i class="fa fa-close"></i></span></div>');
 
     $(".appendPR").append(row);
 
-    start();
-
     i--;
+    start();
 
 })
 

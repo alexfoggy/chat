@@ -44,6 +44,11 @@
                 <div class="col-lg-12 mb-3 d-flex align-items-center">
                     <span class="px-2 py-1 bg-indigo h-100 d-flex align-items-center tx-white"><i class="icon ion-arrow-move"></i></span>
                     <input class="form-control" placeholder="Placehoder" value="{{$one_inp->placeholder}}"type="text" name="pr[{{$one_inp->id}}]">
+                    <select name="valid[{{$one_inp->id}}]" id="" class="select2 w-25">
+                        <option value="text" @if($one_inp->valid == 'text') selected @endif>Text</option>
+                        <option value="number" @if($one_inp->valid == 'number') selected @endif>Number</option>
+                        <option value="email" @if($one_inp->valid == 'email') selected @endif>Email</option>
+                    </select>
                     <select name="pq[{{$one_inp->id}}]" id="" class="select2 w-100" >
                         <option value="req" @if($one_inp->type == 'req') checked @endif>Required</option>
                         <option value="miss" @if($one_inp->type == 'miss') checked @endif>Not required</option>

@@ -52,8 +52,8 @@
                 </table>
             </div><!-- table-responsive -->
             @else
-                <p class="col-lg-12">You have no websites added</p>
-                <div class="col-lg-12">
+                <p class="col-lg-12 mt-2 mb-2">You have no websites added</p>
+                <div class="col-lg-12 mb-2">
                     <a href="{{url('cabinet/newsite')}}" class="btn btn-primary">Add website</a>
                 </div>
             @endif

@@ -63,7 +63,9 @@
             <code class="bg-gray-100 p-2 rounded-5 d-block">
                 &lt;script src="https://yolly.pro/build/js/main.js"&gt;&lt;/script&gt;
             </code>
-
+            <code class="bg-gray-100 p-2 rounded-5 d-block">
+                &lt;div id='yolly'&gt;    &lt;/div&gt;
+            </code>
             <code class="bg-gray-100 p-2 rounded-5 d-block">
 
                 &lt;script&gt;
@@ -71,8 +73,7 @@
                 $(window).yollyform({
                     site_key: "{{$domain->site_key}}",
                     form_key: "form key",
-                    append:'#block', // div where appear form
-                    type:'static', // type or static or popup
+                    append:'#yolly', // div where appear form
                 });</pre>
                 &lt;/script&gt;
             </code>

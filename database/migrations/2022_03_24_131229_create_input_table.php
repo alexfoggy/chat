@@ -18,6 +18,7 @@ class CreateInputTable extends Migration
             $table->unsignedBigInteger('form_id');
             $table->enum('type',['miss','req']);
             $table->string('placeholder');
+            $table->enum('valid',['text','number','email']);
             $table->string('title')->nullable();
             $table->integer('position');
             $table->timestamps();
