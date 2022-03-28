@@ -240,7 +240,7 @@
     transform: translate(-50%, -50%) rotate(360deg); } }
 
 .contactFormYollyPopup .w-100, #chatYollyStatic .w-100 {
-  width: 100%; }
+  width: 100% !important; }
 
 .contactFormYollyPopup button, #chatYollyStatic button {
   width: 100%;
