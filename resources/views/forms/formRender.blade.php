@@ -11,7 +11,7 @@
                       stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
-        <div class="H">
+        <div class="headYolly">
             {{$form->head}}
         </div>
         <form action="###" id="formYolly" class="inputs">

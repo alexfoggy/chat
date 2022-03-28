@@ -345,6 +345,9 @@
 }
 
 .contactFormYollyPopup , #chatYollyStatic {
+    .w-100 {
+        width: 100%;
+    }
     button {
         width: 100%;
         background:linear-gradient(45deg,#024ab1,#4c84e6);
