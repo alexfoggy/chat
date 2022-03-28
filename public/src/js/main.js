@@ -12,10 +12,10 @@ $.fn.yollyform = function(options) {
         form_key: "",
         append:'#yollyform',
         successFunction:function(){
-            $('#formYolly input').val(' ');
-            $('#formYolly').slideUp();
-            $('.headYolly').addClass('active');
-            $('.headYolly').text(settings.successMessage);
+            $(settings.append+' #formYolly input').val(' ');
+            $(settings.append+' #formYolly').slideUp();
+            $(settings.append+' .headYolly').addClass('active');
+            $(settings.append+' .headYolly').text(settings.successMessage);
         },
         successMessage:'Thank you, we will contact you',
     }, options );
@@ -40,9 +40,7 @@ let appendBlock = $(settings.append);
         success: function (data) {
             if(data.session == true){
                 document.cookie = "sessionYolly="+data.sessionYolly;
-            
             }
-
             if(data.form_status == true){
                 appendBlock.append(data.form);
             }
@@ -86,22 +84,6 @@ $(document).on('submit','#formYolly',function(e){
 })
 
 }
-
-
-// number valid 
-
-    $(document).on('keydown','.number_only',function () {
-        var isValid = false;
-        var regex = /^[0-9-+()]*$/;
-        isValid = regex.test($(this).val());
-        if(isValid){
-        $(this).parent().append('<div class="error">error</div>');
-        }
-        else {
-            $(this).parent().find('.error').remove();
-        }
-        return 0;
-    });
 
 
 // let url = "https://chat/api/checkme";

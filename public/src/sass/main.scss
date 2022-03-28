@@ -277,9 +277,10 @@
 
 .contactFormYollyPopup {
     display: none;
-    font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 100vh;
+    left: 0;
+    top: 0;
     position: fixed;
     z-index: 999;
     .plenka {
@@ -345,6 +346,8 @@
 }
 
 .contactFormYollyPopup , #chatYollyStatic {
+    font-family: 'Poppins', sans-serif;
+
     .w-100 {
         width: 100% !important;
     }

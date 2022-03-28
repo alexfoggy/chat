@@ -1,18 +1,26 @@
   <div id="fixed-overlay"></div>
 
-<div id="block"></div>
+  <div id="block"></div>
+
+  <div id="static"></div>
   
   <script src="https://yolly.pro/build/js/main.js"></script>
   <script>
-  
-                  $(window).yollyform({
-                      site_key: "3505341b-bde7-480a-aa25-16991067adda",
-                      form_key: "5a84eb44-ed9a-4b4a-9c2a-1c12799c0fd0",
-                      append:'#block', // div where appear form
-                  });
-  
-  </script> 
+      $(window).yollyform({
+          site_key: "3505341b-bde7-480a-aa25-16991067adda",
+          form_key: "5a84eb44-ed9a-4b4a-9c2a-1c12799c0fd0",
+          append: '#block', // div where appear form
+      });
 
-</body>
-</html>
 
+      $(window).yollyform({
+          site_key: "3505341b-bde7-480a-aa25-16991067adda",
+          form_key: "0f4c37bd-90ce-4f86-83ea-33c2a9548705",
+          append: '#static', // div where appear form
+      });
+
+  </script>
+
+  </body>
+
+  </html>
