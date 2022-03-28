@@ -369,10 +369,10 @@ body {
     font-size: 40px; }
   .text-block {
     padding: 20px; }
+  .main-screen .col-lg-7, .main-screen .col-lg-5 {
+    height: 100vh; }
   .mob-rev {
-    flex-direction: column-reverse; }
-    .mob-rev .col-lg-7, .mob-rev .col-lg-5 {
-      height: 50vh; } }
+    flex-direction: column-reverse; } }
 
 @media (max-width: 550px) {
   .head-info h1 {
