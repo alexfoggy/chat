@@ -12,7 +12,7 @@
                         <span class="tag">yolly.pro</span>
                         <h1 class="tx-main">Beautiful and powerful solution</h1>
                         <h2 class="tx-norm">Starts from $3.99 per month</h2>
-                        <a href="readmore.html" class="main-button">Read more <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        <a href="{{url('instruction')}}" class="main-button">Read more <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                                                          xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 12L5 12" stroke="#292929" stroke-width="2" stroke-linecap="round"
                       stroke-linejoin="round" />
@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-lg-7 bg-main d-flex justify-content-center align-items-center">
                     <div class="text-block">
-                        <span href="" class="blockchange">Mail forms</span>
+                        <span class="blockchange">Mail forms</span>
                     </div>
                     <div class="circles">
                         <div class="" style="animation-delay: 0.5s !important;"></div>

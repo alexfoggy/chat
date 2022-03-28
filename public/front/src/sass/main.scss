@@ -188,23 +188,22 @@ body {
     background-color: #212529;
     margin-bottom: 0;
     padding: 14px 0;
+        a {
+            color:#fff;
+            padding: 6px 10px;
+            text-decoration: none !important;
+            transition: 0.4s;
+            font-size: 14px;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
 }
 .logo {
     font-size: 14px;
     color: #fff;
 }
-.menu-list {
-    a {
-        color:#fff;
-        padding: 6px 10px;
-        text-decoration: none !important;
-        transition: 0.4s;
-        font-size: 14px;
-        &:hover {
-            opacity: 0.7;
-        }
-    }
-}
+
 .head-info {
     position: relative;
     height: 500px;

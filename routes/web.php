@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', 'PageController@main')->name('main');
+Route::get('/instruction', 'PageController@inctruction');
+Route::get('/price', 'PageController@price');
+Route::get('/docs', 'PageController@docs');
 
 
 Route::get('/chanel', function (){

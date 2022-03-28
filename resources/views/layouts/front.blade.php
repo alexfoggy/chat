@@ -21,7 +21,7 @@
 <header class="main-header">
     <div class="container-fluid">
         <div class="d-flex justify-content-between align-items-center">
-            <div class="logo">Yolly.pro</div>
+            <a href="{{url('/')}}" class="logo">Yolly.pro</a>
             <div class="menu">
                 <div class="actions">
                     <a href="{{url('login')}}" class="login">Login</a>
@@ -35,23 +35,22 @@
 <footer class="main-footer">
     <div class="container-fluid">
         <div class="d-flex justify-content-between">
-            <div class="logo">Yolly.pro</div>
+            <a href="{{url('/')}}" class="logo">Yolly.pro</a>
             <div class=""></div>
             <div class="menu-list">
-                <a href="">Docs</a>
-                <a href="">Instruction</a>
-                <a href="">Pricing</a>
+                <a href="{{url('docs')}}">Docs</a>
+                <a href="{{url('instruction')}}">Instruction</a>
+                <a href="{{url('price')}}">Pricing</a>
             </div>
         </div>
     </div>
 </footer>
-<script src="{{asset('assets/js/jquery/js/jquery.js')}}"></script>
-
 
 
 @stack('scripts')
 
-<script src="{{asset('assets/js/slim.js?v='.\Carbon\Carbon::now()->getTimestamp())}}"></script>
+<script src="{{asset('front/build/js/libs.min.js')}}"></script>
+<script src="{{asset('front/build/js/main.js')}}"></script>
 
 </body>
 </html>
