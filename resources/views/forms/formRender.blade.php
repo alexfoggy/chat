@@ -16,7 +16,8 @@
         </div>
         <form action="###" id="formYolly" class="inputs">
             @foreach($inputs as $one_inp)
-            <input  @if($loop->last) @if(!(count($inputs) % 2) == 0) class="w-100 @if($one_inp->valid == 'number')number_only @elseif($one_inp->valid == 'email') email_only @else  @endif" @endif @endif type="text" placeholder="{{$one_inp->placeholder}}" name="{{$one_inp->id}}" @if($one_inp->type == 'req') required @endif>
+            <input  @if($loop->last) @if(!(count($inputs) % 2) == 0) class="w-100 @if($one_inp->valid == 'number')number_only @elseif($one_inp->valid == 'email') email_only @else suka  @endif" @endif @endif type="text" placeholder="{{$one_inp->placeholder}}" name="{{$one_inp->id}}" @if($one_inp->type == 'req') required @endif>
+            {!! $one_inp->valid !!}
             @endforeach
             <button type="submit"><span class="sendButton">Send</span>
                 <div class="loader">

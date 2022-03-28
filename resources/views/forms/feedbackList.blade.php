@@ -25,7 +25,7 @@
         <div class="row">
             @if($feedbackList)
                 @foreach($feedbackList as $one_message)
-            <div class="col-md-6 col-lg-4 mt-2">
+            <div class="col-md-6 col-lg-4 mt-4">
                 <ul class="list-group">
                     @foreach($one_message->children as $one_inp)
                     <li class="list-group-item">
