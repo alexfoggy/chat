@@ -95,9 +95,10 @@
                                 class="icon fa fa-globe"></i>{{trans('vars.languages',[],$lang)}}</a>
                         <a href="{{url('manager','settings')}}" class="nav-link"><i
                                 class="icon ion-ios-gear"></i>{{trans('vars.acc_settings',[],$lang)}}</a>
-                        <a href="{{url('accountOut')}}" class="nav-link "><i
-                                class="icon ion-forward"></i>{{trans('vars.sign_out',[],$lang)}}</a>
+
                     @endif--}}
+                    <a href="{{url('accountOut')}}" class="nav-link "><i
+                            class="icon ion-forward"></i>{{trans('vars.sign_out',[],$lang)}}</a>
                 </nav>
             </div><!-- dropdown-menu -->
         </div><!-- dropdown -->

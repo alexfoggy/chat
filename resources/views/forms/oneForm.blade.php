@@ -18,13 +18,16 @@
         </div>
     @endif
     <div class="section-wrapper">
-        <label class="section-title d-flex justify-content-between align-items-center">
-            <span>Form information</span>
+        <div class="section-title d-flex justify-content-between align-items-center">
+            <div>
+                <span>Form information</span>
+                <span class="d-block tx-12 tx-normal tx-norm">form key: <span class="tx-warning tx-lowercase">{{$form->formkey}}</span></span>
+            </div>
             <div class="">
             <a href="{{url('cabinet',['editform',$form->id])}}" class="btn btn-indigo tx-12 px-2 py-1 tx-transform-none rounded">Edit</a>
             <span class="btn btn-danger tx-12 px-2 py-1 tx-transform-none rounded delete-it">Delete</span>
             </div>
-        </label>
+        </div>
         <p class="mg-b-20 mg-sm-b-40"></p>
 
         <div class="row">

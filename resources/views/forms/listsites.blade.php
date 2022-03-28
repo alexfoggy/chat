@@ -41,7 +41,7 @@
                         <td>{{$one_site->site_key}}</td>
 
                         <td class="tx-center"><span class="square-8 bg-success mg-r-5 rounded-circle"></span> </td>
-                        <td class="tx-center">Forms count</td>
+                        <td class="tx-center">{{$one_site->forms->count()}}</td>
                         <td class="tx-center">
                             <a href="{{url('cabinet',['form',$one_site->id])}}" class="btn tx-12 py-1 btn-indigo rounded">Open forms</a>
                         </td>
