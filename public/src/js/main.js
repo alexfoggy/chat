@@ -100,7 +100,7 @@ $(document).on('submit','#formYolly',function(e){
         else {
             $(this).parent().find('.error').remove();
         }
-        return isValid;
+        return 0;
     });
 
 
