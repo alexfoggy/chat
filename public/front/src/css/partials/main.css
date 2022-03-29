@@ -344,6 +344,11 @@ body {
     font-size: 75px; } }
 
 @media (max-width: 990px) {
+  .main-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0; }
   .head-info h1 {
     font-size: 80px; }
   .price-card {
