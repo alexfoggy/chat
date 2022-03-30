@@ -32,7 +32,7 @@
                     <option value="popup" @if($form->type == 'popup') selected @endif>Popup</option>
                     <option value="static" @if($form->type == 'static') selected @endif>Static</option>
                 </select>
-                <input type="text" name="popup-head" class="form-control mt-2 popupHead" placeholder="{{$form->popup_head}}">
+                <input type="text" name="popup-head" class="form-control mt-2 popupHead" value="{{$form->popup_head}}" placeholder="{{$form->popup_head}}">
             </div><!-- col -->
 
         </div><!-- row -->
@@ -49,7 +49,7 @@
                         <option value="number" @if($one_inp->valid == 'number') selected @endif>Number</option>
                         <option value="email" @if($one_inp->valid == 'email') selected @endif>Email</option>
                     </select>
-                    <select name="pq[{{$one_inp->id}}]" id="" class="select2 w-100" >
+                    <select name="pq[{{$one_inp->id}}]" id="" class="select2 w-25" >
                         <option value="req" @if($one_inp->type == 'req') checked @endif>Required</option>
                         <option value="miss" @if($one_inp->type == 'miss') checked @endif>Not required</option>
                     </select>
