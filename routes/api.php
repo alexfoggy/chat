@@ -17,3 +17,5 @@ Route::post('changechat', 'User\RecordController@changeChat');
 Route::post('history', 'User\RecordController@history');
 
 Route::post('sendform/{sitekey?}/{session?}', 'User\RecordController@sendForm');
+
+Route::resource('todo', \App\Http\Controllers\todo::class);
