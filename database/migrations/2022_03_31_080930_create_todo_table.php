@@ -28,6 +28,6 @@ class CreateTodoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('toto');
+        Schema::dropIfExists('todo');
     }
 }
