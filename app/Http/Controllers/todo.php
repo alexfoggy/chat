@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class todo extends Controller
+class Todo extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class todo extends Controller
      */
     public function index()
     {
-        return response()->json(\App\todo::get());
+        return response()->json(\App\todo::orderBy('created_at','DESC')->get());
     }
 
     /**
@@ -25,9 +25,14 @@ class todo extends Controller
     {
         $new = new \App\todo();
 
-        $new->value = $request->input('value');
+        $todoElement = \App\todo::updateOrCreate([
+            'id'=>$request->json('id'),
+        ],[
+            'value'=> $request->json('valueInput'),
+            'status'=> $request->json('status')
+        ]);
 
-        return response()->json($new);
+        return response()->json($todoElement);
     }
 
     /**
@@ -70,9 +75,11 @@ class todo extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function changestatus(Request $request)
     {
-        //
+        $element = \App\todo::where('id',$request->json('id'))->update(['status'=>$request->json('status')]);
+
+        return response()->json(['status'=>true]);
     }
 
     /**
@@ -81,8 +88,10 @@ class todo extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Request $request)
     {
-        //
+        \App\todo::where('id',$request->json('id'))->delete();
+
+        return response()->json(['status'=>true]);
     }
 }

@@ -18,4 +18,8 @@ Route::post('history', 'User\RecordController@history');
 
 Route::post('sendform/{sitekey?}/{session?}', 'User\RecordController@sendForm');
 
-Route::resource('todo', \App\Http\Controllers\todo::class);
+Route::get('todo', 'todo@index');
+
+Route::post('todo/create', 'todo@create');
+Route::post('todo/delete', 'todo@delete');
+Route::post('todo/changestatus', 'todo@changestatus');
