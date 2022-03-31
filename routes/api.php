@@ -23,3 +23,4 @@ Route::get('todo', 'todo@index');
 Route::post('todo/create', 'todo@create');
 Route::post('todo/delete', 'todo@delete');
 Route::post('todo/changestatus', 'todo@changestatus');
+Route::post('todo/update', 'todo@update');

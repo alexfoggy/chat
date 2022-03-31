@@ -41,9 +41,11 @@ class Todo extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function update(Request $request)
     {
-        //
+       $element = \App\todo::where('id',$request->json('id'))->update(['value'=>$request->json('updateValue')]);
+
+       return response()->json(['status'=>true]);
     }
 
     /**
