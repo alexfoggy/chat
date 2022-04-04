@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\comment;
 use Illuminate\Http\Request;
 
 class Todo extends Controller
@@ -95,5 +96,20 @@ class Todo extends Controller
         \App\todo::where('id',$request->json('id'))->delete();
 
         return response()->json(['status'=>true]);
+    }
+
+    public function commentShow($id){
+
+        return response()->json(comment::where('todo_id',$id)->orderBy('created_at','DESC')->get());
+
+    }
+    public function commentCreate(Request $request){
+
+        $comment = new comment();
+        $comment->comment = $request->json('commentValue');
+        $comment->todo_id = $request->json('id');
+        $comment->save();
+
+        return response()->json($comment);
     }
 }

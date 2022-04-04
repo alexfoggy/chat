@@ -24,3 +24,8 @@ Route::post('todo/create', 'todo@create');
 Route::post('todo/delete', 'todo@delete');
 Route::post('todo/changestatus', 'todo@changestatus');
 Route::post('todo/update', 'todo@update');
+
+Route::post('todo/comment/create', 'todo@commentCreate');
+Route::get('todo/comment/show/{id?}', 'todo@commentShow');
+Route::post('todo/comment/delete', 'todo@commentDelete');
+
