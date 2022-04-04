@@ -14,7 +14,7 @@ class Todo extends Controller
      */
     public function index()
     {
-        return response()->json(\App\todo::orderBy('created_at','DESC')->get());
+        return response()->json( \App\Todo::orderBy('created_at','DESC')->get());
     }
 
     /**
@@ -24,9 +24,9 @@ class Todo extends Controller
      */
     public function create(Request $request)
     {
-        $new = new \App\todo();
+        $new = new \App\Todo();
 
-        $todoElement = \App\todo::updateOrCreate([
+        $todoElement = \App\Todo::updateOrCreate([
             'id'=>$request->json('id'),
         ],[
             'value'=> $request->json('valueInput'),
@@ -44,7 +44,7 @@ class Todo extends Controller
      */
     public function update(Request $request)
     {
-       $element = \App\todo::where('id',$request->json('id'))->update(['value'=>$request->json('updateValue')]);
+       $element = \App\Todo::where('id',$request->json('id'))->update(['value'=>$request->json('updateValue')]);
 
        return response()->json(['status'=>true]);
     }
@@ -80,7 +80,7 @@ class Todo extends Controller
      */
     public function changestatus(Request $request)
     {
-        $element = \App\todo::where('id',$request->json('id'))->update(['status'=>$request->json('status')]);
+        $element = \App\Todo::where('id',$request->json('id'))->update(['status'=>$request->json('status')]);
 
         return response()->json(['status'=>true]);
     }
@@ -93,7 +93,7 @@ class Todo extends Controller
      */
     public function delete(Request $request)
     {
-        \App\todo::where('id',$request->json('id'))->delete();
+        \App\Todo::where('id',$request->json('id'))->delete();
 
         return response()->json(['status'=>true]);
     }
