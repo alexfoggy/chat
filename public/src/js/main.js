@@ -8,14 +8,14 @@ $.fn.yollyform = function(options) {
 
     var settings = $.extend({
         // These are the defaults.
-        site_key: "4f5179df-f8ac-4b50-b79e-40852a239d39",
-        form_key: "ea604317-2d20-4ce0-9acf-e887bb68976a",
+        site_key: "",
+        form_key: "",
         append:'#yollyform',
         successFunction:function(){
-            $('#formYolly input').val(' ');
-            $('#formYolly').slideUp();
-            $('.headYolly').addClass('active');
-            $('.headYolly').text(settings.successMessage);
+            $(settings.append+' #formYolly input').val(' ');
+            $(settings.append+' #formYolly').slideUp();
+            $(settings.append+' .headYolly').addClass('active');
+            $(settings.append+' .headYolly').text(settings.successMessage);
         },
         successMessage:'Thank you, we will contact you',
     }, options );
@@ -40,9 +40,7 @@ let appendBlock = $(settings.append);
         success: function (data) {
             if(data.session == true){
                 document.cookie = "sessionYolly="+data.sessionYolly;
-            
             }
-
             if(data.form_status == true){
                 appendBlock.append(data.form);
             }
@@ -86,8 +84,6 @@ $(document).on('submit','#formYolly',function(e){
 })
 
 }
-
-
 
 
 // let url = "https://chat/api/checkme";

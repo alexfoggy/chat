@@ -28,4 +28,17 @@ class PageController extends Controller
     {
         return view();
     }
+
+    public function docs()
+    {
+        return view('pages.docs');
+    }
+    public function price()
+    {
+        return view('pages.price');
+    }
+    public function inctruction()
+    {
+        return view('pages.inctruction');
+    }
 }

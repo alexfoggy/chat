@@ -17,6 +17,7 @@
             <div class="card-header">
                 <h6 class="slim-card-title">Your domains</h6>
             </div><!-- card-header -->
+            @if($sites->isNotEmpty())
             <div class="table-responsive">
                 <table class="table mg-b-0 tx-13">
                     <thead>
@@ -29,7 +30,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @if($sites->isNotEmpty())
+
                         @foreach($sites as $one_site)
                     <tr>
                         <td>
@@ -37,24 +38,25 @@
                                 {{$one_site->site_route}}
                             </a>
                         </td>
-                        <td>d430350a-907f-4b8f-a61d-dc7ec6d7fe35</td>
+                        <td>{{$one_site->site_key}}</td>
 
                         <td class="tx-center"><span class="square-8 bg-success mg-r-5 rounded-circle"></span> </td>
-                        <td class="tx-center">Forms count</td>
+                        <td class="tx-center">{{$one_site->forms->count()}}</td>
                         <td class="tx-center">
                             <a href="{{url('cabinet',['form',$one_site->id])}}" class="btn tx-12 py-1 btn-indigo rounded">Open forms</a>
                         </td>
                     </tr>
                         @endforeach
-                    @else
-                        <p class="col-lg-12">You have no websites added</p>
-                        <div class="col-lg-12">
-                            <a href="{{url('cabinet/newsite')}}" class="btn btn-primary">Add website</a>
-                        </div>
-                        @endif
+
                     </tbody>
                 </table>
             </div><!-- table-responsive -->
+            @else
+                <p class="col-lg-12 mt-2 mb-2">You have no websites added</p>
+                <div class="col-lg-12 mb-2">
+                    <a href="{{url('cabinet/newsite')}}" class="btn btn-primary">Add website</a>
+                </div>
+            @endif
         </div>
     </div>
 

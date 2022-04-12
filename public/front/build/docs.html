@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Title</title>
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/libs.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Main Header start -->  
+  <header class="main-header">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="logo">Yolly.pro</div>
+        <div class="menu">
+          <div class="actions">
+          <a href="" class="login">Login</a>
+          <a href="" class="register">Register</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Main Header end -->
+<!-- Hero start -->
+
+<div class="container-fluid head-info">
+    <img src="/img/peace.jpg" alt="">
+    <h1>Docs</h1>
+</div>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-2">
+            <p>Navigation</p>
+            <ul class="navigtion">
+                <li>
+                    <a href="">
+                        Start
+                    </a>
+                </li>
+                <li>
+                    <a href="">Instalation</a>
+
+                </li>
+                <li>
+                    <a href=""> Events</a>
+
+                </li>
+                <li>
+                    <a href="">Modes</a>
+
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-10">
+            <div class="docs">
+
+                <h2 class="mb-5">Documentation for developers</h2>
+
+                <div class="text-block-devid">
+                    <h4>Start work</h4>
+                    <p>Let's start... First we need to link default <span class="accent">styles</span> and <span
+                            class="accent">js core</span></p>
+                </div>
+                <code>
+                    Hello
+                </code>
+                <p>and</p>
+                <code>
+                    Hello
+                </code>
+
+
+                <div class="text-block-devid">
+                    <h4>Instalation</h4>
+                    <p>Let's install it... First we need to downlowd it if you don't like CDN version</p>
+                </div>
+                <a href="" class="button-docs">Download zip</a>
+                <p>or</p>
+                <code>
+                    npm install yolly
+                </code>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Hero end -->
+  <footer class="main-footer">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between">
+        <div class="logo">Yolly.pro</div>
+        <div class=""></div>
+        <div class="menu-list">
+          <a href="">Docs</a>
+          <a href="">Instruction</a>
+          <a href="">Pricing</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+	<script src="js/libs.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    if ( $(window).width() >= 768 ) {
+      $('a[href^="tel:"], a[href^="mailto:"]').click(function() {
+        event.preventDefault();
+        window.location.href = "/contacts.html";
+      });
+    };
+  </script>
+  
+</body>
+</html>

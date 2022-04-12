@@ -17,3 +17,15 @@ Route::post('changechat', 'User\RecordController@changeChat');
 Route::post('history', 'User\RecordController@history');
 
 Route::post('sendform/{sitekey?}/{session?}', 'User\RecordController@sendForm');
+
+Route::get('todo', 'Todo@index');
+
+Route::post('todo/create', 'Todo@create');
+Route::post('todo/delete', 'Todo@delete');
+Route::post('todo/changestatus', 'Todo@changestatus');
+Route::post('todo/update', 'Todo@update');
+
+Route::post('todo/comment/create', 'Todo@commentCreate');
+Route::get('todo/comment/show/{id?}', 'Todo@commentShow');
+Route::post('todo/comment/delete', 'Todo@commentDelete');
+

@@ -1,5 +1,5 @@
 <div class="openformYolly">
-    Contact us
+    {{$form->popup_head}}
 </div>
 
 <div class="contactFormYollyPopup">
@@ -11,12 +11,12 @@
                       stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
-        <div class="H">
+        <div class="headYolly">
             {{$form->head}}
         </div>
         <form action="###" id="formYolly" class="inputs">
             @foreach($inputs as $one_inp)
-            <input  @if($loop->last) @if(!(count($inputs) % 2) == 0) class="w-100" @endif @endif type="text" placeholder="{{$one_inp->placeholder}}" name="{{$one_inp->id}}" @if($one_inp->type == 'req') required @endif>
+            <input class="@if($one_inp->valid == 'number')number_only @elseif($one_inp->valid == 'email') email_only @else clear @endif @if($loop->last) @if(!(count($inputs) % 2) == 0) w-100  @endif @endif" type="text" placeholder="{{$one_inp->placeholder}}" name="{{$one_inp->id}}" @if($one_inp->type == 'req') required @endif>
             @endforeach
             <button type="submit"><span class="sendButton">Send</span>
                 <div class="loader">

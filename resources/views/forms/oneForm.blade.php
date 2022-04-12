@@ -18,13 +18,16 @@
         </div>
     @endif
     <div class="section-wrapper">
-        <label class="section-title d-flex justify-content-between align-items-center">
-            <span>Form information</span>
+        <div class="section-title d-flex justify-content-between align-items-center">
+            <div>
+                <span>Form information</span>
+                <span class="d-block tx-12 tx-normal tx-norm">form key: <span class="tx-warning tx-lowercase">{{$form->formkey}}</span></span>
+            </div>
             <div class="">
             <a href="{{url('cabinet',['editform',$form->id])}}" class="btn btn-indigo tx-12 px-2 py-1 tx-transform-none rounded">Edit</a>
             <span class="btn btn-danger tx-12 px-2 py-1 tx-transform-none rounded delete-it">Delete</span>
             </div>
-        </label>
+        </div>
         <p class="mg-b-20 mg-sm-b-40"></p>
 
         <div class="row">
@@ -49,9 +52,14 @@
             @foreach($inputs as $one_inp)
             <div class="col-lg-12 mb-3 d-flex align-items-center">
                 <input class="form-control" placeholder="Placehoder" value="{{$one_inp->placeholder}}" readonly type="text" name="pr[{{$one_inp->id}}]">
+                <select name="valid[{{$one_inp->id}}]" id="" class="select2 w-25" disabled>
+                    <option value="text" @if($one_inp->valid == 'text') selected @endif>Text</option>
+                    <option value="number" @if($one_inp->valid == 'number') selected @endif>Number</option>
+                    <option value="email" @if($one_inp->valid == 'email') selected @endif>Email</option>
+                </select>
                 <select name="pq[{{$one_inp->id}}]" id="" class="select2 w-100" disabled>
-                    <option value="req" @if($one_inp->type == 'req') checked @endif>Required</option>
-                    <option value="miss" @if($one_inp->type == 'miss') checked @endif>Not required</option>
+                    <option value="req" @if($one_inp->type == 'req') selected @endif>Required</option>
+                    <option value="miss" @if($one_inp->type == 'miss') selected @endif>Not required</option>
                 </select>
                 <span class="btn-danger ml-4 px-2 py-1 rounded delete-field d-none"><i class="fa fa-close"></i></span>
             </div><!-- col -->
@@ -70,5 +78,27 @@
 
         start();
 
+
+        $(document).on('click','.delete-it',function () {
+            let apr = confirm('Are you sure ?');
+            if (apr == true) {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: '/cabinet/formdelete/{{$form->id}}',
+                    success: function (response) {
+                        if (response.status == true) {
+                            location.reload();
+                        } else {
+                            alertAppend(response.msg, 'danger');
+                        }
+                    }
+                });
+            }
+        });
     </script>
 @endpush

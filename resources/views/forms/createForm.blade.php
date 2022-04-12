@@ -47,7 +47,12 @@
                 <span class="px-2 py-1 bg-indigo h-100 d-flex align-items-center tx-white"><i
                         class="icon ion-arrow-move"></i></span>
                 <input class="form-control" placeholder="Placehoder" value="Your name" type="text" name="pr[0]">
-                <select name="pq[0]" id="" class="select2 w-100">
+                <select name="valid[0]" id="" class="select2 w-25">
+                    <option value="text">Text</option>
+                    <option value="number">Number</option>
+                    <option value="email">Email</option>
+                </select>
+                <select name="pq[0]" id="" class="select2 w-25">
                     <option value="req">Required</option>
                     <option value="miss">Not required</option>
                 </select>
@@ -58,7 +63,12 @@
                         class="icon ion-arrow-move"></i></span>
 
                 <input class="form-control" placeholder="Placehoder" value="Your email" type="text" name="pr[-1]">
-                <select name="pq[-1]" id="" class="select2 w-100">
+                <select name="valid[-1]" id="" class="select2 w-25">
+                    <option value="text">Text</option>
+                    <option value="number">Number</option>
+                    <option value="email">Email</option>
+                </select>
+                <select name="pq[-1]" id="" class="select2 w-25">
                     <option value="req">Required</option>
                     <option value="miss">Not required</option>
                 </select>
@@ -69,7 +79,12 @@
                         class="icon ion-arrow-move"></i></span>
 
                 <input class="form-control" placeholder="Placehoder" value="Your Phone" type="text" name="pr[-2]">
-                <select name="pq[-2]" id="" class="select2 w-100">
+                <select name="valid[-2]" id="" class="select2 w-25">
+                    <option value="text">Text</option>
+                    <option value="number">Number</option>
+                    <option value="email">Email</option>
+                </select>
+                <select name="pq[-2]" id="" class="select2 w-25">
                     <option value="req">Required</option>
                     <option value="miss">Not required</option>
                 </select>

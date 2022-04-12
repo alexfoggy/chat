@@ -8,5 +8,5 @@ class Input extends Model
 {
     protected $table = 'input';
 
-    protected $fillable = ['form_id','type','placeholder','title','position'];
+    protected $fillable = ['form_id','type','placeholder','valid','title','position'];
 }
