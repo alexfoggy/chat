@@ -323,7 +323,7 @@ class SpeakerController extends Controller
     public function editFormPage(Request $request,$form_id)
     {
         $form = Form::where('user_id',Auth::user()->id)->where('id',$form_id)->first();
-        $inputs = Input::where('form_id',$form_id)->get();
+        $inputs = Input::where('form_id',$form_id)->orderBy('position','ASC')->get();
 
         return view('forms.editForm',get_defined_vars());
     }
