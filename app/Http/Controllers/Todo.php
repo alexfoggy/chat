@@ -99,9 +99,7 @@ class Todo extends Controller
     }
 
     public function commentShow($id){
-
         return response()->json(comment::where('todo_id',$id)->orderBy('created_at','DESC')->get());
-
     }
     public function commentCreate(Request $request){
 

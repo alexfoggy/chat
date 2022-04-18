@@ -132,14 +132,16 @@
                 <li class="sidebar-nav-item">
                     <a href="{{url('cabinet/feedbacks')}}" class="sidebar-nav-link"><i class="fa fa-envelope-o"></i>Feedbacks</a>
                 </li>
+                <li class="sidebar-nav-item">
+                    <a href="{{url('cabinet/pools')}}" class="sidebar-nav-link"><i class="icon ion-clipboard"></i>Question pool</a>
+                </li>
                 {{--<li class="sidebar-nav-item">
                     <a href="{{url('cabinet','tasks')}}" class="sidebar-nav-link"><i
                             class="icon icon ion-filing"></i>{{trans('vars.tasks',[],$lang)}}</a>
                 </li>--}}
             @else
                 <li class="sidebar-nav-item">
-                    <a href="{{url('cabinet')}}" class="sidebar-nav-link"><i
-                            class="icon ion-ios-contact"></i>{{trans('vars.profile',[],$lang)}}</a>
+                    <a href="{{url('cabinet')}}" class="sidebar-nav-link"><i class="icon ion-stats-bars"></i>{{trans('vars.profile',[],$lang)}}</a>
                 </li>
                 <li class="sidebar-nav-item">
                     <a href="{{url('cabinet','tasks')}}" class="sidebar-nav-link"><i
