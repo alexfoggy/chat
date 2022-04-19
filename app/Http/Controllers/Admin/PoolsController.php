@@ -12,6 +12,8 @@ use App\Models\Project;
 use App\Models\Sites;
 use App\Models\TasksRelation;
 use App\Notifications\NewTaskNotification;
+use App\Pool_ans;
+use App\Pool_ans_id;
 use App\Pool_checkbox;
 use App\Pool_question;
 use App\Pools;
@@ -129,6 +131,43 @@ class PoolsController extends Controller
 
 
         return response()->json(['status'=>true]);
+    }
+
+    public function poolAsk($key){
+        $pool = Pools::where('key', $key)->first();
+
+        $ques = Pool_question::where('pool_id',$pool->id)->with('checkbox')->orderBy('id')->get();
+
+        return view('admin/speaker/poolAsk', get_defined_vars());
+    }
+
+    public function poolSave(Request $request,$key){
+
+        $pool = Pools::where('key',$key)->first();
+
+        $newAns = new Pool_ans_id();
+        $newAns->pools_id = $pool->id;
+        $newAns->save();
+
+        foreach ($request->input('value') as $one_value){
+            $ans = new Pool_ans();
+            //$ans->value = $one_value;
+            $ans->ans_id = $newAns->id;
+            $ans->checkbox_id = $one_value;
+            $ans->save();
+        }
+
+        return redirect('/pool/'.$key)->with('status',true);
+
+    }
+
+    public function poolPageAnswers($key){
+
+        $pool = Pools::where('key',$key)->first();
+
+        $pool_ans_id = Pool_ans_id::where('pools_id',$pool->id)->get();
+
+        return view('admin/speaker/answers', get_defined_vars());
     }
 
 

@@ -19,6 +19,8 @@ Route::get('/', 'PageController@main')->name('main');
 Route::get('/instruction', 'PageController@inctruction');
 Route::get('/price', 'PageController@price');
 Route::get('/docs', 'PageController@docs');
+Route::get('/pool/{key?}', 'Admin\PoolsController@poolAsk');
+Route::post('/sendform/{key?}', 'Admin\PoolsController@poolSave');
 
 
 Route::get('/chanel', function () {

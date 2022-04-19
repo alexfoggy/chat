@@ -13,10 +13,11 @@
     @endif
     <div class="uppquestions">
         <div class="section-wrapper">
-
+            <p><span>link:</span> <span class="ml-1 tx-warning">{{url('pool',$pool->key)}}</span></p>
             <div class="d-flex justify-content-between align-items-center">
             <label class="section-title">Pool</label>
             <div class="">
+                <a href="{{url('cabinet',['pool','answers',$pool->key])}}" class="btn btn-indigo rounded-5 px-2 py-1 tx-12">Anwsers</a>
                 <a href="{{url('cabinet',['pool','edit',$pool->key])}}" class="btn btn-warning rounded-5 px-2 py-1 tx-12">Edit</a>
             </div>
             </div>

@@ -20,6 +20,7 @@ Route::prefix('cabinet')->name('cabinet.')->middleware(['auth', 'verified', 'use
     Route::get('/pool/{key?}', 'Admin\PoolsController@poolPage');
     Route::get('/pool/view/{key?}', 'Admin\PoolsController@poolPageView');
     Route::get('/pool/edit/{key?}', 'Admin\PoolsController@poolPageEdit');
+    Route::get('/pool/answers/{key?}', 'Admin\PoolsController@poolPageAnswers');
 
     //POST
     Route::post('createNewConnection', 'Controller@createConnection');

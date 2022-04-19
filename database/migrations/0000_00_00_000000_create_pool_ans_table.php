@@ -15,7 +15,7 @@ class CreatePoolAnsTable extends Migration
     {
         Schema::create('pool_ans', function (Blueprint $table) {
             $table->id();
-            $table->string('value');
+            $table->string('value')->nullable();
             $table->integer('checkbox_id');
             $table->integer('ans_id');
             $table->timestamps();
