@@ -29,6 +29,7 @@
                         <th class="pd-y-5">Theme</th>
                         <th class="pd-y-5">Added at</th>
                         <th class="pd-y-5 tx-center">Status</th>
+                        <th class="pd-y-5"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -38,6 +39,7 @@
                             <td>{{$one_pool->theme}}</td>
                             <td>{{\Carbon\Carbon::parse($one_pool->created_at)->format('d.m.y')}}</td>
                             <td class="tx-center"><span class="square-8 bg-success mg-r-5 rounded-circle"></span> </td>
+                            <td class="tx-right"><span class="btn btn-danger rounded-10 popup-action" data-action="pool/delete/{{$one_pool->id}}"><i class="fa fa-close"></i></span></td>
                         </tr>
                     @endforeach
                     </tbody>

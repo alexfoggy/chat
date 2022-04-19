@@ -19,6 +19,7 @@ Route::prefix('cabinet')->name('cabinet.')->middleware(['auth', 'verified', 'use
     Route::get('/newpool', 'Admin\PoolsController@newPoolPage');
     Route::get('/pool/{key?}', 'Admin\PoolsController@poolPage');
     Route::get('/pool/view/{key?}', 'Admin\PoolsController@poolPageView');
+    Route::get('/pool/edit/{key?}', 'Admin\PoolsController@poolPageEdit');
 
     //POST
     Route::post('createNewConnection', 'Controller@createConnection');
@@ -30,6 +31,7 @@ Route::prefix('cabinet')->name('cabinet.')->middleware(['auth', 'verified', 'use
     Route::post('/formdelete/{id?}', 'Admin\SpeakerController@formDelete');
     Route::post('/createpool', 'Admin\PoolsController@createPool');
     Route::post('/savepool/{key?}', 'Admin\PoolsController@savePool');
+    Route::post('/pool/delete/{id?}', 'Admin\PoolsController@deletePool');
 
 //    Route::get('settings','Admin\SpeakerController@settingsPage');
 //    Route::get('tasks','Admin\TaskController@speakerTaskList');

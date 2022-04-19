@@ -65,6 +65,13 @@ class PoolsController extends Controller
         return view('admin/speaker/poolPageView', get_defined_vars());
     }
 
+    public function poolPageEdit($key){
+        $pool = Pools::where('key', $key)->first();
+
+        $ques = Pool_question::where('pool_id',$pool->id)->with('checkbox')->orderBy('id')->get();
+
+        return view('admin/speaker/poolPageEdit', get_defined_vars());
+    }
 
     public function createPool(Request $request)
     {
@@ -93,25 +100,35 @@ class PoolsController extends Controller
 
         foreach ($poolQus as $key => $value){
 
-            $qus = new Pool_question();
-            $qus->title = $value;
-            $qus->status = 1;
-            $qus->pool_id = $pool->id;
-            $qus->type = 'one';
+            $qus = Pool_question::updateOrCreate([
+                'id'=>$key
+            ],[
+                'title'=>$value,
+                'status'=>1,
+                'pool_id'=>$pool->id,
+                'type'=>'one'
+            ]);
 
-            $qus->save();
+            foreach($poolChek[$key] as $id => $value){
 
-            foreach($poolChek[$key] as $key => $value){
-                $che = new Pool_checkbox();
-                $che->pool_question_id = $qus->id;
-                $che->title = $value;
-
-                $che->save();
+                $qws = Pool_checkbox::updateOrCreate([
+                    'id'=>$id,
+                    'pool_question_id'=>$qus->id,
+                ],[
+                    'title'=>$value,
+                ]);
             }
         }
 
         return redirect('/cabinet/pool/view/' . $pool->key);
 
+    }
+
+    public function deletePool($id){
+        Pools::where('id',$id)->where('user_id',Auth::user()->id)->delete();
+
+
+        return response()->json(['status'=>true]);
     }
 
 

@@ -31,9 +31,14 @@ $(document).on('click', '.close-popup', function () {
 $(document).on('click', '.prove-button', function () {
     let url = $(this).data('url');
 
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     $.ajax({
         type: 'POST',
-        url: '/api/' + url,
+        url: url,
         success: function (response) {
             if (response.status == true) {
                 location.reload();

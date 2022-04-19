@@ -13,20 +13,25 @@
     @endif
     <div class="uppquestions">
         <div class="section-wrapper">
-            <label class="section-title">Pool</label>
 
+            <div class="d-flex justify-content-between align-items-center">
+            <label class="section-title">Pool</label>
+            <div class="">
+                <a href="{{url('cabinet',['pool','edit',$pool->key])}}" class="btn btn-warning rounded-5 px-2 py-1 tx-12">Edit</a>
+            </div>
+            </div>
             <div class="form-layout">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label">Title: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" value="{{$pool->title}}" readonly>
+                            <label class="form-control-label">Title</label>
+                            <input class="form-control rounded-5" type="text" value="{{$pool->title}}" readonly>
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label">Theme: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" value="{{$pool->theme}}" readonly>
+                            <label class="form-control-label">Theme</label>
+                            <input class="form-control rounded-5" type="text" value="{{$pool->theme}}" readonly>
                         </div>
                     </div><!-- col-4 -->
                 </div><!-- row -->
